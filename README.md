@@ -20,9 +20,52 @@ sudo pacman -S neovim ranger
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
+# mount drive
+
+# Create symlink
+
+```
+ln -ivs ~/marc/GitHub/dms/config/niri ~/.config/
+
+rm -Rf ~/.config/ranger
+ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/
+rm /home/mc/.local/share/ranger/bookmarks
+ln -ivs ~/marc/GitHub/dms/local/share/ranger/bookmarks ~/.local/share/ranger/
+
+rm -Rf ~/.config/nvim
+ln -ivs ~/marc/GitHub/dms/.vimrc ~/
+ln -ivs ~/marc/GitHub/dms/config/nvim ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/zathura ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/mpv ~/.config/
+
+ln -ivs ~/marc/virtualbox "/home/mc/VirtualBox VMs"
+
+mkdir ~/.config/script
+mkdir ~/.local/bin
+ln -ivs ~/marc/GitHub/dms/local/bin/custom ~/.local/bin
+
+mkdir -p ~/.config/tmux-plugins
+ln -ivs ~/marc/GitHub/dms/config/tmux ~/.config/
+rm -Rf ~/marc/GitHub/dms/config/tmux/plugins/
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux-plugins/tpm
+
+```
+
+ctrl + B + capital I = install plugin
+ctrl + space + capital I = install plugin
+
+```
+ln -ivs /home/mc/marc/GitHub/dms/myclirc ~/.myclirc
+
+ln -ivs /home/mc/marc/custom/source/commandbox/box ~/.local/bin/
+ln -ivs /home/mc/marc/custom/source/commandbox/jre ~/.local/bin/
+
+ln -ivs ~/marc/GitHub/dms/zshrc ~/.zshrc
+```
+
 # clone repo
 
-git clone https://github.com/scarmonger/manjaro-hypr
+git clone https://github.com/scarmonger/dms
 
 ~/marc/GitHub/wayland
 
@@ -67,7 +110,7 @@ Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 
 mkdir -p ~/marc/GitHub
 cd ~/marc/GitHub
-git clone https://www.github.com/scarmonger/ubuntu.git
+git clone https://www.github.com/scarmonger/dms.git
 
 # Tailscale
 

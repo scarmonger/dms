@@ -1,0 +1,50 @@
+search thund
+rename ImapMail
+rename bestart
+rename ws
+rename fereport
+mkdir SRQ
+rename SRQ-ServiceRequest-20240419.doc
+mkdir p90
+rename 03.Shoulders.and.Arms.mp4
+rename 05.Legs.and.Back.mp4
+rename 05.Legs.and.Back.m
+rename 06.Kenpo.X.mp4
+rename jjj
+rename 07.X.Stretch.mp4
+rename 08.Core..mp4
+rename 08.Core.Synergistics.mp4
+rename 09.Chest.Shoulders.and.Triceps.mp4
+rename 10.Back.and.Biceps.mp4
+rename 11.Cardio.X.mp4
+rename 12.AB.Ripper.X.mp4
+mkdir coding
+find iso
+find vir
+trash
+delete
+rename win11x
+search conclu
+find ran
+mkdir archive
+rename TRA2.jpeg
+rename std.jpeg
+find psc
+search fu
+find fu
+find 00
+rename sna
+rename 
+rename snack.png
+find 
+
+rename SRQ-ServiceRequest-20240723.doc_
+rename SRQ-ServiceRequest-20240723.doc
+rename TIM2.pdf
+find sve
+shell veracrypt -t -k "" --pim=0 --protect-hidden=no ~/Dropbox/linux/cl ~/.config/script
+open_with libreoffice24.2
+rename Training sunfish Workplaze ke 2 - 10 .pdf
+rename DMF Final Form Data Migration .pdf
+rename DMF initial.pdf
+find 6
