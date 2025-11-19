@@ -1,7 +1,3 @@
-# dms
-
-Danklinux.com / Dank Material Shell
-
 # Install yay
 
 sudo pacman -S --needed base-devel git
