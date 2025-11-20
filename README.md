@@ -11,7 +11,13 @@ makepkg -si
 
 # Install google-chrome
 
-yay -S google-chrome
+yay -S google-chrome github-cli python-pip tmux ranger
+
+## Install other app
+
+sudo pacman -S telegram-desktop kitty yazi pinta flameshot
+
+sudo pacman -S thunar nautilus
 
 # Install neovim - https://www.lazyvim.org/installation
 
@@ -19,6 +25,16 @@ sudo pacman -S neovim ranger
 
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
+
+## Install neovim-remote / nvr
+
+https://github.com/mhinz/neovim-remote
+
+pip3 install neovim-remote --break-system-packages
+
+## Install lazygit
+
+sudo pacman -S lazygit
 
 # mount drive
 
@@ -41,14 +57,7 @@ git clone https://github.com/scarmonger/dms ~/marc/GitHub/dms
 
 https://cli.github.com/manual/
 
-type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-&& sudo apt update \
-&& sudo apt install gh -y
-sudo apt update
-sudo apt install gh
+sudo pacman -S github-cli
 
 git config --global user.email "<psikomania@yahoo.com>"
 git config --global user.name "scarmonger"
@@ -56,7 +65,8 @@ git config --global user.name "scarmonger"
 1. jalankan di terminal `gh auth login`
 2. pilih github.com
 3. pilih HTTPS
-4. pilih paste an authentication token (lihat cara ambil token dibawah ini)
+4. Authenticate Git with your GitHub credentials? No
+5. pilih paste an authentication token (lihat cara ambil token dibawah ini)
 
 Untuk mengambil token bisa login ke github lagi ke
 
@@ -112,12 +122,6 @@ ln -ivs /home/mc/marc/custom/source/commandbox/jre ~/.local/bin/
 
 ln -ivs ~/marc/GitHub/dms/zshrc ~/.zshrc
 ```
-
-# Install app
-
-sudo pacman -S telegram-desktop kitty yazi pinta flameshot
-
-sudo pacman -S thunar nautilus
 
 # Install App Launcher - Walker https://github.com/abenz1267/walker
 

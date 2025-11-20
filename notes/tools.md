@@ -1,5 +1,7 @@
 mkdir -p ~/marc/GitHub
 
+sudo pacman -Syu
+
 # Check keymap / button
 
 xev
