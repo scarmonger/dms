@@ -82,6 +82,12 @@ sempat masih belum coba gh auth login lagi, setelah berhasil coba jalanin syntax
 yang didapat setelah berhasil login di gh auth login:
 `gh config set -h github.com git_protocol https`
 
+# Register Alias
+
+## Fish shell
+
+sudo echo "source /home/mc/marc/GitHub/dms/aliases" | sudo tee -a ~/.config/fish/config.fish
+
 # Create symlink
 
 ```
