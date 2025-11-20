@@ -37,6 +37,41 @@ sudo mount -a
 
 git clone https://github.com/scarmonger/dms ~/marc/GitHub/dms
 
+# github-cli authentication
+
+https://cli.github.com/manual/
+
+type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
+sudo apt update
+sudo apt install gh
+
+git config --global user.email "<psikomania@yahoo.com>"
+git config --global user.name "scarmonger"
+
+1. jalankan di terminal `gh auth login`
+2. pilih github.com
+3. pilih HTTPS
+4. pilih paste an authentication token (lihat cara ambil token dibawah ini)
+
+Untuk mengambil token bisa login ke github lagi ke
+
+1. developer setting
+2. personal access tokens - Tokens(classic) => Generate access tokens (Classic)
+3. tulis nama pada note
+4. no_expiration
+5. minimal centang repo, workflow, admin:org (inclusive semua)
+
+Setelah dapat token, coba git push, login dengan user dan password di isi dengan token yang sudah tergenerate
+
+sempat masih belum coba gh auth login lagi, setelah berhasil coba jalanin syntax dibawah ini
+yang didapat setelah berhasil login di gh auth login:
+`gh config set -h github.com git_protocol https`
+
 # Create symlink
 
 ```
