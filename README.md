@@ -11,18 +11,20 @@ makepkg -si
 
 # Install google-chrome
 
-yay -S google-chrome github-cli python-pip tmux ranger mpv-mpris
+yay -S google-chrome 
 
 ## Install other app
 
-sudo pacman -S telegram-desktop kitty yazi flameshot thunar nautilus ranger
+sudo pacman -S telegram-desktop kitty yazi flameshot thunar nautilus tmux ranger mpv-mpris
+
+swayidle
 
 yay -S pinta
 
 
 # Install neovim - https://www.lazyvim.org/installation
 
-sudo pacman -S neovim 
+sudo pacman -S neovim github-cli python-pip tree-sitter-cli ripgrep fd fzf lazygit luarocks
 
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
@@ -32,14 +34,6 @@ rm -rf ~/.config/nvim/.git
 https://github.com/mhinz/neovim-remote
 
 pip3 install neovim-remote --break-system-packages
-
-## Install lazygit
-
-sudo pacman -S lazygit
-
-## Install other packages
-
-sudo pacman -S luarocks swayidle
 
 
 # mount drive
