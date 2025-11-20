@@ -1,6 +1,11 @@
+echo $SHELL
+
 mkdir -p ~/marc/GitHub
 
 sudo pacman -Syu
+
+# Fish
+fish_update_completions
 
 # Check keymap / button
 

@@ -11,17 +11,18 @@ makepkg -si
 
 # Install google-chrome
 
-yay -S google-chrome github-cli python-pip tmux ranger
+yay -S google-chrome github-cli python-pip tmux ranger mpv-mpris
 
 ## Install other app
 
-sudo pacman -S telegram-desktop kitty yazi pinta flameshot
+sudo pacman -S telegram-desktop kitty yazi flameshot thunar nautilus ranger
 
-sudo pacman -S thunar nautilus
+yay -S pinta
+
 
 # Install neovim - https://www.lazyvim.org/installation
 
-sudo pacman -S neovim ranger
+sudo pacman -S neovim 
 
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
@@ -35,6 +36,11 @@ pip3 install neovim-remote --break-system-packages
 ## Install lazygit
 
 sudo pacman -S lazygit
+
+## Install other packages
+
+sudo pacman -S luarocks swayidle
+
 
 # mount drive
 
@@ -86,12 +92,13 @@ yang didapat setelah berhasil login di gh auth login:
 
 ## Fish shell
 
-sudo echo "source /home/mc/marc/GitHub/dms/aliases" | sudo tee -a ~/.config/fish/config.fish
+sudo echo "source /home/mc/marc/GitHub/dms/alias_fish" | sudo tee -a ~/.config/fish/config.fish
+
 
 # Create symlink
 
 ```
-ln -ivs ~/marc/GitHub/dms/config/niri ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/niri/config.kdl ~/.config/niri/
 
 rm -Rf ~/.config/ranger
 ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/
@@ -128,6 +135,9 @@ ln -ivs /home/mc/marc/custom/source/commandbox/jre ~/.local/bin/
 
 ln -ivs ~/marc/GitHub/dms/zshrc ~/.zshrc
 ```
+
+# Install dms
+curl -fsSL https://install.danklinux.com | sh
 
 # Install App Launcher - Walker https://github.com/abenz1267/walker
 
