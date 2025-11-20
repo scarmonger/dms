@@ -15,9 +15,12 @@ yay -S google-chrome
 
 ## Install other app
 
-sudo pacman -S telegram-desktop kitty yazi flameshot thunar nautilus tmux ranger mpv-mpris
+sudo pacman -S telegram-desktop kitty yazi flameshot thunar nautilus tmux ranger mpv-mpris trash-cli neofetch 
+
+sudo pacman -S filezilla ncdu xdotool gimp zathura tldr fish lsd thunderbird
 
 swayidle
+kazam
 
 yay -S pinta
 
@@ -35,6 +38,8 @@ https://github.com/mhinz/neovim-remote
 
 pip3 install neovim-remote --break-system-packages
 
+### Check servername
+:echo v:servername
 
 # mount drive
 
@@ -178,3 +183,35 @@ sudo tailscale up
 # Wallpaper
 
 git clone https://github.com/mylinuxforwork/wallpaper.git ~/Pictures/
+
+# Install oh-my-zsh
+
+**Rubah bin bash menjadi zsh (harus logout)**
+chsh -s /usr/bin/zsh
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSHCUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+---
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/powerlevel10k
+echo 'source ~/.config/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+
+1.) Download a Nerd Font
+
+2.) Unzip and copy to ~/.fonts
+
+3.) Run the command `fc-cache -fv` to manually rebuild the font cache
+
+check fonts with `fc-list`
+> fc-list | grep -i "Wing"
+
+https://github.com/wting/autojump/blob/master/docs/install.md
+> git clone https://github.com/wting/autojump.git
+> cd autojump
+> ./install.py
+
+```
+
