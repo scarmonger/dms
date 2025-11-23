@@ -4,6 +4,12 @@ mkdir -p ~/marc/GitHub
 
 sudo pacman -Syu
 
+# xkboption for X
+man xkeyboard-config
+
+# nvim
+set filetype=lisp
+
 # Fish
 fish_update_completions
 
