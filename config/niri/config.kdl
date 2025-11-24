@@ -151,7 +151,7 @@ spawn-at-startup "google-chrome-stable"
 spawn-at-startup "firefox"
 spawn-at-startup "ghostty" "-e" "nvim" "/home/mc/.config/niri/config.kdl"
 spawn-at-startup "kitty" "-e" "ranger"
-spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/tp13.kbd"
+spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-super.kbd"
 
 environment {
   XDG_CURRENT_DESKTOP "niri"
@@ -411,8 +411,8 @@ binds {
     Mod+Shift+Q repeat=false { close-window; }
     Mod+C hotkey-overlay-title="Maximize column" { maximize-column; }
     Mod+Shift+C hotkey-overlay-title="Fullscreen window" { fullscreen-window; }
-    Mod+Z hotkey-overlay-title="Toggle window floating" { toggle-window-floating; }
-    Mod+Shift+Z hotkey-overlay-title="switch-focus-between-floating-and-tiling" { switch-focus-between-floating-and-tiling; }
+    Mod+Z hotkey-overlay-title="switch-focus-between-floating-and-tiling" { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+Z hotkey-overlay-title="Toggle window floating" { toggle-window-floating; }
     // Mod+W { toggle-column-tabbed-display; }
 
     // === Focus Navigation ===
