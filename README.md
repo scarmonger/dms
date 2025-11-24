@@ -2,6 +2,50 @@
 
 Danklinux.com / Dank Material Shell
 
+show create table teodempdoc;
+
+# wifi
+nmcli radio wifi on
+nmcli device wifi rescan
+nmcli device wifi list
+nmcli device wifi connect DataOn
+nmcli device wifi connect DataOn password xxx
+
+migrate data user type nya harus sysadmin
+Migration Configuration:
+- group name : tidak ada pengaruhnya
+- accesss_code : untuk akses code
+- max record paging : jumlah data yang diproses dalam sekali waktu, pagination
+- sheet name : kalau filenya ada bbrp workshet
+- first process file path : untuk diproses sekali saja di pertama kali saja
+- pre process dan post process yang dieksekusi perdata
+- last process apabila data sudah berhasil masuk semua dan dijalankan di akhir process
+- multi session : tidak usah di pakai lah
+
+Migration table 
+- table name
+- table order: urutan table dimana data akan di input
+- Migration Type: flat - untuk data biasa, tree - untuk struktur organisasi
+
+Migration Column
+- auto ke generate data kolom nya, kalau belum ada maka bisa ditambahkan sendiri
+- Field : kolom 
+- Header name : nama kolom di excel
+- reference : kalau butuh ada referensi ke table lain
+- Constrain:
+- function : buat generate document no
+- listvalue: tdk tahu
+- primary : supaya ketika update datanya akan kebaca nyari docuemnt number yang sesuai dengan data di excelnya, where nya 
+- required: supaya mandatory
+- kalau data yg tdk perlu reference maka abaikan inputan reference, constrain dan function
+- untuk kolom COMPANYID bisa dikosongkan dan mengambil dari reserved word
+
+Reference enabled untuk doc_code:
+table name : nama table yg mjd reference
+field name : kolom database yang valuenya mau extract/diambil utk diisi ke table lain dari table_name
+parameter : kolom database yang dijadikan filter, RW_COMPANYID yang mengambil data dari inputan Header Name / file excel
+Parameter extra: untuk mengambil extra kolom sebagai tambahan filter di table yang dijadikan reference, dengan mengambil value tambahan dari excel menggunakan reserved word khusus
+
 # Install yay
 
 sudo pacman -S --needed base-devel git
@@ -15,9 +59,9 @@ yay -S google-chrome
 
 ## Install other app
 
-sudo pacman -S telegram-desktop kitty yazi flameshot thunar nautilus tmux ranger mpv-mpris trash-cli neofetch 
+sudo pacman -S telegram-desktop kitty yazi flameshot thunar nautilus tmux ranger mpv-mpris trash-cli neofetch ta 
 
-sudo pacman -S filezilla ncdu xdotool gimp zathura tldr fish lsd thunderbird
+sudo pacman -S filezilla ncdu xdotool gimp zathura tldr fish lsd thunderbird keepassxc qt5-wayland
 
 swayidle
 kazam

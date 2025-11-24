@@ -5,6 +5,7 @@ mkdir -p ~/marc/GitHub
 sudo pacman -Syu
 
 # Fish
+fish_config
 fish_update_completions
 
 # Check keymap / button
