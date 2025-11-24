@@ -62,16 +62,18 @@ yay -S google-chrome
 sudo pacman -S telegram-desktop kitty yazi flameshot thunar nautilus tmux ranger mpv-mpris trash-cli neofetch ta 
 
 sudo pacman -S filezilla ncdu xdotool gimp zathura tldr fish lsd thunderbird keepassxc qt5-wayland
+sudo pacman -S telegram-desktop kitty yazi flameshot thunar nautilus tmux ranger mpv-mpris trash-cli neofetch ueberzugpp imagemagick fish wev 
+
+sudo pacman -S filezilla ncdu xdotool gimp zathura tldr fish lsd thunderbird copyq kmonad
 
 swayidle
-kazam
 
-yay -S pinta
+yay -S pinta wps-office ttf-wps-fonts projectlibre
 
 
 # Install neovim - https://www.lazyvim.org/installation
 
-sudo pacman -S neovim github-cli python-pip tree-sitter-cli ripgrep fd fzf lazygit luarocks
+sudo pacman -S neovim github-cli python-pip tree-sitter-cli ripgrep fd fzf lazygit luarocks 
 
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
