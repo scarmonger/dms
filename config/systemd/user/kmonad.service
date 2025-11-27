@@ -1,0 +1,19 @@
+
+[Unit]
+Description=KMonad Keyboard Remapper (User Service)
+# Use WANTS instead of REQUIRES/AFTER to prevent startup failure 
+# if the keyboard is plugged in late.
+# We ensure the desktop environment is fully running before starting.
+Wants=graphical-session.target
+After=graphical-session.target
+
+[Service]
+# Type=exec is suitable when using sudo
+Type=exec
+# Use the full path for sudo and kmonad
+# !!! REMEMBER TO REPLACE yourusername and the path to your .kbd file !!!
+ExecStart=/usr/bin/sudo /usr/bin/kmonad /home/mc/marc/GitHub/dms/config/kmonad/ralt-super.kbd
+Restart=always
+
+[Install]
+WantedBy=default.target

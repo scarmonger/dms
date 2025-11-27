@@ -26,8 +26,13 @@ yay -S google-chrome
 ## Install other app
 
 
-sudo pacman -S filezilla ncdu xdotool gimp zathura tldr fish lsd thunderbird keepassxc qt5-wayland copyq kmonad
-sudo pacman -S telegram-desktop kitty yazi flameshot thunar nautilus tmux ranger mpv-mpris trash-cli neofetch ueberzugpp imagemagick fish wev 
+sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian
+
+sudo pacman -S telegram-desktop yazi flameshot thunar nautilus tmux ranger mpv-mpris trash-cli neofetch wev gpicview
+
+sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps
+
+sudo pacman -S tldr fish ghostty ueberzugpp imagemagick fish kitty 
 
 swayidle
 
@@ -76,25 +81,17 @@ sudo pacman -S github-cli
 git config --global user.email "<psikomania@yahoo.com>"
 git config --global user.name "scarmonger"
 
-1. jalankan di terminal `gh auth login`
-2. pilih github.com
-3. pilih HTTPS
-4. Authenticate Git with your GitHub credentials? No
-5. pilih paste an authentication token (lihat cara ambil token dibawah ini)
+## Generate a new SSH Key
+ssh-keygen -t ed25519 -C "psikomania@yahoo.com"
+## Start the ssh-agent in the background
+eval "$(ssh-agent -s)"
+## Adding SSF Key to SSH-Agent
+ssh-add ~/.ssh/id_ed25519
 
-Untuk mengambil token bisa login ke github lagi ke
+## Adding a new SSH key to your GitHub account
+gh auth login
+gh auth refresh -h github.com -s admin:ssh_signing_key
 
-1. developer setting
-2. personal access tokens - Tokens(classic) => Generate access tokens (Classic)
-3. tulis nama pada note
-4. no_expiration
-5. minimal centang repo, workflow, admin:org (inclusive semua)
-
-Setelah dapat token, coba git push, login dengan user dan password di isi dengan token yang sudah tergenerate
-
-sempat masih belum coba gh auth login lagi, setelah berhasil coba jalanin syntax dibawah ini
-yang didapat setelah berhasil login di gh auth login:
-`gh config set -h github.com git_protocol https`
 
 # Register Alias
 
@@ -147,26 +144,18 @@ ln -ivs ~/marc/GitHub/dms/zshrc ~/.zshrc
 # Install dms
 curl -fsSL https://install.danklinux.com | sh
 
-# Install App Launcher - Walker https://github.com/abenz1267/walker
+# Register kmonad to Systemd User Service
+1. Edit the Sudoers File: Open the sudoers configuration file using the standard utility:
+sudo visudo
+2. Add the Rule: Add the following line to the end of the file. Replace yourusername with your actual Linux username.
+mc ALL=(ALL) NOPASSWD: /usr/bin/kmonad
+3. mkdir -p ~/.config/systemd/user/
+4. ln -ivs ~/marc/GitHub/dms/config/systemd/ ~/.config/
+5. Enable and Start the Service
+systemctl --user daemon-reload
+systemctl --user enable kmonad.service
+systemctl --user start kmonad.service
 
-## Clone the repository
-
-git clone https://github.com/abenz1267/walker.git
-cd walker
-
-## Build with Cargo
-
-sudo pacman -S cargo
-cargo build --release
-
-## Run Walker
-
-./target/release/walker
-
-## Install elephant https://github.com/abenz1267/elephant
-
-yay -S elephant
-yay -S elephant-desktopapplications
 
 # Dropbox Headless Install via command line
 
@@ -177,6 +166,7 @@ cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 
 ~/.dropbox-dist/dropboxd
+
 
 # Clone git repo
 
@@ -224,3 +214,35 @@ https://github.com/wting/autojump/blob/master/docs/install.md
 
 ```
 
+# Install App Launcher - Walker https://github.com/abenz1267/walker
+
+## Clone the repository
+
+git clone https://github.com/abenz1267/walker.git
+cd walker
+
+## Build with Cargo
+
+sudo pacman -S cargo
+cargo build --release
+
+## Run Walker
+
+./target/release/walker
+
+## Install elephant https://github.com/abenz1267/elephant
+
+yay -S elephant
+yay -S elephant-desktopapplications
+
+# Yazi theme
+sudo pacman -S yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
+ya pkg -h
+ya pkg add kalidyasin/yazi-flavors:tokyonight-night
+
+## https://github.com/dedukun/bookmarks.yazi
+
+# Zoxide
+
+echo "zoxide init fish | source" | tee -a /home/mc/.config/fish/config.fish
+echo 'eval "$(zoxide init zsh)"' | tee -a ~/.zshrc

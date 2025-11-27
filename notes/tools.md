@@ -4,6 +4,9 @@ mkdir -p ~/marc/GitHub
 
 sudo pacman -Syu
 
+# Check list font installed
+fc-list | grep -i "nerd"
+
 # xkboption for X
 man xkeyboard-config
 
