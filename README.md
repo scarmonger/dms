@@ -110,6 +110,8 @@ ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/
 rm /home/mc/.local/share/ranger/bookmarks
 ln -ivs ~/marc/GitHub/dms/local/share/ranger/bookmarks ~/.local/share/ranger/
 
+ln -ivs ~/marc/GitHub/dms/config/yazi/ ~/.config/
+
 rm -Rf ~/.config/nvim
 ln -ivs ~/marc/GitHub/dms/.vimrc ~/
 ln -ivs ~/marc/GitHub/dms/config/nvim ~/.config/
