@@ -137,6 +137,7 @@ layout {
 }
 layer-rule {
     match namespace="^quickshell$"
+    match namespace="^noctalia-overview*"
     place-within-backdrop true
 }
 overview {
@@ -150,15 +151,18 @@ overview {
 // See the binds section below for more spawn examples.
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
-spawn-at-startup "dms" "run"
+// spawn-at-startup "dms" "run"
+spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 spawn-at-startup "~/.dropbox-dist/dropboxd"
 spawn-at-startup "copyq"
 // spawn-at-startup "flameshot gui"
 spawn-at-startup "google-chrome-stable"
 spawn-at-startup "firefox"
-spawn-at-startup "ghostty" "-e" "nvr" "/home/mc/.config/niri/config.kdl"
-spawn-at-startup "kitty" "-e" "ranger"
+spawn-at-startup "keepassxc"
+//spawn-at-startup "ghostty" "-e" "nvr" "/home/mc/.config/niri/config.kdl"
+spawn-at-startup "ghostty"
+//spawn-at-startup "kitty" "-e" "yazi"
 spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-super.kbd"
 
 environment {
@@ -236,14 +240,6 @@ window-rule{
     open-maximized true
 }
 
-workspace "F"
-window-rule{
-    match at-startup=true app-id=r#"telegram"# 
-    match at-startup=true app-id=r#"whatsapp"# 
-    // match app-id=r#"firefox"# 
-    open-on-workspace "F"
-    open-maximized true
-}
 workspace "W"
 window-rule{
   match at-startup=true app-id=r#"thunderbird"# 
@@ -251,6 +247,15 @@ window-rule{
   // match app-id=r#"firefox"# 
   open-on-workspace "W"
   open-maximized true
+}
+
+workspace "F"
+window-rule{
+    match at-startup=true app-id=r#"telegram"# 
+    match at-startup=true app-id=r#"whatsapp"# 
+    // match app-id=r#"firefox"# 
+    open-on-workspace "F"
+    open-maximized true
 }
 
 workspace "E"
@@ -277,6 +282,10 @@ window-rule {
     // You can get away with just app-id="wezterm" if you want.
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
+}
+window-rule{
+    match app-id="com.mitchellh.ghostty"
+    open-maximized true
 }
 window-rule {
     match app-id=r#"^org\.gnome\."#

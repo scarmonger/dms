@@ -28,7 +28,7 @@ yay -S google-chrome
 
 sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian
 
-sudo pacman -S telegram-desktop yazi flameshot thunar nautilus tmux ranger mpv-mpris trash-cli neofetch wev gpicview
+sudo pacman -S telegram-desktop yazi flameshot thunar nautilus tmux  mpv-mpris trash-cli neofetch wev gpicview
 
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps
 
@@ -38,6 +38,9 @@ swayidle
 
 yay -S pinta wps-office ttf-wps-fonts projectlibre
 
+# Setup /etc/sudoers
+sudo visudo
+add this on the end of file : Defaults !tty_tickets
 
 # Install neovim - https://www.lazyvim.org/installation
 
@@ -97,7 +100,7 @@ gh auth refresh -h github.com -s admin:ssh_signing_key
 
 ## Fish shell
 
-sudo echo "source /home/mc/marc/GitHub/dms/alias_fish" | sudo tee -a ~/.config/fish/config.fish
+echo "source /home/mc/marc/GitHub/dms/alias_fish" | tee -a ~/.config/fish/config.fish
 
 
 # Create symlink
@@ -105,11 +108,13 @@ sudo echo "source /home/mc/marc/GitHub/dms/alias_fish" | sudo tee -a ~/.config/f
 ```
 ln -ivs ~/marc/GitHub/dms/config/niri/config.kdl ~/.config/niri/
 
+
 rm -Rf ~/.config/ranger
 ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/
 rm /home/mc/.local/share/ranger/bookmarks
 ln -ivs ~/marc/GitHub/dms/local/share/ranger/bookmarks ~/.local/share/ranger/
 
+rm -Rf ~/.config/yazi
 ln -ivs ~/marc/GitHub/dms/config/yazi/ ~/.config/
 
 rm -Rf ~/.config/nvim
@@ -141,6 +146,9 @@ ln -ivs /home/mc/marc/custom/source/commandbox/box ~/.local/bin/
 ln -ivs /home/mc/marc/custom/source/commandbox/jre ~/.local/bin/
 
 ln -ivs ~/marc/GitHub/dms/zshrc ~/.zshrc
+
+sudo mv /etc/greetd/config.toml /etc/greetd/config.toml_bak
+sudo ln -ivs ~/marc/GitHub/dms/etc/greetd/config.toml /etc/greetd/
 ```
 
 # Install dms
@@ -239,6 +247,7 @@ yay -S elephant-desktopapplications
 
 # Yazi theme
 sudo pacman -S yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
+
 ya pkg -h
 ya pkg add kalidyasin/yazi-flavors:tokyonight-night
 

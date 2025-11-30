@@ -1,9 +1,4 @@
 #!/bin/sh
-alias obsidian="flatpak run md.obsidian.Obsidian"
-alias wps="flatpak run com.wps.Office"
-alias telegram="flatpak run org.telegram.desktop"
-alias wezterm='flatpak run org.wezfurlong.wezterm'
-alias thunderbird='flatpak run org.mozilla.Thunderbird'
 
 alias updateyt="python3 -m pip install -U 'yt-dlp[default]'"
 alias now="date +"%Y%m%d%H%M" | xclip -selection clipboard" # Linux with xclip

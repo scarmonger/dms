@@ -124,6 +124,12 @@ keymap = [
 	{ on = [ ",", "r" ], run = "sort random --reverse=no",                      desc = "Sort randomly" },
 
 	# Goto
+	{ on = [ "g", "/" ],       run = "cd /",                                desc = "Go Root Directory" },
+	{ on = [ "g", "e" ],       run = "cd /etc/",                            desc = "Go Etc" },
+	{ on = [ "g", "u" ],       run = "cd /usr/",                            desc = "Go usr" },
+	{ on = [ "g", "O" ],       run = "cd /opt/",                            desc = "Go opt" },
+	{ on = [ "g", "v" ],       run = "cd /var/",                            desc = "Go var" },
+
 	{ on = [ "g", "h" ],       run = "cd ~",                                desc = "Go home" },
 	{ on = [ "g", "G" ],       run = "cd ~/marc/GitHub/",                   desc = "Go GitHub" },
 	{ on = [ "g", "a" ],       run = "cd ~/Dropbox/Dataon",                 desc = "Go DataOn" },
@@ -138,6 +144,8 @@ keymap = [
 	{ on = [ "g", "s" ],       run = "cd ~/.config/script/",                desc = "Go Script" },
 	{ on = [ "g", "<Space>" ], run = "cd --interactive",                    desc = "Jump interactively" },
 	{ on = [ "g", "F" ],       run = "follow",                              desc = "Follow hovered symlink" },
+
+	{ on = [ "g", "0" ],       run = "veracrypt ~/Dropbox/linux/cl ~/.config/script",     desc = "Open veracrypt" },
 
 	# Tabs
 	{ on = "t", run = "tab_create --current", desc = "Create a new tab with CWD" },
