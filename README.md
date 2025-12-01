@@ -245,13 +245,31 @@ cargo build --release
 yay -S elephant
 yay -S elephant-desktopapplications
 
-# Yazi theme
+# Yazi
 sudo pacman -S yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
+
+## Themes
+https://github.com/yazi-rs/flavors?tab=readme-ov-file
 
 ya pkg -h
 ya pkg add kalidyasin/yazi-flavors:tokyonight-night
+ya pkg add yazi-rs/flavors:dracula
+ya pkg add yazi-rs/flavors:catppuccin-mocha
 
-## https://github.com/dedukun/bookmarks.yazi
+## Plugins
+https://github.com/yazi-rs/plugins/tree/main
+https://github.com/yazi-rs/plugins/tree/main/mount.yazi
+
+ya pkg add yazi-rs/plugins:mount
+ya pkg add yazi-rs/plugins:toggle-pane
+ya pkg add yazi-rs/plugins:full-border
+ya pkg add yazi-rs/plugins:smart-enter
+
+https://github.com/dedukun/bookmarks.yazi
+ya pkg add dedukun/bookmarks
+
+https://github.com/KKV9/compress.yazi
+ya pkg add KKV9/compress
 
 # Zoxide
 
