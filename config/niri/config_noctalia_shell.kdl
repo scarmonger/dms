@@ -137,6 +137,7 @@ layout {
 }
 layer-rule {
     match namespace="^quickshell$"
+    match namespace="^noctalia-overview*"
     place-within-backdrop true
 }
 overview {
@@ -150,7 +151,8 @@ overview {
 // See the binds section below for more spawn examples.
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
-spawn-at-startup "dms" "run"
+// spawn-at-startup "dms" "run"
+spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 spawn-at-startup "~/.dropbox-dist/dropboxd"
 spawn-at-startup "copyq"
