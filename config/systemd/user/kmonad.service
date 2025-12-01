@@ -12,7 +12,7 @@ After=graphical-session.target
 Type=exec
 # Use the full path for sudo and kmonad
 # !!! REMEMBER TO REPLACE yourusername and the path to your .kbd file !!!
-ExecStart=/usr/bin/sudo /usr/bin/kmonad /home/mc/marc/GitHub/dms/config/kmonad/ralt-super.kbd
+ExecStart=/usr/bin/sudo -n /usr/bin/kmonad /home/mc/marc/GitHub/dms/config/kmonad/ralt-super.kbd
 Restart=always
 
 [Install]
