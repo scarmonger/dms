@@ -95,6 +95,8 @@ ssh-add ~/.ssh/id_ed25519
 gh auth login
 gh auth refresh -h github.com -s admin:ssh_signing_key
 
+git remote -v
+git remote set-url origin git@github.com:scarmonger/dms.git
 
 # Register Alias
 
