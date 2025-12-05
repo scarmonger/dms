@@ -19,6 +19,11 @@ git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
 makepkg -si
 
+# Source zsh / fish
+echo 'source /home/mc/marc/GitHub/dms/zsh-addon' | tee -a ~/.zshrc
+echo 'source /home/mc/marc/GitHub/dms/fish-addon' | tee -a ~/.config/fish/config.fish
+
+
 # Install google-chrome
 
 yay -S google-chrome 
@@ -28,7 +33,7 @@ yay -S google-chrome
 
 sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian
 
-sudo pacman -S telegram-desktop yazi flameshot thunar nautilus tmux  mpv-mpris trash-cli neofetch wev gpicview
+sudo pacman -S telegram-desktop yazi flameshot thunar nautilus tmux  mpv-mpris trash-cli fastfetch wev gpicview eza
 
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps
 
@@ -101,11 +106,11 @@ git remote -v
 set the method using ssh instead of https
 git remote set-url origin git@github.com:scarmonger/dms.git
 
-# Register Alias
-
-## Fish shell
-
-echo "source /home/mc/marc/GitHub/dms/alias_fish" | tee -a ~/.config/fish/config.fish
+<!-- # Register Alias -->
+<!---->
+<!-- ## Fish shell -->
+<!---->
+<!-- echo "source /home/mc/marc/GitHub/dms/alias_fish" | tee -a ~/.config/fish/config.fish -->
 
 
 # Create symlink
@@ -276,7 +281,7 @@ ya pkg add dedukun/bookmarks
 https://github.com/KKV9/compress.yazi
 ya pkg add KKV9/compress
 
-# Zoxide
-
-echo "zoxide init fish | source" | tee -a /home/mc/.config/fish/config.fish
-echo 'eval "$(zoxide init zsh)"' | tee -a ~/.zshrc
+<!-- # Zoxide -->
+<!---->
+<!-- echo "zoxide init fish | source" | tee -a /home/mc/.config/fish/config.fish -->
+<!-- echo 'eval "$(zoxide init zsh)"' | tee -a ~/.zshrc -->

@@ -1,4 +1,5 @@
 # Marc
+source /home/mc/marc/GitHub/dms/alias_fish 
 
 function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
