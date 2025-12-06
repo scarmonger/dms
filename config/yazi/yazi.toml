@@ -232,3 +232,19 @@ run  = "git"
 id   = "git"
 name = "*/"
 run  = "git"
+
+[[opener.bulk-rename]]
+run   = 'helix "$@"'
+block = true
+
+[[open.prepend_rules]]
+name = "bulk-rename.txt"
+use  = "bulk-rename"
+
+# ~/.config/yazi/keymap.toml
+[[mgr.prepend_keymap]]
+on  = "<C-m>"
+run = '''shell --
+	paths=$(for p in "$@"; do echo "$p"; done | paste -s -d,)
+	thunderbird -compose "attachment='$paths'"
+'''

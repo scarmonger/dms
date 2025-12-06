@@ -31,7 +31,7 @@ yay -S google-chrome
 ## Install other app
 
 
-sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian lsof
+sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian lsof veracrypt
 
 sudo pacman -S telegram-desktop yazi flameshot thunar nautilus tmux  mpv-mpris trash-cli fastfetch wev gpicview eza
 
@@ -257,6 +257,7 @@ yay -S elephant-desktopapplications
 
 # Yazi
 sudo pacman -S yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
+
 
 ## Themes
 https://github.com/yazi-rs/flavors?tab=readme-ov-file
