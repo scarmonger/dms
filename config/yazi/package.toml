@@ -28,6 +28,31 @@ use = "KKV9/compress"
 rev = "c264639"
 hash = "e17c11b605d989568a1d1741ca17c584"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "19dc890"
+hash = "27ca02f49fd236b5cc7bf03c243859fe"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "19dc890"
+hash = "5b2eb0cc2050cec1e4de83cfa51a5b90"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:diff"
+rev = "19dc890"
+hash = "82376c3381ae915fd799d40f4dd4c6cd"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:vcs-files"
+rev = "19dc890"
+hash = "4ee57085277d616acfa0ef1fef37dc00"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-paste"
+rev = "19dc890"
+hash = "75fd60b2df7115e0a6ca31a6a804d320"
+
 [[flavor.deps]]
 use = "kalidyasin/yazi-flavors:tokyonight-night"
 rev = "fa19b40"

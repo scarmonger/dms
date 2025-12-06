@@ -20,3 +20,14 @@ require("bookmarks"):setup({
 		},
 	},
 })
+
+require("git"):setup()
+th.git = th.git or {}
+th.git.modified = ui.Style():fg("blue")
+th.git.deleted = ui.Style():fg("red"):bold()
+
+-- ~/.config/yazi/init.lua
+th.git = th.git or {}
+th.git.added_sign = "A"
+th.git.modified_sign = "M"
+th.git.deleted_sign = "D"

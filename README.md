@@ -31,7 +31,7 @@ yay -S google-chrome
 ## Install other app
 
 
-sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian
+sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian lsof
 
 sudo pacman -S telegram-desktop yazi flameshot thunar nautilus tmux  mpv-mpris trash-cli fastfetch wev gpicview eza
 
@@ -41,7 +41,7 @@ sudo pacman -S tldr fish ghostty ueberzugpp imagemagick fish kitty
 
 swayidle
 
-yay -S pinta wps-office ttf-wps-fonts projectlibre
+yay -S pinta wps-office ttf-wps-fonts projectlibre 
 
 # Setup /etc/sudoers
 sudo visudo
@@ -260,6 +260,7 @@ sudo pacman -S yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagi
 
 ## Themes
 https://github.com/yazi-rs/flavors?tab=readme-ov-file
+https://github.com/yazi-rs/plugins/tree/main/mime-ext.yazi
 
 ya pkg -h
 ya pkg add kalidyasin/yazi-flavors:tokyonight-night
@@ -285,3 +286,10 @@ ya pkg add KKV9/compress
 <!---->
 <!-- echo "zoxide init fish | source" | tee -a /home/mc/.config/fish/config.fish -->
 <!-- echo 'eval "$(zoxide init zsh)"' | tee -a ~/.zshrc -->
+
+# GPU Screen recorder
+https://github.com/BrycensRanch/gpu-screen-recorder-git-copr
+https://git.dec05eba.com/gpu-screen-recorder-ui/about/
+
+yay -S gpu-screen-recorder-ui
+systemctl enable --now --user gpu-screen-recorder-ui

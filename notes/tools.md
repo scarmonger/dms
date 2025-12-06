@@ -1,8 +1,12 @@
-echo $SHELL
+# Niri
+niri msg pick-window [equals to xprop]
 
-mkdir -p ~/marc/GitHub
+# Check keymap / button
 
-sudo pacman -Syu
+wev [equals to xev]
+
+Check mouse button:
+wev | grep -i button
 
 # Check list font installed
 fc-list | grep -i "nerd"
@@ -17,12 +21,6 @@ set filetype=lisp
 fish_config
 fish_update_completions
 
-# Check keymap / button
-
-xev
-
-Check mouse button:
-xev | grep -i button
 
 # Setting hostname Linux
 
@@ -58,3 +56,9 @@ sudo mkfs.ext4 /dev/nvme0n1p3
 lsblk
 
 ll /dev/disk/by-uuid
+
+echo $SHELL
+
+mkdir -p ~/marc/GitHub
+
+sudo pacman -Syu

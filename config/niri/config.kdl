@@ -155,13 +155,15 @@ spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 spawn-at-startup "~/.dropbox-dist/dropboxd"
 spawn-at-startup "copyq"
 // spawn-at-startup "flameshot gui"
-spawn-at-startup "google-chrome-stable"
 spawn-at-startup "firefox"
 spawn-at-startup "keepassxc"
 //spawn-at-startup "ghostty" "-e" "nvr" "/home/mc/.config/niri/config.kdl"
 spawn-at-startup "ghostty"
 //spawn-at-startup "kitty" "-e" "yazi"
 spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-super.kbd"
+spawn-at-startup "google-chrome-stable"
+spawn-at-startup "/opt/google/chrome/google-chrome" "--profile-directory=Default" "--app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
+spawn-at-startup "Telegram"
 
 environment {
   XDG_CURRENT_DESKTOP "niri"
@@ -219,6 +221,7 @@ window-rule{
     match at-startup=true app-id=r#"kitty"# 
     match app-id="com.mitchellh.ghostty"
     open-on-workspace "A"
+    open-focused false
 }
 
 workspace "S"
@@ -228,14 +231,25 @@ window-rule{
     open-on-workspace "S"
     // match app-id=r#"google"#
     open-maximized true
+    open-focused true
 }
 
 workspace "D"
 window-rule{
     match at-startup=true app-id=r#"firefox"# 
-    match app-id=r#"firefox"# 
     open-on-workspace "D"
     open-maximized true
+    open-focused false
+}
+
+workspace "F"
+window-rule{
+    match at-startup=true app-id=r#"telegram"# 
+    match at-startup=true title=r#"WhatsApp Web"# 
+    // match app-id=r#"firefox"# 
+    open-on-workspace "F"
+    open-maximized true
+    open-focused false
 }
 
 workspace "W"
@@ -245,32 +259,25 @@ window-rule{
   // match app-id=r#"firefox"# 
   open-on-workspace "W"
   open-maximized true
+  open-focused false
 }
 
-workspace "F"
-window-rule{
-    match at-startup=true app-id=r#"telegram"# 
-    match at-startup=true app-id=r#"whatsapp"# 
-    // match app-id=r#"firefox"# 
-    open-on-workspace "F"
-    open-maximized true
-}
 
-workspace "E"
+workspace "R"
 window-rule{
   match at-startup=true app-id=r#"wps"# 
   match at-startup=true app-id=r#"libre"# 
   // match app-id=r#"firefox"# 
-  open-on-workspace "E"
+  open-on-workspace "R"
   open-maximized true
 }
 
-workspace "R"
+workspace "G"
 window-rule{
   match at-startup=true app-id=r#"code"# 
   match at-startup=true app-id=r#"dbeaver"# 
   // match app-id=r#"firefox"# 
-  open-on-workspace "R"
+  open-on-workspace "G"
   open-maximized true
 }
 
@@ -331,6 +338,43 @@ window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
+
+// Block out password managers from screencasts.
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id=r#"telegram"# 
+    block-out-from "screencast"
+}
+// Block out mako notifications from screencasts.
+layer-rule {
+    match namespace="^notifications$"
+    block-out-from "screencast"
+}
+
+// Indicate screencasted windows with red colors.
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+
+    border {
+        inactive-color "#7d0d2d"
+    }
+
+    shadow {
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+}
+
 binds {
     // === System & Overview ===
     MOD+TAB { focus-workspace-previous; }
@@ -361,6 +405,12 @@ binds {
     Mod+X hotkey-overlay-title="Power Option" {
       spawn "dms" "ipc" "call" "powermenu" "toggle";
     }
+    Mod+F3 hotkey-overlay-title="Calculator" {
+      spawn "galculator";
+    }
+    Mod+F2 hotkey-overlay-title="Power Option" {
+      spawn "dms" "ipc" "call" "control-center" "toggle";
+    }
     Mod+F1 hotkey-overlay-title="Browse Wallpapers" {
         spawn "dms" "ipc" "call" "dankdash" "wallpaper";
     }
@@ -371,7 +421,8 @@ binds {
     Mod+ESCAPE hotkey-overlay-title="Lock Screen" {
         spawn "dms" "ipc" "call" "lock" "lock";
     }
-    Alt+F4 { quit; }
+    Alt+F4 repeat=false { close-window; }
+    Mod+Shift+E { quit; }
     Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" {
         spawn "dms" "ipc" "call" "processlist" "toggle";
     }
@@ -514,7 +565,7 @@ binds {
     Mod+D { focus-workspace "D"; }
     Mod+F { focus-workspace "F"; }
     Mod+W { focus-workspace "W"; }
-    Mod+E { focus-workspace "E"; }
+    Mod+G { focus-workspace "E"; }
     Mod+R { focus-workspace "R"; }
     Mod+T { focus-workspace "T"; }
     Mod+Y { focus-workspace "Y"; }
@@ -525,7 +576,7 @@ binds {
     Mod+Shift+D { move-column-to-workspace "D"; }
     Mod+Shift+F { move-column-to-workspace "F"; }
     Mod+Shift+W { move-column-to-workspace "W"; }
-    Mod+Shift+E { move-column-to-workspace "E"; }
+    Mod+Shift+G { move-column-to-workspace "E"; }
     Mod+Shift+R { move-column-to-workspace "R"; }
     Mod+Shift+T { move-column-to-workspace "T"; }
     Mod+Shift+Y { move-column-to-workspace "Y"; }
