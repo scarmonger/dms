@@ -248,7 +248,6 @@ window-rule{
     match at-startup=true title=r#"WhatsApp Web"# 
     // match app-id=r#"firefox"# 
     open-on-workspace "F"
-    open-maximized true
     open-focused false
 }
 
@@ -262,14 +261,21 @@ window-rule{
   open-focused false
 }
 
-
 workspace "R"
-window-rule{
-  match at-startup=true app-id=r#"wps"# 
-  match at-startup=true app-id=r#"libre"# 
-  // match app-id=r#"firefox"# 
-  open-on-workspace "R"
-  open-maximized true
+window-rule {
+    match app-id=r#"wps"#
+    open-on-workspace "R"
+    open-maximized true
+}
+window-rule {
+    match title=r#"LibreOffice"#
+    open-on-workspace "R"
+    open-maximized true
+}
+window-rule {
+    match title=r#"projectlibre"#
+    open-on-workspace "R"
+    open-maximized true
 }
 
 workspace "G"
@@ -344,6 +350,7 @@ window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
     match app-id=r#"telegram"# 
+    match title=r#"WhatsApp Web"# 
     block-out-from "screencast"
 }
 // Block out mako notifications from screencasts.
@@ -487,8 +494,8 @@ binds {
     Mod+Up    { focus-window-up; }
     Mod+Right { focus-column-right; }
     Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
+    // Mod+J     { focus-window-down; }
+    // Mod+K     { focus-window-up; }
     Mod+L     { focus-column-right; }
 
     // === Window Movement ===
@@ -513,8 +520,8 @@ binds {
     //Mod+Ctrl+Up    { focus-monitor-up; }
     Mod+Ctrl+Right { focus-monitor-right; }
     Mod+Ctrl+H     { focus-monitor-left; }
-    Mod+Ctrl+J     { focus-monitor-down; }
-    Mod+Ctrl+K     { focus-monitor-up; }
+    // Mod+Ctrl+J     { focus-monitor-down; }
+    // Mod+Ctrl+K     { focus-monitor-up; }
     Mod+Ctrl+L     { focus-monitor-right; }
 
     // === Move to Monitor ===
@@ -523,19 +530,24 @@ binds {
     Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
     Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
     Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
+    // Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
+    // Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
     Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
 
     // === Workspace Navigation ===
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
+    Mod+I              { focus-workspace-down; }
+    Mod+U              { focus-workspace-up; }
     Mod+Ctrl+Down      { move-column-to-workspace-down; }
     Mod+Ctrl+Up        { move-column-to-workspace-up; }
-    Mod+Ctrl+U         { move-column-to-workspace-down; }
-    Mod+Ctrl+I         { move-column-to-workspace-up; }
+    Mod+Ctrl+I         { move-column-to-workspace-down; }
+    Mod+Ctrl+U         { move-column-to-workspace-up; }
+    Mod+Ctrl+J         { move-column-to-workspace-down; }
+    Mod+Ctrl+K         { move-column-to-workspace-up; }
+
+    Mod+J              { focus-workspace-down; }
+    Mod+K              { focus-workspace-up; }
 
     // === Move Workspaces ===
     Mod+Shift+Page_Down { move-workspace-down; }
@@ -626,9 +638,9 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // === Screenshots ===
-    Print hotkey-overlay-title="Screenshot" {  spawn "flameshot" "gui";  }
-
-
+    Print hotkey-overlay-title="Screenshot Area" {  spawn "flameshot" "gui";  }
+    Ctrl+Print hotkey-overlay-title="Screenshot Screen" {  spawn "flameshot" "screen";  }
+    Shift+Print hotkey-overlay-title="Screenshot Screen" {  spawn "flameshot" "screen";  }
     // XF86Launch1 { screenshot; }
     // Ctrl+XF86Launch1 { screenshot-screen; }
     // Alt+XF86Launch1 { screenshot-window; }
@@ -638,6 +650,7 @@ binds {
     // === System Controls ===
     Mod+Shift+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+P { power-off-monitors; }
+    Mod+Ctrl+Shift+F { toggle-windowed-fullscreen; }
 }
 debug {
     honor-xdg-activation-with-invalid-serial

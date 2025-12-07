@@ -202,14 +202,10 @@ alias extip="curl icanhazip.com"
 
 alias jabra='bluetoothctl power on; bluetoothctl connect 50:C9:71:5A:23:90'
 alias jbl='bluetoothctl power on; bluetoothctl connect F4:BC:DA:A4:37:A5'
-# alias bi="sudo apt --fix-broken install"
-alias di="sudo dpkg -i"
-# alias i="sudo apt install"
+alias i="sudo pacman -S"
+alias ui="sudo pacman -Rs"
 alias up="sudo pacman -Syu --noconfirm"
 alias qs="sudo pacman -Qs | grep"
-#alias ui="sudo pacman -Rs"
-alias ui="sudo apt remove --purge"
-alias i="sudo apt install"
 alias mki="makepkg -si"
 alias mkw="cdw; rm config.h && sudo make clean install"
 alias mks="cds;rm config.h && sudo make clean install"

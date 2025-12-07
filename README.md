@@ -31,7 +31,7 @@ yay -S google-chrome
 ## Install other app
 
 
-sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian lsof veracrypt
+sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian lsof veracrypt libreoffice-still helix
 
 sudo pacman -S telegram-desktop yazi flameshot thunar nautilus tmux  mpv-mpris trash-cli fastfetch wev gpicview eza
 
@@ -41,7 +41,11 @@ sudo pacman -S tldr fish ghostty ueberzugpp imagemagick fish kitty
 
 swayidle
 
-yay -S pinta wps-office ttf-wps-fonts projectlibre 
+yay -S pinta wps-office ttf-wps-fonts 
+
+# projectlibre
+yay -S projectlibre java-runtime-common 
+https://wiki.archlinux.org/title/Java#Switching_between_JVM
 
 # Setup /etc/sudoers
 sudo visudo
@@ -118,6 +122,7 @@ git remote set-url origin git@github.com:scarmonger/dms.git
 ```
 ln -ivs ~/marc/GitHub/dms/config/niri/config.kdl ~/.config/niri/
 
+ln -ivs ~/marc/GitHub/dms/config/helix/ ~/.config/
 
 rm -Rf ~/.config/ranger
 ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/

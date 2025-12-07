@@ -1,3 +1,5 @@
+printenv
+
 # Niri
 niri msg pick-window [equals to xprop]
 
@@ -56,6 +58,43 @@ sudo mkfs.ext4 /dev/nvme0n1p3
 lsblk
 
 ll /dev/disk/by-uuid
+
+# Setup Default apps
+
+## setup for libreoffice24
+xdg-mime default libreoffice24.2-writer.desktop application/vnd.openxmlformats-officedocument.wordprocessingml.document
+xdg-mime default libreoffice24.2-writer.desktop application/msword
+xdg-mime default libreoffice24.2-calc.desktop application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+xdg-mime default libreoffice24.2-calc.desktop application/vnd.ms-excel
+xdg-mime default libreoffice24.2-impress.desktop application/vnd.ms-powerpoint
+xdg-mime default libreoffice24.2-impress.desktop application/vnd.openxmlformats-officedocument.presentationml.presentation
+
+## setup for wps
+xdg-mime default wps-office-wps.desktop application/vnd.openxmlformats-officedocument.wordprocessingml.document
+xdg-mime default wps-office-wps.desktop application/msword
+xdg-mime default wps-office-et.desktop application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+xdg-mime default wps-office-et.desktop application/vnd.ms-excel
+xdg-mime default wps-office-wpp.desktop application/vnd.ms-powerpoint
+xdg-mime default wps-office-wpp.desktop application/vnd.openxmlformats-officedocument.presentationml.presentation
+
+check for the setup
+xdg-mime query default application/vnd.openxmlformats-officedocument.wordprocessingml.document
+xdg-mime query default application/msword
+xdg-mime query default application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+xdg-mime query default application/vnd.ms-excel
+xdg-mime query default application/vnd.ms-powerpoint
+xdg-mime query default application/vnd.openxmlformats-officedocument.presentationml.presentation
+
+# Setup default browser
+
+xdg-settings get default-web-browser
+
+xdg-open https://example.com
+
+> to see what command is actually run when opening a URL
+
+xdg-settings set default-web-browser microsoft-edge.desktop
+xdg-settings set default-web-browser google-chrome.desktop
 
 echo $SHELL
 
