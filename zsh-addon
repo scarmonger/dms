@@ -1,5 +1,4 @@
 # Marc
-# export SAL_USE_VCLPLUGIN=gtk4
 export EDITOR="nvr"
 export VISUAL="nvr"
 export NVIM_LISTEN_ADDRESS="/tmp/nvimsocket"

@@ -19,9 +19,9 @@ git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
 makepkg -si
 
-# Source zsh / fish
-echo 'source /home/mc/marc/GitHub/dms/zsh-addon' | tee -a ~/.zshrc
-echo 'source /home/mc/marc/GitHub/dms/fish-addon' | tee -a ~/.config/fish/config.fish
+<!-- # Source zsh / fish -->
+<!-- echo 'source /home/mc/marc/GitHub/dms/zsh-addon' | tee -a ~/.zshrc -->
+<!-- echo 'source /home/mc/marc/GitHub/dms/fish-addon' | tee -a ~/.config/fish/config.fish -->
 
 
 # Install google-chrome
@@ -123,6 +123,8 @@ git remote set-url origin git@github.com:scarmonger/dms.git
 ln -ivs ~/marc/GitHub/dms/config/niri/config.kdl ~/.config/niri/
 
 ln -ivs ~/marc/GitHub/dms/config/helix/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/zsh/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/fish/ ~/.config/
 
 rm -Rf ~/.config/ranger
 ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/
@@ -208,21 +210,27 @@ sudo tailscale up
 
 git clone https://github.com/mylinuxforwork/wallpaper.git ~/Pictures/
 
-# Install oh-my-zsh
 
-**Rubah bin bash menjadi zsh (harus logout)**
+# Rubah default shell bin bash menjadi zsh (harus logout)
 chsh -s /usr/bin/zsh
+
+# Install oh-my-zsh
 
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSHCUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+<!-- ## Install plugins -->
+<!-- git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions -->
+<!-- git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting -->
 
----
 
+# install powerlevel10k
+```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/powerlevel10k
-echo 'source ~/.config/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+```
+<!-- echo 'source ~/.config/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc -->
 
+# Install font
 1.) Download a Nerd Font
 
 2.) Unzip and copy to ~/.fonts
