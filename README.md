@@ -5,12 +5,12 @@ Danklinux.com / Dank Material Shell
 show create table teodempdoc;
 
 # wifi
+
 nmcli radio wifi on
 nmcli device wifi rescan
 nmcli device wifi list
 nmcli device wifi connect DataOn
 nmcli device wifi connect DataOn password xxx
-
 
 # Install yay
 
@@ -23,37 +23,37 @@ makepkg -si
 <!-- echo 'source /home/mc/marc/GitHub/dms/zsh-addon' | tee -a ~/.zshrc -->
 <!-- echo 'source /home/mc/marc/GitHub/dms/fish-addon' | tee -a ~/.config/fish/config.fish -->
 
-
 # Install google-chrome
 
-yay -S google-chrome 
+yay -S google-chrome
 
 ## Install other app
 
-
 sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian lsof veracrypt libreoffice-still helix
 
-sudo pacman -S telegram-desktop yazi flameshot thunar nautilus tmux  mpv-mpris trash-cli fastfetch wev gpicview eza
+sudo pacman -S telegram-desktop yazi flameshot thunar nautilus tmux mpv-mpris trash-cli fastfetch wev gpicview eza
 
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps
 
-sudo pacman -S tldr fish ghostty ueberzugpp imagemagick fish kitty 
+sudo pacman -S tldr fish ghostty ueberzugpp imagemagick fish kitty
 
 swayidle
 
-yay -S pinta wps-office ttf-wps-fonts 
+yay -S pinta wps-office ttf-wps-fonts windsurf
 
 # projectlibre
-yay -S projectlibre java-runtime-common 
+
+yay -S projectlibre java-runtime-common
 https://wiki.archlinux.org/title/Java#Switching_between_JVM
 
 # Setup /etc/sudoers
+
 sudo visudo
 add this on the end of file : Defaults !tty_tickets
 
 # Install neovim - https://www.lazyvim.org/installation
 
-sudo pacman -S neovim github-cli python-pip tree-sitter-cli ripgrep fd fzf lazygit luarocks 
+sudo pacman -S neovim github-cli python-pip tree-sitter-cli ripgrep fd fzf lazygit luarocks
 
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
@@ -65,6 +65,7 @@ https://github.com/mhinz/neovim-remote
 pip3 install neovim-remote --break-system-packages
 
 ### Check servername
+
 :echo v:servername
 
 # mount drive
@@ -94,13 +95,19 @@ git config --global user.email "<psikomania@yahoo.com>"
 git config --global user.name "scarmonger"
 
 ## Generate a new SSH Key
+
 ssh-keygen -t ed25519 -C "psikomania@yahoo.com"
+
 ## Start the ssh-agent in the background
+
 eval "$(ssh-agent -s)"
+
 ## Adding SSF Key to SSH-Agent
+
 ssh-add ~/.ssh/id_ed25519
 
 ## Adding a new SSH key to your GitHub account
+
 gh auth login
 gh auth refresh -h github.com -s admin:ssh_signing_key
 
@@ -115,7 +122,6 @@ git remote set-url origin git@github.com:scarmonger/dms.git
 <!-- ## Fish shell -->
 <!---->
 <!-- echo "source /home/mc/marc/GitHub/dms/alias_fish" | tee -a ~/.config/fish/config.fish -->
-
 
 # Create symlink
 
@@ -169,20 +175,21 @@ sudo ln -ivs ~/marc/GitHub/dms/etc/greetd/config.toml /etc/greetd/
 ```
 
 # Install dms
+
 curl -fsSL https://install.danklinux.com | sh
 
 # Register kmonad to Systemd User Service
+
 1. Edit the Sudoers File: Open the sudoers configuration file using the standard utility:
-sudo visudo
+   sudo visudo
 2. Add the Rule: Add the following line to the end of the file. Replace yourusername with your actual Linux username.
-mc ALL=(ALL) NOPASSWD: /usr/bin/kmonad
+   mc ALL=(ALL) NOPASSWD: /usr/bin/kmonad
 3. mkdir -p ~/.config/systemd/user/
 4. ln -ivs ~/marc/GitHub/dms/config/systemd/ ~/.config/
 5. Enable and Start the Service
-systemctl --user daemon-reload
-systemctl --user enable kmonad.service
-systemctl --user start kmonad.service
-
+   systemctl --user daemon-reload
+   systemctl --user enable kmonad.service
+   systemctl --user start kmonad.service
 
 # Dropbox Headless Install via command line
 
@@ -193,7 +200,6 @@ cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 
 ~/.dropbox-dist/dropboxd
-
 
 # Clone git repo
 
@@ -210,8 +216,8 @@ sudo tailscale up
 
 git clone https://github.com/mylinuxforwork/wallpaper.git ~/Pictures/
 
-
 # Rubah default shell bin bash menjadi zsh (harus logout)
+
 chsh -s /usr/bin/zsh
 
 # Install oh-my-zsh
@@ -219,18 +225,21 @@ chsh -s /usr/bin/zsh
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
 <!-- ## Install plugins -->
 <!-- git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions -->
 <!-- git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting -->
 
-
 # install powerlevel10k
+
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/powerlevel10k
 ```
+
 <!-- echo 'source ~/.config/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc -->
 
 # Install font
+
 1.) Download a Nerd Font
 
 2.) Unzip and copy to ~/.fonts
@@ -238,9 +247,11 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/power
 3.) Run the command `fc-cache -fv` to manually rebuild the font cache
 
 check fonts with `fc-list`
+
 > fc-list | grep -i "Wing"
 
 https://github.com/wting/autojump/blob/master/docs/install.md
+
 > git clone https://github.com/wting/autojump.git
 > cd autojump
 > ./install.py
@@ -307,3 +318,4 @@ https://git.dec05eba.com/gpu-screen-recorder-ui/about/
 
 yay -S gpu-screen-recorder-ui
 systemctl enable --now --user gpu-screen-recorder-ui
+```
