@@ -35,11 +35,11 @@ sudo pacman -S telegram-desktop yazi flameshot thunar nautilus tmux mpv-mpris tr
 
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps
 
-sudo pacman -S tldr fish ghostty ueberzugpp imagemagick fish kitty
+sudo pacman -S tldr fish ghostty ueberzugpp imagemagick fish kitty rofimoji
 
 swayidle
 
-yay -S pinta wps-office ttf-wps-fonts windsurf
+yay -S pinta wps-office ttf-wps-fonts windsurf zellij
 
 # projectlibre
 
@@ -131,6 +131,9 @@ ln -ivs ~/marc/GitHub/dms/config/niri/config.kdl ~/.config/niri/
 ln -ivs ~/marc/GitHub/dms/config/helix/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/zsh/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/fish/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/rofimoji.rc ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/zellij ~/.config/
+ln -ivs ~/marc/GitHub/dms/local/share/applications/rofi-wifi-menu.desktop ~/.local/share/applications/
 
 rm -Rf ~/.config/ranger
 ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/

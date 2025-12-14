@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Rofi Wi-Fi Menu
+Comment=Connect to Wi-Fi networks using rofi and nmcli
+Exec=/home/mc/.local/bin/custom/rofi-wifi-menu
+Icon=network-wireless # Standard icon for Wi-Fi/networking
+Terminal=false
+Type=Application
+Categories=Network;Utility;
+Keywords=wifi;rofi;network;

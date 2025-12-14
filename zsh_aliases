@@ -1,10 +1,63 @@
 #!/bin/sh
+alias hx='helix'
 
+## Useful aliases
+# Replace ls with eza
+alias ls='eza -al --color=always --group-directories-first --icons' # preferred listing
+alias la='eza -a --color=always --group-directories-first --icons' # all files and dirs
+alias ll='eza -l --color=always --group-directories-first --icons' # long format
+alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
+alias l.="eza -a | grep -e '^\.'" # show only dotfiles
+
+# Common use
+alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias fixpacman="sudo rm /var/lib/pacman/db.lck"
+alias tarnow='tar -acf '
+alias untar='tar -zxvf '
+alias wget='wget -c '
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias hw='hwinfo --short' # Hardware Info
+alias big="expac -H M '%m\t%n' | sort -h | nl" # Sort installed packages according to size in MB
+alias gitpkg='pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
+alias update='sudo pacman -Syu'
+
+# Get fastest mirrors
+alias mirror="sudo cachyos-rate-mirrors"
+
+# Help people new to Arch
+alias apt='man pacman'
+alias apt-get='man pacman'
+alias please='sudo'
+alias tb='nc termbin.com 9999'
+
+# Cleanup orphaned packages
+alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
+
+# Get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+# Recent installed packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+
+############################################################################################################
+alias ae="PATH=$PATH:~/bin/"
 alias updateyt="python3 -m pip install -U 'yt-dlp[default]'"
 alias now="date +"%Y%m%d%H%M" | xclip -selection clipboard" # Linux with xclip
 alias fd="fdfind"
 alias g1="veracrypt ~/Dropbox/linux/cl ~/.config/script"
 alias npms="NODE_OPTIONS=--max-old-space-size=8096 npm start"
+
 # alias sats="cd /home/mc/marc/custom/backend/atlas/soulbackend/main/src/web/ && box"
 # alias sdac="cd /home/mc/marc/custom/backend/daikinhr/soulbackend/main/src/web/ && box"
 # alias sctt="cd /home/mc/marc/custom/backend/vallourec_sea/soulbackend/main/src/web/ && box"
@@ -120,16 +173,16 @@ alias yf="yt-dlp -o '~/%(channel)s-%(title)s.%(ext)s' -f 'bestvideo[height<=1080
 # # ex - archive extractor
 # # usage: ex <file>
 # ls, the common ones I use a lot shortened for rapid fire usage
-alias ls='lsd'
-alias l='ls -lFh'   #size,show type,human readable
-alias la='ls -lAFh' #long list,show almost all,show type,human readable
-alias lr='ls -tRFh' #sorted by date,recursive,show type,human readable
-alias lt='ls -ltFh' #long list,sorted by date,show type,human readable
-alias ll='ls -l'    #long list
-alias ldot='ls -ld .*'
-alias lS='ls -1FSsh'
-alias lart='ls -1Fcart'
-alias lrt='ls -1Fcrt'
+# alias ls='lsd'
+# alias l='ls -lFh'   #size,show type,human readable
+# alias la='ls -lAFh' #long list,show almost all,show type,human readable
+# alias lr='ls -tRFh' #sorted by date,recursive,show type,human readable
+# alias lt='ls -ltFh' #long list,sorted by date,show type,human readable
+# alias ll='ls -l'    #long list
+# alias ldot='ls -ld .*'
+# alias lS='ls -1FSsh'
+# alias lart='ls -1Fcart'
+# alias lrt='ls -1Fcrt'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 
@@ -215,19 +268,16 @@ alias mem5="ps auxf | sort -nr -k 4 | head -5"
 alias cpu10="ps auxf | sort -nr -k 3 | head -10"
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -"
 
-alias ls='lsd'
-alias ll='lsd -alF'
-alias la='lsd -A'
-alias l='lsd -CF'
 
-alias so="source ~/.zshrc"
-alias sox="source ~/.xinitrc"
+alias so="source /home/mc/.config/zsh/.zshrc"
+#alias sox="source ~/.xinitrc"
 alias v='nvim'
 alias vim='nvim'
 #alias vimdiff='nvim -d'
 alias r='ranger'
 #alias h='history | dmenu -i -l 20 -p "history" | xclip -sel c'
-alias h='history | dmenu -i -l 20 -p "history" | wl-copy'
+#alias h='history | awk '{$1=""; print $0}' | rofi -dmenu -i -l 50 -p "history" | wl-copy'
+alias h="history | sed 's/^[[:space:]]*[0-9]*[[:space:]]*//' | rofi -dmenu -i -l 30 -p 'history' | wl-copy"
 
 # OS
 alias pow='sudo poweroff'

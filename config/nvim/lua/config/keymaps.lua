@@ -38,6 +38,12 @@ vim.keymap.set({ "n", "i" }, "<M-h>", "<esc>:bprevious<cr>", { desc = "" })
 vim.keymap.set("n", "<M-r>", ":w | GoRun<cr>", { desc = "GoRun" })
 vim.keymap.set("i", "<M-r>", "<esc>:w | GoRun<cr>", { desc = "GoRun" })
 
+vim.keymap.set(
+  "n",
+  "<C-y>",
+  ":! tmux new-window -n fx '~/.config/helix/yazi-picker-tmux.sh e'<cr>",
+  { desc = "open Yazi" }
+)
 -- vim.keymap.set("n", "<C-d>", '<esc>"_dd', { desc = "delete line when insert mode" })
 vim.keymap.set("i", "<C-d>", '<esc>"_ddi', { desc = "delete line when insert mode" })
 

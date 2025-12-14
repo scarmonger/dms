@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source /home/mc/marc/GitHub/dms/zsh-addon
+setopt ALIASES
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
@@ -79,7 +79,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git copybuffer copypath zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git copybuffer copypath zsh-autosuggestions zsh-syntax-highlighting rsync colored-man-pages colorize compleat)
+
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rsync
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,3 +118,6 @@ source ~/.config/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+source /home/mc/marc/GitHub/dms/zsh-addon
+

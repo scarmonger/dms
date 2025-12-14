@@ -6,11 +6,14 @@ theme = "bogster"
 esc = ["collapse_selection", "keep_primary_selection"]
 ret = ["move_line_down", "goto_first_nonwhitespace"]
 0   = "goto_line_start"
-
 # Define 'Z' once, and list its sequences inside.
 Z = { Z = ":wq", Q = ":q!" }
 "C-r" = ":config-reload"
+# C-y = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker-z.sh open"
 
+[keys.normal.C-y]
+z = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker-z.sh open"
+t = ":sh tmux new-window -n fx '~/.config/helix/yazi-picker-tmux.sh open'"
 
 [editor]
 line-number = "relative"
@@ -38,3 +41,4 @@ esc = ["collapse_selection", "normal_mode"]
 [keys.select]
 esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
 0   = "goto_line_start"
+

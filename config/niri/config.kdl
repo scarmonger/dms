@@ -389,6 +389,8 @@ binds {
     Mod+O repeat=false { toggle-overview; }
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+    // Mod+Slash {  spawn "rofi" "-modi" "'emoji:rofimoji'" "-show" "emoji" ;  }
+
     // === Application Launchers ===
     Mod+RETURN hotkey-overlay-title="Open Terminal" { spawn "kitty"; }
     Mod+Space hotkey-overlay-title="Application Launcher" {
@@ -412,6 +414,9 @@ binds {
     Mod+X hotkey-overlay-title="Power Option" {
       spawn "dms" "ipc" "call" "powermenu" "toggle";
     }
+    // Mod+F4 hotkey-overlay-title="Select Wifi" {
+    //   spawn "rofi-wifi-menu";
+    // }
     Mod+F3 hotkey-overlay-title="Calculator" {
       spawn "galculator";
     }
@@ -430,6 +435,8 @@ binds {
     }
     Alt+F4 repeat=false { close-window; }
     Mod+Shift+E { quit; }
+    Mod+E hotkey-overlay-title="Show Emoji" { spawn "rofi" "-modi" "'emoji:rofimoji'" "-show" "emoji" ; }
+
     Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" {
         spawn "dms" "ipc" "call" "processlist" "toggle";
     }
