@@ -1,20 +1,18 @@
-# dms
+# Install dms / Danklinux.com / Dank Material Shell
 
-Danklinux.com / Dank Material Shell
+curl -fsSL https://install.danklinux.com | sh
+
+## Update DMS
+
+paru -Syu dms-shell-bin
+# or
+paru -Syu dms-shell-git
 
 show create table teodempdoc;
 
-# wifi
-
-nmcli radio wifi on
-nmcli device wifi rescan
-nmcli device wifi list
-nmcli device wifi connect DataOn
-nmcli device wifi connect DataOn password xxx
-
 # Install yay
 
-sudo pacman -S --needed base-devel git
+sudo pacman -S --needed base-devel git yazi thunar nautilus tmux trash-cli 
 git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
 makepkg -si
@@ -29,17 +27,15 @@ yay -S google-chrome
 
 ## Install other app
 
-sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian lsof veracrypt libreoffice-still helix
+sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian lsof veracrypt libreoffice-still helix fish virtualbox
 
-sudo pacman -S telegram-desktop yazi flameshot thunar nautilus tmux mpv-mpris trash-cli fastfetch wev gpicview eza
+sudo pacman -S telegram-desktop flameshot mpv-mpris fastfetch wev gpicview eza
 
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps
 
-sudo pacman -S tldr fish ghostty ueberzugpp imagemagick fish kitty rofimoji
+sudo pacman -S tldr ghostty ueberzugpp imagemagick rofimoji
 
-swayidle
-
-yay -S pinta wps-office ttf-wps-fonts windsurf zellij
+yay -S pinta wps-office ttf-wps-fonts windsurf zellij zoom
 
 # projectlibre
 
@@ -69,6 +65,7 @@ pip3 install neovim-remote --break-system-packages
 :echo v:servername
 
 # mount drive
+mkdir -p ~/marc/
 
 pc:
 sudo echo "UUID=8f4825e2-0016-43c2-994a-bb2830ddaea9 /home/mc/marc/ ext4 errors=remount-ro 0 1" | sudo tee -a /etc/fstab
@@ -135,10 +132,6 @@ ln -ivs ~/marc/GitHub/dms/config/rofimoji.rc ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/zellij ~/.config/
 ln -ivs ~/marc/GitHub/dms/local/share/applications/rofi-wifi-menu.desktop ~/.local/share/applications/
 
-rm -Rf ~/.config/ranger
-ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/
-rm /home/mc/.local/share/ranger/bookmarks
-ln -ivs ~/marc/GitHub/dms/local/share/ranger/bookmarks ~/.local/share/ranger/
 
 rm -Rf ~/.config/yazi
 ln -ivs ~/marc/GitHub/dms/config/yazi/ ~/.config/
@@ -151,7 +144,6 @@ ln -ivs ~/marc/GitHub/dms/config/mpv ~/.config/
 
 ln -ivs ~/marc/virtualbox "/home/mc/VirtualBox VMs"
 
-mkdir ~/.config/script
 mkdir ~/.local/bin
 ln -ivs ~/marc/GitHub/dms/local/bin/custom ~/.local/bin
 
@@ -177,9 +169,12 @@ sudo mv /etc/greetd/config.toml /etc/greetd/config.toml_bak
 sudo ln -ivs ~/marc/GitHub/dms/etc/greetd/config.toml /etc/greetd/
 ```
 
-# Install dms
 
-curl -fsSL https://install.danklinux.com | sh
+<!-- rm -Rf ~/.config/ranger -->
+<!-- ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/ -->
+<!-- rm /home/mc/.local/share/ranger/bookmarks -->
+<!-- ln -ivs ~/marc/GitHub/dms/local/share/ranger/bookmarks ~/.local/share/ranger/ -->
+
 
 # Register kmonad to Systemd User Service
 
@@ -188,7 +183,7 @@ curl -fsSL https://install.danklinux.com | sh
 2. Add the Rule: Add the following line to the end of the file. Replace yourusername with your actual Linux username.
    mc ALL=(ALL) NOPASSWD: /usr/bin/kmonad
 3. mkdir -p ~/.config/systemd/user/
-4. ln -ivs ~/marc/GitHub/dms/config/systemd/ ~/.config/
+4. ln -ivs ~/marc/GitHub/dms/config/systemd/user/kmonad.service ~/.config/systemd/user/
 5. Enable and Start the Service
    systemctl --user daemon-reload
    systemctl --user enable kmonad.service
@@ -259,7 +254,6 @@ https://github.com/wting/autojump/blob/master/docs/install.md
 > cd autojump
 > ./install.py
 
-```
 
 # Install App Launcher - Walker https://github.com/abenz1267/walker
 

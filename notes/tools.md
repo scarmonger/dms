@@ -1,5 +1,13 @@
 printenv
 
+# wifi
+
+nmcli radio wifi on
+nmcli device wifi rescan
+nmcli device wifi list
+nmcli device wifi connect DataOn
+nmcli device wifi connect DataOn password xxx
+
 # Niri
 niri msg pick-window [equals to xprop]
 

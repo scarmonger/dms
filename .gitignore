@@ -1,2 +1,5 @@
 config/tmux/plugins
 config/ranger/plugins/__pycache__
+config/nvim/lazy-lock.json
+config/zsh/.zcompdump-thinkcenter-5.9
+config/zsh/.zcompdump-thinkcenter-5.9.zwc
