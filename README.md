@@ -12,7 +12,7 @@ show create table teodempdoc;
 
 # Install yay
 
-sudo pacman -S --needed base-devel git yazi thunar nautilus tmux trash-cli 
+sudo pacman -S --needed base-devel git yazi thunar nautilus tmux trash-cli macchanger
 git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
 makepkg -si
@@ -27,19 +27,24 @@ yay -S google-chrome
 
 ## Install other app
 
-sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian lsof veracrypt libreoffice-still helix fish virtualbox
+sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian lsof veracrypt libreoffice-still helix fish 
 
-sudo pacman -S telegram-desktop flameshot mpv-mpris fastfetch wev gpicview eza
+sudo pacman -S telegram-desktop flameshot mpv-mpris fastfetch wev gpicview eza galculator
 
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps
 
 sudo pacman -S tldr ghostty ueberzugpp imagemagick rofimoji
 
-yay -S pinta wps-office ttf-wps-fonts windsurf zellij zoom
+yay -S wps-office ttf-wps-fonts libtiff5 
+yay -S windsurf zellij zoom pinta 
 
 # projectlibre
 
-yay -S projectlibre java-runtime-common
+yay -S projectlibre java-runtime-common 
+sudo pacman -S jre11-openjdk
+
+xdg-mime default projectlibre.desktop application/octet-stream
+
 https://wiki.archlinux.org/title/Java#Switching_between_JVM
 
 # Setup /etc/sudoers
@@ -164,6 +169,7 @@ ln -ivs /home/mc/marc/custom/source/commandbox/box ~/.local/bin/
 ln -ivs /home/mc/marc/custom/source/commandbox/jre ~/.local/bin/
 
 ln -ivs ~/marc/GitHub/dms/zshrc ~/.zshrc
+ln -ivs ~/marc/.thunderbird ~/.thunderbird
 
 sudo mv /etc/greetd/config.toml /etc/greetd/config.toml_bak
 sudo ln -ivs ~/marc/GitHub/dms/etc/greetd/config.toml /etc/greetd/
@@ -212,7 +218,7 @@ sudo tailscale up
 
 # Wallpaper
 
-git clone https://github.com/mylinuxforwork/wallpaper.git ~/Pictures/
+git clone https://github.com/mylinuxforwork/wallpaper.git /home/mc/marc/pics/wallpaper
 
 # Rubah default shell bin bash menjadi zsh (harus logout)
 
@@ -315,4 +321,17 @@ https://git.dec05eba.com/gpu-screen-recorder-ui/about/
 
 yay -S gpu-screen-recorder-ui
 systemctl enable --now --user gpu-screen-recorder-ui
-```
+
+# Install python,pip & selenium
+yay -S python-selenium python-clipman mycli
+sudo pacman -S python-pandas
+yay -S pyinstaller 
+
+# virtualbox
+uname -r : 6.12.62-1-MANJARO
+sudo pacman -S virtualbox linux612-virtualbox-host-modules
+sudo modprobe vboxdrv
+sudo usermod -aG vboxusers $USER
+
+# rustdesk
+sudo pacman -U rustdesk-1.4.4-0-x86_64.pkg.tar.zst

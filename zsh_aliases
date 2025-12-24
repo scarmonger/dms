@@ -1,5 +1,9 @@
 #!/bin/sh
 alias hx='helix'
+alias ze='zellij'
+alias tt="tmux attach -t t1 || tmux new -s t1"
+alias zz="zellij -s z1 || zellij attach z1"
+alias apa='export PATH="$HOME/bin/otomation:$PATH"'
 
 ## Useful aliases
 # Replace ls with eza
@@ -157,7 +161,7 @@ alias gp="cd ~/Documents/ && yt-dlp -f '\''bestaudio'\'' "
 alias tso="tmux source ~/.config/tmux/tmux.conf"
 alias nw="tmux neww"
 alias ks="tmux kill-server"
-alias tt="tmux attach -t ws || tmux new -s ws ws"
+# alias tt="tmux attach -t ws || tmux new -s ws ws"
 alias tf="tmux attach -t fe-server"
 alias tb="tmux attach -t be-server"
 alias clf="tmux split -h lf; lf"

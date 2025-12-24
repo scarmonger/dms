@@ -17,11 +17,24 @@ config-notification {
     //position x=0 y=0
 }
 
-output "eDP-1" {
+/- output "eDP-1" {
     mode "2560x1440@359.979" // Set resolution and refresh rate
     scale 1 // No scaling (use 2 for HiDPI)
 }
 
+output "HDMI-A-2" {
+    focus-at-startup
+    mode "1920x1080" // Set resolution and refresh rate
+    position x=0 y=0
+    scale 1 // No scaling (use 2 for HiDPI)
+}
+
+output "DP-2" {
+    mode "1440x900" // Set resolution and refresh rate
+    position x=1920 y=0
+    scale 1 // No scaling (use 2 for HiDPI)
+    //off
+}
 
 gestures {
     hot-corners {
@@ -156,7 +169,7 @@ spawn-at-startup "~/.dropbox-dist/dropboxd"
 spawn-at-startup "copyq"
 // spawn-at-startup "flameshot gui"
 spawn-at-startup "firefox"
-spawn-at-startup "keepassxc"
+spawn-at-startup "thunderbird"
 //spawn-at-startup "ghostty" "-e" "nvr" "/home/mc/.config/niri/config.kdl"
 spawn-at-startup "ghostty"
 //spawn-at-startup "kitty" "-e" "yazi"
@@ -164,6 +177,7 @@ spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-su
 spawn-at-startup "google-chrome-stable"
 spawn-at-startup "/opt/google/chrome/google-chrome" "--profile-directory=Default" "--app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
 spawn-at-startup "Telegram"
+spawn-at-startup "keepassxc"
 
 environment {
   XDG_CURRENT_DESKTOP "niri"
@@ -215,7 +229,9 @@ animations {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
-workspace "A"
+workspace "A"{
+    open-on-output "HDMI-A-2"
+}
 window-rule{
     match at-startup=true app-id=r#"Ghostty"# 
     match at-startup=true app-id=r#"kitty"# 
@@ -224,7 +240,10 @@ window-rule{
     open-focused false
 }
 
-workspace "S"
+workspace "S"{
+    open-on-output "HDMI-A-2"
+}
+
 window-rule{
     // match at-startup=true app-id=r#"google"# 
     match app-id=r#"google"# 
@@ -234,7 +253,10 @@ window-rule{
     open-focused true
 }
 
-workspace "D"
+workspace "D"{
+    open-on-output "HDMI-A-2"
+}
+
 window-rule{
     match at-startup=true app-id=r#"firefox"# 
     open-on-workspace "D"
@@ -242,26 +264,44 @@ window-rule{
     open-focused false
 }
 
-workspace "F"
+workspace "F"{
+    open-on-output "HDMI-A-2"
+}
+
 window-rule{
     match at-startup=true app-id=r#"telegram"# 
     match at-startup=true title=r#"WhatsApp Web"# 
+    match app-id=r#"telegram"# 
+    match title=r#"WhatsApp Web"# 
     // match app-id=r#"firefox"# 
     open-on-workspace "F"
     open-focused false
 }
 
-workspace "W"
+workspace "W"{
+    open-on-output "HDMI-A-2"
+}
+
 window-rule{
-  match at-startup=true app-id=r#"thunderbird"# 
+  match at-startup=true app-id=r#"Thunderbird"# 
+  match app-id=r#"Thunderbird"# 
+  open-on-workspace "W"
+  open-maximized true
+  open-focused false
+}
+window-rule{
   match at-startup=true app-id=r#"keepassxc"# 
+  match app-id=r#"keepassxc"# 
   // match app-id=r#"firefox"# 
   open-on-workspace "W"
   open-maximized true
   open-focused false
 }
 
-workspace "R"
+workspace "R"{
+    open-on-output "HDMI-A-2"
+}
+
 window-rule {
     match app-id=r#"wps"#
     open-on-workspace "R"
@@ -273,18 +313,46 @@ window-rule {
     open-maximized true
 }
 window-rule {
-    match title=r#"projectlibre"#
+    // match title=r#"projectlibre"#
+    match app-id=r#"com-projectlibre1-main-Main"#
+    open-on-workspace "R"
+    open-maximized true
+}
+window-rule {
+    match app-id=r#"et"#
+    open-on-workspace "R"
+    open-maximized true
+}
+window-rule {
+    match app-id=r#"wpp"#
     open-on-workspace "R"
     open-maximized true
 }
 
-workspace "G"
+workspace "G"{
+    open-on-output "HDMI-A-2"
+}
+
 window-rule{
   match at-startup=true app-id=r#"code"# 
   match at-startup=true app-id=r#"dbeaver"# 
   // match app-id=r#"firefox"# 
   open-on-workspace "G"
   open-maximized true
+}
+window-rule {
+    // Jika menggunakan mako, biasanya dia otomatis floating, 
+    // tapi jika kamu pakai browser app sebagai jendela:
+    match app-id="chrome-web.whatsapp.com__-Default"
+    open-floating true
+}
+window-rule {
+    match title="^Open database$"
+    open-floating true
+}
+window-rule {
+    match app-id="^chromium-browser$"
+    open-maximized true
 }
 
 window-rule {

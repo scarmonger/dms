@@ -1,5 +1,22 @@
 printenv
 
+# change mac address
+
+sudo apt install macchanger
+sudo macchanger -s eno1
+sudo macchanger -m 6c:0b:84:22:be:c4 eno1
+
+sudo EDITOR=nano crontab -e
+@reboot macchanger -m 6c:0b:84:22:be:c4 eno1
+@reboot tailscale up
+
+sudo apt upgrade
+
+> [!NOTE] Notes
+> sudo tailscale up
+> sudo tailscale down
+
+## Check UUID (blkid)
 # wifi
 
 nmcli radio wifi on
@@ -35,22 +52,6 @@ fish_update_completions
 # Setting hostname Linux
 
 hostnamectl set-hostname SGSGHCMIHRISOJA
-
-# change mac address
-
-sudo apt install macchanger
-sudo macchanger -s enp0s31f6
-sudo macchanger -m 6c:0b:84:22:be:c4 enp0s31f6
-
-sudo EDITOR=nano crontab -e
-@reboot macchanger -m 6c:0b:84:22:be:c4 enp0s31f6
-@reboot tailscale up
-
-sudo apt upgrade
-
-> [!NOTE] Notes
-> sudo tailscale up
-> sudo tailscale down
 
 # Check UUID (blkid)
 

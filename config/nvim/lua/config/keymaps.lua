@@ -262,22 +262,9 @@ map("i", " ", " <c-g>u")
 -- vim.keymap.set("n", "<leader>eR", ":Neotree current %:p:h:h %:p reveal_force_cwd<cr>")
 -- vim.keymap.set("n", "<leader>eE", ":Neotree right position=current<cr>")
 -- vim.keymap.set("n", "<leader>ee", ":Neotree float reveal<cr>")
-vim.keymap.set("n", "<leader>ei", ":e ~/marc/GitHub/ubuntu/config/nvim/init.lua<cr>", { desc = "Edit init.lua" })
-vim.keymap.set("n", "<leader>ec", ":e ~/marc/GitHub/ubuntu/config/i3/config<cr>", { desc = "Edit i3-config.lua" })
-vim.keymap.set(
-  "n",
-  "<leader>ep",
-  ":e ~/marc/GitHub/ubuntu/config/nvim/lua/custom/plugins/plugins.lua<cr>",
-  { desc = "Edit plugins.lua" }
-)
-vim.keymap.set("n", "<leader>ek", ":e ~/marc/GitHub/ubuntu/config/nvim/lua/config<cr>", { desc = "Edit Vim Keymap" })
-vim.keymap.set("n", "<leader>ez", ":e ~/marc/GitHub/ubuntu/zshrc<cr>", { desc = "Edit zshrc" })
-vim.keymap.set("n", "<leader>eu", ":e ~/marc/GitHub/ubuntu/ubuntu-i3.md<cr>", { desc = "Edit ubuntu.md file" })
-vim.keymap.set("n", "<leader>er", ":e ~/marc/GitHub/ubuntu/config/ranger<cr>", { desc = "Edit ranger config file" })
-vim.keymap.set("n", "<leader>ea", ":e ~/marc/GitHub/ubuntu/aliases<cr>", { desc = "Edit aliases" })
-vim.keymap.set(
-  "n",
-  "<leader>eb",
-  ":e ~/marc/GitHub/ubuntu/config/nvim/lua/custom/abbreviation.lua<cr>",
-  { desc = "Edit abbreviation" }
-)
+-- vim.keymap.set(
+--   "n",
+--   "<leader>eb",
+--   ":e ~/marc/GitHub/ubuntu/config/nvim/lua/custom/abbreviation.lua<cr>",
+--   { desc = "Edit abbreviation" }
+-- )
