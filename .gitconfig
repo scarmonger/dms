@@ -1,0 +1,16 @@
+[user]
+	email = <psikomania@yahoo.com>
+	name = scarmonger
+[merge]
+	tool = nvim
+[mergetool "nvim"]
+	cmd = nvim -d $LOCAL $REMOTE $MERGED -c \"$wincmd w\" -c \"wincmd J\"
+	trustExitCode = true
+[mergetool]
+	keepBackup = false
+[difftool]
+    prompt = true
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""

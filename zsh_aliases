@@ -4,6 +4,7 @@ alias ze='zellij'
 alias tt="tmux attach -t t1 || tmux new -s t1"
 alias zz="zellij -s z1 || zellij attach z1"
 alias apa='export PATH="$HOME/bin/otomation:$PATH"'
+alias mvc='veracrypt ~/Dropbox/linux/cl ~/bin/'
 
 ## Useful aliases
 # Replace ls with eza
@@ -281,7 +282,7 @@ alias vim='nvim'
 alias r='ranger'
 #alias h='history | dmenu -i -l 20 -p "history" | xclip -sel c'
 #alias h='history | awk '{$1=""; print $0}' | rofi -dmenu -i -l 50 -p "history" | wl-copy'
-alias h="history | sed 's/^[[:space:]]*[0-9]*[[:space:]]*//' | rofi -dmenu -i -l 30 -p 'history' | wl-copy"
+alias h="history | sed 's/^[[:space:]]*[0-9]*[[:space:]]*//' | rofi -dmenu -i -l 30 -p 'history' -theme /usr/share/rofi/themes/Adapta-Nokto.rasi | wl-copy "
 
 # OS
 alias pow='sudo poweroff'

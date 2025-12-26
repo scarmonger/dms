@@ -1,60 +1,45 @@
-# Install dms / Danklinux.com / Dank Material Shell
+# clone repo
 
-curl -fsSL https://install.danklinux.com | sh
-
-## Update DMS
-
-paru -Syu dms-shell-bin
-# or
-paru -Syu dms-shell-git
-
-show create table teodempdoc;
-
-# Install yay
-
-sudo pacman -S --needed base-devel git yazi thunar nautilus tmux trash-cli macchanger
-git clone https://aur.archlinux.org/yay-git.git
-cd yay-git
-makepkg -si
-
-<!-- # Source zsh / fish -->
-<!-- echo 'source /home/mc/marc/GitHub/dms/zsh-addon' | tee -a ~/.zshrc -->
-<!-- echo 'source /home/mc/marc/GitHub/dms/fish-addon' | tee -a ~/.config/fish/config.fish -->
-
-# Install google-chrome
-
-yay -S google-chrome
-
-## Install other app
-
-sudo pacman -S filezilla ncdu xdotool gimp lsd thunderbird keepassxc qt5-wayland copyq kmonad obsidian lsof veracrypt libreoffice-still helix fish 
-
-sudo pacman -S telegram-desktop flameshot mpv-mpris fastfetch wev gpicview eza galculator
-
-sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps
-
-sudo pacman -S tldr ghostty ueberzugpp imagemagick rofimoji
-
-yay -S wps-office ttf-wps-fonts libtiff5 
-yay -S windsurf zellij zoom pinta 
-
-# projectlibre
-
-yay -S projectlibre java-runtime-common 
-sudo pacman -S jre11-openjdk
-
-xdg-mime default projectlibre.desktop application/octet-stream
-
-https://wiki.archlinux.org/title/Java#Switching_between_JVM
+git clone https://github.com/scarmonger/dms ~/marc/GitHub/dms
 
 # Setup /etc/sudoers
 
 sudo visudo
 add this on the end of file : Defaults !tty_tickets
 
+# mount drive
+
+mkdir -p ~/marc/
+
+pc:
+sudo echo "UUID=8f4825e2-0016-43c2-994a-bb2830ddaea9 /home/mc/marc/ ext4 errors=remount-ro 0 1" | sudo tee -a /etc/fstab
+
+tp13:
+sudo echo "UUID=3cb910c9-2e1e-4910-a6a9-c114df09d3cd /home/mc/marc/ ext4 errors=remount-ro 0 1" | sudo tee -a /etc/fstab
+
+dell:
+sudo echo "UUID=6b617826-89bc-444c-9b72-9bcf0c44eb73 /home/mc/marc/ ext4 errors=remount-ro 0 1" | sudo tee -a /etc/fstab
+
+sudo mount -a
+
+# Install dms / Danklinux.com / Dank Material Shell
+
+curl -fsSL https://install.danklinux.com | sh
+
+# Install yay
+
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/yay-git.git
+cd yay-git
+makepkg -si
+
+# Install google-chrome
+
+yay -S google-chrome
+
 # Install neovim - https://www.lazyvim.org/installation
 
-sudo pacman -S neovim github-cli python-pip tree-sitter-cli ripgrep fd fzf lazygit luarocks
+sudo pacman -S neovim github-cli python-pip tree-sitter-cli ripgrep fd fzf lazygit luarocks ghostty
 
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
@@ -69,29 +54,43 @@ pip3 install neovim-remote --break-system-packages
 
 :echo v:servername
 
-# mount drive
-mkdir -p ~/marc/
+# Install other app (sudo pacman -S)
 
-pc:
-sudo echo "UUID=8f4825e2-0016-43c2-994a-bb2830ddaea9 /home/mc/marc/ ext4 errors=remount-ro 0 1" | sudo tee -a /etc/fstab
+sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi --noconfirm
 
-tp13:
-sudo echo "UUID=3cb910c9-2e1e-4910-a6a9-c114df09d3cd /home/mc/marc/ ext4 errors=remount-ro 0 1" | sudo tee -a /etc/fstab
+sudo pacman -S yt-dlp ncdu copyq kmonad helix mpv-mpris fastfetch wev galculator --noconfirm
+sudo pacman -S rofimoji --noconfirm
+sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps
+sudo pacman -S 7zip imagemagick gwenview flameshot
 
-dell:
-sudo echo "UUID=6b617826-89bc-444c-9b72-9bcf0c44eb73 /home/mc/marc/ ext4 errors=remount-ro 0 1" | sudo tee -a /etc/fstab
+sudo pacman -S keepassxc qt5-wayland obsidian veracrypt telegram-desktop filezilla
+sudo pacman -S macchanger thunderbird
+sudo pacman -S code dbeaver
+sudo pacman -S gimp
 
-sudo mount -a
+yay -S wps-office ttf-wps-fonts libtiff5 --noconfirm
+yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin
 
-# clone repo
+# projectlibre
 
-git clone https://github.com/scarmonger/dms ~/marc/GitHub/dms
+yay -S projectlibre java-runtime-common
+sudo pacman -S jre11-openjdk
+
+archlinux-java status
+sudo archlinux-java set java-25-openjdk
+
+xdg-mime query filetype nama_file.pod
+
+> octet-stream
+
+xdg-mime default projectlibre.desktop application/octet-stream
+
+https://aur.archlinux.org/packages/projectlibre
+https://wiki.archlinux.org/title/Java#Switching_between_JVM
 
 # github-cli authentication
 
 https://cli.github.com/manual/
-
-sudo pacman -S github-cli
 
 git config --global user.email "<psikomania@yahoo.com>"
 git config --global user.name "scarmonger"
@@ -119,24 +118,10 @@ git remote -v
 set the method using ssh instead of https
 git remote set-url origin git@github.com:scarmonger/dms.git
 
-<!-- # Register Alias -->
-<!---->
-<!-- ## Fish shell -->
-<!---->
-<!-- echo "source /home/mc/marc/GitHub/dms/alias_fish" | tee -a ~/.config/fish/config.fish -->
-
 # Create symlink
 
 ```
 ln -ivs ~/marc/GitHub/dms/config/niri/config.kdl ~/.config/niri/
-
-ln -ivs ~/marc/GitHub/dms/config/helix/ ~/.config/
-ln -ivs ~/marc/GitHub/dms/config/zsh/ ~/.config/
-ln -ivs ~/marc/GitHub/dms/config/fish/ ~/.config/
-ln -ivs ~/marc/GitHub/dms/config/rofimoji.rc ~/.config/
-ln -ivs ~/marc/GitHub/dms/config/zellij ~/.config/
-ln -ivs ~/marc/GitHub/dms/local/share/applications/rofi-wifi-menu.desktop ~/.local/share/applications/
-
 
 rm -Rf ~/.config/yazi
 ln -ivs ~/marc/GitHub/dms/config/yazi/ ~/.config/
@@ -144,43 +129,44 @@ ln -ivs ~/marc/GitHub/dms/config/yazi/ ~/.config/
 rm -Rf ~/.config/nvim
 ln -ivs ~/marc/GitHub/dms/.vimrc ~/
 ln -ivs ~/marc/GitHub/dms/config/nvim ~/.config/
-ln -ivs ~/marc/GitHub/dms/config/zathura ~/.config/
-ln -ivs ~/marc/GitHub/dms/config/mpv ~/.config/
-
-ln -ivs ~/marc/virtualbox "/home/mc/VirtualBox VMs"
-
-mkdir ~/.local/bin
-ln -ivs ~/marc/GitHub/dms/local/bin/custom ~/.local/bin
 
 mkdir -p ~/.config/tmux-plugins
 ln -ivs ~/marc/GitHub/dms/config/tmux ~/.config/
 rm -Rf ~/marc/GitHub/dms/config/tmux/plugins/
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux-plugins/tpm
-
 ```
 
 ctrl + B + capital I = install plugin
 ctrl + space + capital I = install plugin
 
 ```
+ln -ivs ~/marc/GitHub/dms/.gitconfig ~/
+
+ln -ivs ~/marc/GitHub/dms/.zshenv ~/
+ln -ivs ~/marc/GitHub/dms/config/zsh/ ~/.config/
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/powerlevel10k
+
+ln -ivs ~/marc/GitHub/dms/config/helix/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/fish/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/zellij ~/.config/
+
+ln -ivs ~/marc/GitHub/dms/config/zathura ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/mpv ~/.config/
+ln -ivs ~/marc/GitHub/dms/local/share/applications/rofi-wifi-menu.desktop ~/.local/share/applications/
+mkdir -p ~/.local/bin
+ln -ivs ~/marc/GitHub/dms/local/bin/custom ~/.local/bin
+
+ln -ivs ~/marc/virtualbox "/home/mc/VirtualBox VMs"
+
+
 ln -ivs /home/mc/marc/GitHub/dms/myclirc ~/.myclirc
 
 ln -ivs /home/mc/marc/custom/source/commandbox/box ~/.local/bin/
 ln -ivs /home/mc/marc/custom/source/commandbox/jre ~/.local/bin/
 
-ln -ivs ~/marc/GitHub/dms/zshrc ~/.zshrc
 ln -ivs ~/marc/.thunderbird ~/.thunderbird
-
-sudo mv /etc/greetd/config.toml /etc/greetd/config.toml_bak
-sudo ln -ivs ~/marc/GitHub/dms/etc/greetd/config.toml /etc/greetd/
+<!-- ln -ivs ~/marc/GitHub/dms/config/rofimoji.rc ~/.config/ -->
 ```
-
-
-<!-- rm -Rf ~/.config/ranger -->
-<!-- ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/ -->
-<!-- rm /home/mc/.local/share/ranger/bookmarks -->
-<!-- ln -ivs ~/marc/GitHub/dms/local/share/ranger/bookmarks ~/.local/share/ranger/ -->
-
 
 # Register kmonad to Systemd User Service
 
@@ -188,6 +174,7 @@ sudo ln -ivs ~/marc/GitHub/dms/etc/greetd/config.toml /etc/greetd/
    sudo visudo
 2. Add the Rule: Add the following line to the end of the file. Replace yourusername with your actual Linux username.
    mc ALL=(ALL) NOPASSWD: /usr/bin/kmonad
+
 3. mkdir -p ~/.config/systemd/user/
 4. ln -ivs ~/marc/GitHub/dms/config/systemd/user/kmonad.service ~/.config/systemd/user/
 5. Enable and Start the Service
@@ -205,11 +192,10 @@ Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 
 ~/.dropbox-dist/dropboxd
 
-# Clone git repo
+sudo pacman -S libappindicator
 
-mkdir -p ~/marc/GitHub
-cd ~/marc/GitHub
-git clone https://www.github.com/scarmonger/dms.git
+wget -O ~/.local/bin/dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"
+chmod + x ~/.local/bin/dropbox
 
 # Tailscale
 
@@ -223,99 +209,10 @@ git clone https://github.com/mylinuxforwork/wallpaper.git /home/mc/marc/pics/wal
 # Rubah default shell bin bash menjadi zsh (harus logout)
 
 chsh -s /usr/bin/zsh
-
-# Install oh-my-zsh
-
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-<!-- ## Install plugins -->
-<!-- git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions -->
-<!-- git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting -->
-
-# install powerlevel10k
-
-```
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/powerlevel10k
-```
-
-<!-- echo 'source ~/.config/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc -->
-
-# Install font
-
-1.) Download a Nerd Font
-
-2.) Unzip and copy to ~/.fonts
-
-3.) Run the command `fc-cache -fv` to manually rebuild the font cache
-
-check fonts with `fc-list`
-
-> fc-list | grep -i "Wing"
-
-https://github.com/wting/autojump/blob/master/docs/install.md
-
-> git clone https://github.com/wting/autojump.git
-> cd autojump
-> ./install.py
-
-
-# Install App Launcher - Walker https://github.com/abenz1267/walker
-
-## Clone the repository
-
-git clone https://github.com/abenz1267/walker.git
-cd walker
-
-## Build with Cargo
-
-sudo pacman -S cargo
-cargo build --release
-
-## Run Walker
-
-./target/release/walker
-
-## Install elephant https://github.com/abenz1267/elephant
-
-yay -S elephant
-yay -S elephant-desktopapplications
-
-# Yazi
-sudo pacman -S yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
-
-
-## Themes
-https://github.com/yazi-rs/flavors?tab=readme-ov-file
-https://github.com/yazi-rs/plugins/tree/main/mime-ext.yazi
-
-ya pkg -h
-ya pkg add kalidyasin/yazi-flavors:tokyonight-night
-ya pkg add yazi-rs/flavors:dracula
-ya pkg add yazi-rs/flavors:catppuccin-mocha
-
-## Plugins
-https://github.com/yazi-rs/plugins/tree/main
-https://github.com/yazi-rs/plugins/tree/main/mount.yazi
-
-ya pkg add yazi-rs/plugins:mount
-ya pkg add yazi-rs/plugins:toggle-pane
-ya pkg add yazi-rs/plugins:full-border
-ya pkg add yazi-rs/plugins:smart-enter
-
-https://github.com/dedukun/bookmarks.yazi
-ya pkg add dedukun/bookmarks
-
-https://github.com/KKV9/compress.yazi
-ya pkg add KKV9/compress
-
-<!-- # Zoxide -->
-<!---->
-<!-- echo "zoxide init fish | source" | tee -a /home/mc/.config/fish/config.fish -->
-<!-- echo 'eval "$(zoxide init zsh)"' | tee -a ~/.zshrc -->
+restart
 
 # GPU Screen recorder
+
 https://github.com/BrycensRanch/gpu-screen-recorder-git-copr
 https://git.dec05eba.com/gpu-screen-recorder-ui/about/
 
@@ -323,15 +220,24 @@ yay -S gpu-screen-recorder-ui
 systemctl enable --now --user gpu-screen-recorder-ui
 
 # Install python,pip & selenium
-yay -S python-selenium python-clipman mycli
-sudo pacman -S python-pandas
-yay -S pyinstaller 
+
+yay -S python-selenium python-clipman mycli --noconfirm
+sudo pacman -S python-pandas --noconfirm
+yay -S pyinstaller
 
 # virtualbox
+
 uname -r : 6.12.62-1-MANJARO
-sudo pacman -S virtualbox linux612-virtualbox-host-modules
-sudo modprobe vboxdrv
+sudo pacman -S virtualbox linux618-virtualbox-host-modules
+
+6.18.2-2-cachyos
+sudo pacman -S linux-cachyos-headers virtualbox virtualbox-host-dkms
+
 sudo usermod -aG vboxusers $USER
+sudo modprobe vboxdrv
+yay -S virtualbox-ext-oracle
+sudo modprobe -r kvm_intel
 
 # rustdesk
+
 sudo pacman -U rustdesk-1.4.4-0-x86_64.pkg.tar.zst

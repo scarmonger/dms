@@ -493,20 +493,26 @@ desc = "Open $SHELL here"
 [[mgr.prepend_keymap]]
 on   = "<F2>"
 for  = "unix"
-run  = 'shell -- veracrypt ~/Dropbox/linux/cl ~/bin/'
-desc = "Open $SHELL here"
+run = "rename --cursor=before_ext"
+desc = "Rename selected file(s)" 
 
 [[mgr.prepend_keymap]]
 on   = "<F3>"
 for  = "unix"
 run  = 'shell --orphan -- kitty -e helix "$0"'
-desc = "Open $SHELL here"
+desc = "Open with helix"
 
 [[mgr.prepend_keymap]]
-on   = "<F4>"
+on   = "<F7>"
 for  = "unix"
-run  = 'shell --orphan -- libreoffice "$0"'
-desc = "Open $SHELL here"
+run = "create"
+desc = "Create a file (ends with / for directories)"
+
+[[mgr.prepend_keymap]]
+on   = "<Insert>"
+for  = "unix"
+run = "create"
+desc = "Create a file (ends with / for directories)"
 
 [[mgr.prepend_keymap]]
 on = [ "g", "r" ]

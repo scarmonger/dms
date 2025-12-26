@@ -175,7 +175,8 @@ spawn-at-startup "ghostty"
 //spawn-at-startup "kitty" "-e" "yazi"
 spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-super.kbd"
 spawn-at-startup "google-chrome-stable"
-spawn-at-startup "/opt/google/chrome/google-chrome" "--profile-directory=Default" "--app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
+// spawn-at-startup "/usr/bin/chromium" "--profile-directory=Default" "--app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
+spawn-at-startup "librewolf"
 spawn-at-startup "Telegram"
 spawn-at-startup "keepassxc"
 
@@ -270,10 +271,9 @@ workspace "F"{
 
 window-rule{
     match at-startup=true app-id=r#"telegram"# 
-    match at-startup=true title=r#"WhatsApp Web"# 
+    match at-startup=true app-id=r#"librewolf"# 
     match app-id=r#"telegram"# 
-    match title=r#"WhatsApp Web"# 
-    // match app-id=r#"firefox"# 
+    match app-id=r#"librewolf"# 
     open-on-workspace "F"
     open-focused false
 }
@@ -339,12 +339,6 @@ window-rule{
   // match app-id=r#"firefox"# 
   open-on-workspace "G"
   open-maximized true
-}
-window-rule {
-    // Jika menggunakan mako, biasanya dia otomatis floating, 
-    // tapi jika kamu pakai browser app sebagai jendela:
-    match app-id="chrome-web.whatsapp.com__-Default"
-    open-floating true
 }
 window-rule {
     match title="^Open database$"
@@ -503,7 +497,8 @@ binds {
     }
     Alt+F4 repeat=false { close-window; }
     Mod+Shift+E { quit; }
-    Mod+E hotkey-overlay-title="Show Emoji" { spawn "rofi" "-modi" "'emoji:rofimoji'" "-show" "emoji" ; }
+    // Mod+E hotkey-overlay-title="Show Emoji" { spawn "rofi" "-modi" "'emoji:rofimoji'" "-show" "emoji" ; }
+    Mod+E hotkey-overlay-title="Show Emoji" { spawn "/home/mc/marc/GitHub/dms/local/bin/custom/showemoji"; }
 
     Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" {
         spawn "dms" "ipc" "call" "processlist" "toggle";
