@@ -146,6 +146,9 @@ ln -ivs ~/marc/GitHub/dms/.zshenv ~/
 ln -ivs ~/marc/GitHub/dms/config/zsh/ ~/.config/
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/powerlevel10k
 
+sudo mv /etc/greetd/config.toml /etc/greetd/config.toml_bak
+sudo ln -ivs ~/marc/GitHub/dms/etc/greetd/config.toml /etc/greetd/
+
 ln -ivs ~/marc/GitHub/dms/config/helix/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/fish/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/zellij ~/.config/
