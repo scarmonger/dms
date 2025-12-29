@@ -62,7 +62,7 @@ input {
         dwt
         // scroll-factor 3.0
     }
-    focus-follows-mouse // Automatically focus windows under the mouse pointer
+    //focus-follows-mouse // Automatically focus windows under the mouse pointer
     workspace-auto-back-and-forth // Enable workspace back & forth switching
 
     mouse {

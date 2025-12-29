@@ -257,6 +257,9 @@ Cek about:config (Cara Paksa)
 Cari: privacy.resistFingerprinting.
 Pastikan nilainya adalah false. 
 
+3. tambahkan extension spoof-timezone dan rubah timezone sesuai selera
+https://addons.mozilla.org/en-US/firefox/addon/spoof-timezone/
+
 # adjust microphone volume
 dms ipc call audio status
 dms ipc call audio setmic 70
