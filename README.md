@@ -41,8 +41,8 @@ yay -S google-chrome
 
 sudo pacman -S neovim github-cli python-pip tree-sitter-cli ripgrep fd fzf lazygit luarocks ghostty
 
+rm -rf ~/.config/nvim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
-rm -rf ~/.config/nvim/.git
 
 ## Install neovim-remote / nvr
 
@@ -170,6 +170,8 @@ ln -ivs ~/marc/.thunderbird ~/.thunderbird
 
 # Register kmonad to Systemd User Service
 
+https://www.youtube.com/watch?v=Dhj1eauljwU
+
 1. Edit the Sudoers File: Open the sudoers configuration file using the standard utility:
    sudo visudo
 2. Add the Rule: Add the following line to the end of the file. Replace yourusername with your actual Linux username.
@@ -195,7 +197,8 @@ Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 sudo pacman -S libappindicator
 
 wget -O ~/.local/bin/dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"
-chmod + x ~/.local/bin/dropbox
+chmod +x ~/.local/bin/dropbox.py
+mv ~/.local/bin/dropbox.py ~/.local/bin/dropbox
 
 # Tailscale
 
@@ -241,3 +244,16 @@ sudo modprobe -r kvm_intel
 # rustdesk
 
 sudo pacman -U rustdesk-1.4.4-0-x86_64.pkg.tar.zst
+
+# Librewolf setting
+1. Izinkan Penyimpanan Permanen untuk WhatsApp
+Pastikan opsi "Delete cookies and site data when LibreWolf is closed" tidak menghapus data untuk situs yang sudah kamu kecualikan.
+
+2. Matikan "ResistFingerprinting" (Opsional tapi Direkomendasikan)
+Cek about:config (Cara Paksa)
+Cari: privacy.resistFingerprinting.
+Pastikan nilainya adalah false. 
+
+# adjust microphone volume
+dms ipc call audio status
+dms ipc call audio setmic 70
