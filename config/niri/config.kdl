@@ -345,7 +345,8 @@ window-rule {
     open-floating true
 }
 window-rule {
-    match app-id="^chromium-browser$"
+    match app-id="^chromium$"
+    match app-id="^obsidian$"
     open-maximized true
 }
 
