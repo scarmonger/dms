@@ -62,7 +62,7 @@ sudo pacman -S yt-dlp ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noc
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps
 sudo pacman -S 7zip imagemagick gwenview flameshot
 
-sudo pacman -S keepassxc qt5-wayland 
+sudo pacman -S keepassxc qt5-wayland tailscale --noconfirm
 sudo pacman -S obsidian veracrypt 
 sudo pacman -S telegram-desktop filezilla
 sudo pacman -S macchanger thunderbird
@@ -205,9 +205,8 @@ Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 
 sudo pacman -S libappindicator
 
-wget -O ~/.local/bin/dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"
-chmod +x ~/.local/bin/dropbox.py
-mv ~/.local/bin/dropbox.py ~/.local/bin/dropbox
+wget -O ~/.local/bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py"
+chmod +x ~/.local/bin/dropbox
 
 # Tailscale
 
