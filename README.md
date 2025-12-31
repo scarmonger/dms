@@ -11,7 +11,7 @@ add this on the end of file : Defaults !tty_tickets
 
 mkdir -p ~/marc/
 
-pc:
+m720q:
 sudo echo "UUID=8f4825e2-0016-43c2-994a-bb2830ddaea9 /home/mc/marc/ ext4 errors=remount-ro 0 1" | sudo tee -a /etc/fstab
 
 tp13:
@@ -58,18 +58,22 @@ pip3 install neovim-remote --break-system-packages
 
 sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi --noconfirm
 
-sudo pacman -S yt-dlp ncdu copyq kmonad helix mpv-mpris fastfetch wev galculator --noconfirm
-sudo pacman -S rofimoji --noconfirm
+sudo pacman -S yt-dlp ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps
 sudo pacman -S 7zip imagemagick gwenview flameshot
 
-sudo pacman -S keepassxc qt5-wayland obsidian veracrypt telegram-desktop filezilla
+sudo pacman -S keepassxc qt5-wayland 
+sudo pacman -S obsidian veracrypt 
+sudo pacman -S telegram-desktop filezilla
 sudo pacman -S macchanger thunderbird
 sudo pacman -S code dbeaver
 sudo pacman -S gimp
+sudo pacman -S chromium
 
 yay -S wps-office ttf-wps-fonts libtiff5 --noconfirm
-yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin
+yay -S --noconfirm windsurf zellij zoom pinta 
+
+sudo pacman -S rofimoji helix librewolf-bin --noconfirm
 
 # projectlibre
 
@@ -79,10 +83,11 @@ sudo pacman -S jre11-openjdk
 archlinux-java status
 sudo archlinux-java set java-25-openjdk
 
+## check mime filetype
 xdg-mime query filetype nama_file.pod
-
 > octet-stream
 
+## Setup default app untuk suatu filetype
 xdg-mime default projectlibre.desktop application/octet-stream
 
 https://aur.archlinux.org/packages/projectlibre
@@ -143,6 +148,7 @@ ctrl + space + capital I = install plugin
 ln -ivs ~/marc/GitHub/dms/.gitconfig ~/
 
 ln -ivs ~/marc/GitHub/dms/.zshenv ~/
+rm -rf ~/.config/zsh/
 ln -ivs ~/marc/GitHub/dms/config/zsh/ ~/.config/
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/powerlevel10k
 

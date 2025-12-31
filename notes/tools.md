@@ -7,7 +7,7 @@ exa / eza: eza -l --octal-permissions
 
 # change mac address
 
-sudo apt install macchanger
+sudo pacman -S macchanger
 sudo macchanger -s eno1
 sudo macchanger -m 6c:0b:84:22:be:c4 eno1
 
