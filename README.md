@@ -71,9 +71,9 @@ sudo pacman -S gimp
 sudo pacman -S chromium
 
 yay -S wps-office ttf-wps-fonts libtiff5 --noconfirm
-yay -S --noconfirm windsurf zellij zoom pinta 
+yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin 
 
-sudo pacman -S rofimoji helix librewolf-bin --noconfirm
+sudo pacman -S rofimoji helix --noconfirm
 
 # projectlibre
 
@@ -173,7 +173,7 @@ ln -ivs /home/mc/marc/GitHub/dms/myclirc ~/.myclirc
 ln -ivs /home/mc/marc/custom/source/commandbox/box ~/.local/bin/
 ln -ivs /home/mc/marc/custom/source/commandbox/jre ~/.local/bin/
 
-ln -ivs ~/marc/.thunderbird ~/.thunderbird
+<!-- ln -ivs ~/marc/.thunderbird ~/.thunderbird -->
 <!-- ln -ivs ~/marc/GitHub/dms/config/rofimoji.rc ~/.config/ -->
 ```
 
@@ -250,8 +250,16 @@ yay -S virtualbox-ext-oracle
 sudo modprobe -r kvm_intel
 
 # rustdesk
-
 sudo pacman -U rustdesk-1.4.4-0-x86_64.pkg.tar.zst
+
+
+# adjust microphone volume
+dms ipc call audio status
+dms ipc call audio setmic 70
+
+# thunderbird setup
+Help -> troubleshooting information 
+search and click link -> about:profiles -> create a new profile -> choose folder
 
 # Librewolf setting
 1. Izinkan Penyimpanan Permanen untuk WhatsApp
@@ -261,10 +269,8 @@ Pastikan opsi "Delete cookies and site data when LibreWolf is closed" tidak meng
 Cek about:config (Cara Paksa)
 Cari: privacy.resistFingerprinting.
 Pastikan nilainya adalah false. 
+Dan untuk item resist lainnya khusus yang time di buat false
 
-3. tambahkan extension spoof-timezone dan rubah timezone sesuai selera
-https://addons.mozilla.org/en-US/firefox/addon/spoof-timezone/
+<!-- 3. tambahkan extension spoof-timezone dan rubah timezone sesuai selera -->
+<!-- https://addons.mozilla.org/en-US/firefox/addon/spoof-timezone/ -->
 
-# adjust microphone volume
-dms ipc call audio status
-dms ipc call audio setmic 70
