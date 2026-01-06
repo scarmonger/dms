@@ -60,7 +60,7 @@ sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi --noconfirm
 
 sudo pacman -S yt-dlp ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps
-sudo pacman -S 7zip imagemagick gwenview flameshot
+sudo pacman -S 7zip imagemagick gwenview flameshot expac
 
 sudo pacman -S keepassxc qt5-wayland tailscale --noconfirm
 sudo pacman -S obsidian veracrypt 
