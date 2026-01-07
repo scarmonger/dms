@@ -155,9 +155,13 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/power
 sudo mv /etc/greetd/config.toml /etc/greetd/config.toml_bak
 sudo ln -ivs ~/marc/GitHub/dms/etc/greetd/config.toml /etc/greetd/
 
+rm -rf ~/.config/helix/
 ln -ivs ~/marc/GitHub/dms/config/helix/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/fish/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/zellij ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/flameshot/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/gpu-screen-recorder/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/keepassxc/ ~/.config/
 
 ln -ivs ~/marc/GitHub/dms/config/zathura ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/mpv ~/.config/
