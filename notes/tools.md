@@ -137,6 +137,7 @@ xdg-mime query default image/jpeg
 
 \*) Setup new default application
 xdg-mime default org.kde.gwenview.desktop image/jpeg
+xdg-mime default org.kde.gwenview.desktop image/png
 
 # Troubleshooting Niri
 

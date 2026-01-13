@@ -29,12 +29,12 @@ output "HDMI-A-2" {
     scale 1 // No scaling (use 2 for HiDPI)
 }
 
-output "DP-2" {
-    mode "1440x900" // Set resolution and refresh rate
-    position x=1920 y=0
-    scale 1 // No scaling (use 2 for HiDPI)
-    //off
-}
+// output "DP-2" {
+//     mode "1440x900" // Set resolution and refresh rate
+//     position x=1920 y=0
+//     scale 1 // No scaling (use 2 for HiDPI)
+//     //off
+// }
 
 gestures {
     hot-corners {
@@ -178,7 +178,7 @@ spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-su
 spawn-at-startup "google-chrome-stable"
 // spawn-at-startup "/usr/bin/chromium" "--profile-directory=Default" "--app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
 spawn-at-startup "librewolf"
-// spawn-at-startup "Telegram"
+spawn-at-startup "Telegram"
 // spawn-at-startup "keepassxc"
 
 environment {
@@ -346,6 +346,7 @@ window-rule {
 window-rule {
     match app-id="^librewolf$"
     match app-id="^obsidian$"
+    match app-id="org.ksnip.ksnip"
     open-maximized true
 }
 
