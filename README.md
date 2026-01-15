@@ -81,6 +81,7 @@ yay -S projectlibre java-runtime-common
 sudo pacman -S jre11-openjdk
 
 archlinux-java status
+sudo archlinux-java set java-11-openjdk
 sudo archlinux-java set java-25-openjdk
 
 ## check mime filetype
@@ -243,7 +244,7 @@ yay -S pyinstaller
 # virtualbox
 
 uname -r : 6.12.62-1-MANJARO
-sudo pacman -S virtualbox linux618-virtualbox-host-modules
+sudo pacman -S virtualbox linux612-virtualbox-host-modules
 
 6.18.2-2-cachyos
 sudo pacman -S linux-cachyos-headers virtualbox virtualbox-host-dkms
@@ -280,3 +281,12 @@ Dan untuk item resist lainnya khusus yang time di buat false
 
 # Screenshot
 https://github.com/AlexanderVanhee/Gradia
+
+# Screenshare
+sudo pacman -S pipewire wireplumber xdg-desktop-portal-gnome xdg-desktop-portal
+systemctl --user restart xdg-desktop-portal
+
+Verifikasi Cepat
+Setelah melakukan langkah di atas, Anda bisa menguji apakah sistem "siap" melakukan sharing dengan perintah ini di terminal:
+systemctl --user status pipewire (Pastikan statusnya active)
+systemctl --user status xdg-desktop-portal-gnome (Pastikan tidak ada pesan error merah)

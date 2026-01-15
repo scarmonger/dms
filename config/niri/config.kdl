@@ -362,6 +362,7 @@ window-rule{
     match app-id=r#"firefox"# 
     match app-id="^librewolf$"
     match app-id="^chromium$"
+    match app-id="be.alexandervanhee.gradia"
     open-maximized true
 }
 window-rule {
@@ -716,7 +717,7 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // === Screenshots ===
-    Print hotkey-overlay-title="Screenshot Area" {  spawn "flameshot" "gui";  }
+    Print hotkey-overlay-title="Screenshot Area" {  spawn "/home/mc/.local/bin/custom/niri-gradia";  }
     Ctrl+Print hotkey-overlay-title="Screenshot Screen" {  spawn "flameshot" "screen";  }
     Shift+Print hotkey-overlay-title="Screenshot Screen" {  spawn "flameshot" "screen";  }
     // XF86Launch1 { screenshot; }
