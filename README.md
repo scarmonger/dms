@@ -11,7 +11,7 @@ add this on the end of file : Defaults !tty_tickets
 
 mkdir -p ~/marc/
 
-pc:
+m720q:
 sudo echo "UUID=8f4825e2-0016-43c2-994a-bb2830ddaea9 /home/mc/marc/ ext4 errors=remount-ro 0 1" | sudo tee -a /etc/fstab
 
 tp13:
@@ -41,8 +41,8 @@ yay -S google-chrome
 
 sudo pacman -S neovim github-cli python-pip tree-sitter-cli ripgrep fd fzf lazygit luarocks ghostty
 
+rm -rf ~/.config/nvim
 git clone https://github.com/LazyVim/starter ~/.config/nvim
-rm -rf ~/.config/nvim/.git
 
 ## Install neovim-remote / nvr
 
@@ -58,18 +58,22 @@ pip3 install neovim-remote --break-system-packages
 
 sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi --noconfirm
 
-sudo pacman -S yt-dlp ncdu copyq kmonad helix mpv-mpris fastfetch wev galculator --noconfirm
-sudo pacman -S rofimoji --noconfirm
+sudo pacman -S yt-dlp ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps
-sudo pacman -S 7zip imagemagick gwenview flameshot
+sudo pacman -S 7zip imagemagick gwenview flameshot expac ksnip
 
-sudo pacman -S keepassxc qt5-wayland obsidian veracrypt telegram-desktop filezilla
+sudo pacman -S keepassxc qt5-wayland tailscale --noconfirm
+sudo pacman -S obsidian veracrypt 
+sudo pacman -S telegram-desktop filezilla
 sudo pacman -S macchanger thunderbird
 sudo pacman -S code dbeaver
 sudo pacman -S gimp
+sudo pacman -S chromium
 
 yay -S wps-office ttf-wps-fonts libtiff5 --noconfirm
-yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin
+yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin 
+
+sudo pacman -S rofimoji helix --noconfirm
 
 # projectlibre
 
@@ -77,12 +81,14 @@ yay -S projectlibre java-runtime-common
 sudo pacman -S jre11-openjdk
 
 archlinux-java status
+sudo archlinux-java set java-11-openjdk
 sudo archlinux-java set java-25-openjdk
 
+## check mime filetype
 xdg-mime query filetype nama_file.pod
-
 > octet-stream
 
+## Setup default app untuk suatu filetype
 xdg-mime default projectlibre.desktop application/octet-stream
 
 https://aur.archlinux.org/packages/projectlibre
@@ -143,12 +149,20 @@ ctrl + space + capital I = install plugin
 ln -ivs ~/marc/GitHub/dms/.gitconfig ~/
 
 ln -ivs ~/marc/GitHub/dms/.zshenv ~/
+rm -rf ~/.config/zsh/
 ln -ivs ~/marc/GitHub/dms/config/zsh/ ~/.config/
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/powerlevel10k
 
+sudo mv /etc/greetd/config.toml /etc/greetd/config.toml_bak
+sudo ln -ivs ~/marc/GitHub/dms/etc/greetd/config.toml /etc/greetd/
+
+rm -rf ~/.config/helix/
 ln -ivs ~/marc/GitHub/dms/config/helix/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/fish/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/zellij ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/flameshot/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/gpu-screen-recorder/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/keepassxc/ ~/.config/
 
 ln -ivs ~/marc/GitHub/dms/config/zathura ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/mpv ~/.config/
@@ -164,11 +178,13 @@ ln -ivs /home/mc/marc/GitHub/dms/myclirc ~/.myclirc
 ln -ivs /home/mc/marc/custom/source/commandbox/box ~/.local/bin/
 ln -ivs /home/mc/marc/custom/source/commandbox/jre ~/.local/bin/
 
-ln -ivs ~/marc/.thunderbird ~/.thunderbird
+<!-- ln -ivs ~/marc/.thunderbird ~/.thunderbird -->
 <!-- ln -ivs ~/marc/GitHub/dms/config/rofimoji.rc ~/.config/ -->
 ```
 
 # Register kmonad to Systemd User Service
+
+https://www.youtube.com/watch?v=Dhj1eauljwU
 
 1. Edit the Sudoers File: Open the sudoers configuration file using the standard utility:
    sudo visudo
@@ -194,8 +210,8 @@ Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 
 sudo pacman -S libappindicator
 
-wget -O ~/.local/bin/dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"
-chmod + x ~/.local/bin/dropbox
+wget -O ~/.local/bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py"
+chmod +x ~/.local/bin/dropbox
 
 # Tailscale
 
@@ -228,7 +244,7 @@ yay -S pyinstaller
 # virtualbox
 
 uname -r : 6.12.62-1-MANJARO
-sudo pacman -S virtualbox linux618-virtualbox-host-modules
+sudo pacman -S virtualbox linux612-virtualbox-host-modules
 
 6.18.2-2-cachyos
 sudo pacman -S linux-cachyos-headers virtualbox virtualbox-host-dkms
@@ -239,5 +255,38 @@ yay -S virtualbox-ext-oracle
 sudo modprobe -r kvm_intel
 
 # rustdesk
-
 sudo pacman -U rustdesk-1.4.4-0-x86_64.pkg.tar.zst
+
+
+# adjust microphone volume
+dms ipc call audio status
+dms ipc call audio setmic 70
+
+# thunderbird setup
+Help -> troubleshooting information 
+search and click link -> about:profiles -> create a new profile -> choose folder
+
+# Librewolf setting
+1. Izinkan Penyimpanan Permanen untuk WhatsApp
+Pastikan opsi "Delete cookies and site data when LibreWolf is closed" tidak menghapus data untuk situs yang sudah kamu kecualikan.
+
+2. Matikan "ResistFingerprinting" (Opsional tapi Direkomendasikan)
+Cek about:config (Cara Paksa)
+Cari: privacy.resistFingerprinting.
+Pastikan nilainya adalah false. 
+Dan untuk item resist lainnya khusus yang time di buat false
+
+<!-- 3. tambahkan extension spoof-timezone dan rubah timezone sesuai selera -->
+<!-- https://addons.mozilla.org/en-US/firefox/addon/spoof-timezone/ -->
+
+# Screenshot
+https://github.com/AlexanderVanhee/Gradia
+
+# Screenshare
+sudo pacman -S pipewire wireplumber xdg-desktop-portal-gnome xdg-desktop-portal
+systemctl --user restart xdg-desktop-portal
+
+Verifikasi Cepat
+Setelah melakukan langkah di atas, Anda bisa menguji apakah sistem "siap" melakukan sharing dengan perintah ini di terminal:
+systemctl --user status pipewire (Pastikan statusnya active)
+systemctl --user status xdg-desktop-portal-gnome (Pastikan tidak ada pesan error merah)

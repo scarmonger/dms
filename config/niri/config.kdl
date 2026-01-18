@@ -29,12 +29,12 @@ output "HDMI-A-2" {
     scale 1 // No scaling (use 2 for HiDPI)
 }
 
-output "DP-2" {
-    mode "1440x900" // Set resolution and refresh rate
-    position x=1920 y=0
-    scale 1 // No scaling (use 2 for HiDPI)
-    //off
-}
+// output "DP-2" {
+//     mode "1440x900" // Set resolution and refresh rate
+//     position x=1920 y=0
+//     scale 1 // No scaling (use 2 for HiDPI)
+//     //off
+// }
 
 gestures {
     hot-corners {
@@ -62,13 +62,13 @@ input {
         dwt
         // scroll-factor 3.0
     }
-    focus-follows-mouse // Automatically focus windows under the mouse pointer
+    //focus-follows-mouse // Automatically focus windows under the mouse pointer
     workspace-auto-back-and-forth // Enable workspace back & forth switching
 
     mouse {
       left-handed
       accel-speed 0.5
-      scroll-factor 3.0
+      scroll-factor 2.0
     }
     trackpoint {
     }
@@ -167,18 +167,19 @@ spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 spawn-at-startup "~/.dropbox-dist/dropboxd"
 spawn-at-startup "copyq"
-// spawn-at-startup "flameshot gui"
+spawn-at-startup "flameshot"
 spawn-at-startup "firefox"
 spawn-at-startup "thunderbird"
 //spawn-at-startup "ghostty" "-e" "nvr" "/home/mc/.config/niri/config.kdl"
 spawn-at-startup "ghostty"
 //spawn-at-startup "kitty" "-e" "yazi"
 spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-super.kbd"
+spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-super_usb_keyboard.kbd"
 spawn-at-startup "google-chrome-stable"
 // spawn-at-startup "/usr/bin/chromium" "--profile-directory=Default" "--app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
 spawn-at-startup "librewolf"
 spawn-at-startup "Telegram"
-spawn-at-startup "keepassxc"
+// spawn-at-startup "keepassxc"
 
 environment {
   XDG_CURRENT_DESKTOP "niri"
@@ -234,11 +235,11 @@ workspace "A"{
     open-on-output "HDMI-A-2"
 }
 window-rule{
-    match at-startup=true app-id=r#"Ghostty"# 
-    match at-startup=true app-id=r#"kitty"# 
-    match app-id="com.mitchellh.ghostty"
+    // match at-startup=true app-id=r#"google"# 
+    match app-id=r#"google"# 
     open-on-workspace "A"
-    open-focused false
+    open-maximized true
+    open-focused true
 }
 
 workspace "S"{
@@ -246,12 +247,11 @@ workspace "S"{
 }
 
 window-rule{
-    // match at-startup=true app-id=r#"google"# 
-    match app-id=r#"google"# 
+    match at-startup=true app-id=r#"Ghostty"# 
+    match at-startup=true app-id=r#"kitty"# 
+    match app-id="com.mitchellh.ghostty"
     open-on-workspace "S"
-    // match app-id=r#"google"#
-    open-maximized true
-    open-focused true
+    open-focused false
 }
 
 workspace "D"{
@@ -273,7 +273,6 @@ window-rule{
     match at-startup=true app-id=r#"telegram"# 
     match at-startup=true app-id=r#"librewolf"# 
     match app-id=r#"telegram"# 
-    match app-id=r#"librewolf"# 
     open-on-workspace "F"
     open-focused false
 }
@@ -345,7 +344,9 @@ window-rule {
     open-floating true
 }
 window-rule {
-    match app-id="^chromium-browser$"
+    match app-id="^librewolf$"
+    match app-id="^obsidian$"
+    match app-id="org.ksnip.ksnip"
     open-maximized true
 }
 
@@ -358,6 +359,10 @@ window-rule {
 }
 window-rule{
     match app-id="com.mitchellh.ghostty"
+    match app-id=r#"firefox"# 
+    match app-id="^librewolf$"
+    match app-id="^chromium$"
+    match app-id="be.alexandervanhee.gradia"
     open-maximized true
 }
 window-rule {
@@ -492,6 +497,10 @@ binds {
     Mod+Shift+N hotkey-overlay-title="Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
 
     // === Security ===
+    Mod+Shift+ESCAPE hotkey-overlay-title="Suspend" {
+        spawn-sh "dms ipc call lock lock && systemctl suspend";
+    }
+
     Mod+ESCAPE hotkey-overlay-title="Lock Screen" {
         spawn "dms" "ipc" "call" "lock" "lock";
     }
@@ -708,7 +717,7 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // === Screenshots ===
-    Print hotkey-overlay-title="Screenshot Area" {  spawn "flameshot" "gui";  }
+    Print hotkey-overlay-title="Screenshot Area" {  spawn "/home/mc/.local/bin/custom/niri-gradia";  }
     Ctrl+Print hotkey-overlay-title="Screenshot Screen" {  spawn "flameshot" "screen";  }
     Shift+Print hotkey-overlay-title="Screenshot Screen" {  spawn "flameshot" "screen";  }
     // XF86Launch1 { screenshot; }
@@ -718,7 +727,7 @@ binds {
     // Ctrl+Print { screenshot-screen; }
     // Alt+Print { screenshot-window; }
     // === System Controls ===
-    Mod+Shift+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    Mod+Shift+Period allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+P { power-off-monitors; }
     Mod+Ctrl+Shift+F { toggle-windowed-fullscreen; }
 }

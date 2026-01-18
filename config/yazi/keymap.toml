@@ -503,6 +503,12 @@ run  = 'shell --orphan -- kitty -e helix "$0"'
 desc = "Open with helix"
 
 [[mgr.prepend_keymap]]
+on   = "<F4>"
+for  = "unix"
+run  = 'shell --orphan -- ksnip -e "$0"'
+desc = "Open with helix"
+
+[[mgr.prepend_keymap]]
 on   = "<F7>"
 for  = "unix"
 run = "create"

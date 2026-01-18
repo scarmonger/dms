@@ -28,7 +28,7 @@ driver.get('https://mail.dataon.com:3000/')
 
 #userinput = driver.find_element("xpath",'//input[@id="userName"]')
 userinput = driver.find_element("xpath",'/html/body/div/div[1]/div[1]/form/div[2]/div[2]/input')
-userinput.send_keys('marctinius' + Keys.TAB + 'Zimbramail.1' + Keys.RETURN)
+userinput.send_keys('marctinius' + Keys.TAB + 'Zimbra.67890' + Keys.RETURN)
 
 userinput = driver.find_element("xpath",'/html/body/div[4]/div[1]/div/div/div[2]/div/table/tbody/tr[1]/td[3]/div/div/table/tbody/tr/td[2]/div/input')
 userinput.send_keys('daily reset' + Keys.TAB + Keys.RETURN)
