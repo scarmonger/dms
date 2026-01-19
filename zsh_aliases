@@ -1,7 +1,8 @@
 #!/bin/sh
 alias hx='helix'
 alias ze='zellij'
-alias tt="tmux attach -t t1 || tmux new -s t1"
+# alias tt="tmux attach -t t1 || tmux new -s t1"
+alias tt="tmux attach -t ws || tmux new -s ws ws"
 alias zz="zellij -s z1 || zellij attach z1"
 alias apa='veracrypt ~/Dropbox/linux/cl ~/bin/ && export PATH="$HOME/bin/otomation:$PATH"'
 alias mvc='veracrypt ~/Dropbox/linux/cl ~/bin/'

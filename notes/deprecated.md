@@ -74,3 +74,19 @@ mkdir -p ~/marc/GitHub
 cd ~/marc/GitHub
 git clone https://www.github.com/scarmonger/dms.git
 
+# Register kmonad to Systemd User Service
+
+https://www.youtube.com/watch?v=Dhj1eauljwU
+
+1. Edit the Sudoers File: Open the sudoers configuration file using the standard utility:
+   sudo visudo
+2. Add the Rule: Add the following line to the end of the file. Replace yourusername with your actual Linux username.
+   mc ALL=(ALL) NOPASSWD: /usr/bin/kmonad
+
+3. mkdir -p ~/.config/systemd/user/
+4. ln -ivs ~/marc/GitHub/dms/config/systemd/user/kmonad.service ~/.config/systemd/user/
+5. Enable and Start the Service
+   systemctl --user daemon-reload
+   systemctl --user enable kmonad.service
+   systemctl --user start kmonad.service
+
