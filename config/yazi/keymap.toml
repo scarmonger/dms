@@ -509,6 +509,12 @@ run  = 'shell --orphan -- ksnip -e "$0"'
 desc = "Open with helix"
 
 [[mgr.prepend_keymap]]
+on   = "<F5>"
+for  = "unix"
+run  = 'shell --orphan -- et "$0"'
+desc = "Open with wps"
+
+[[mgr.prepend_keymap]]
 on   = "<F7>"
 for  = "unix"
 run = "create"

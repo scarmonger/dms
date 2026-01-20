@@ -167,7 +167,7 @@ spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 spawn-at-startup "~/.dropbox-dist/dropboxd"
 spawn-at-startup "copyq"
-// spawn-at-startup "flameshot"
+spawn-at-startup "flameshot"
 spawn-at-startup "firefox"
 spawn-at-startup "thunderbird"
 //spawn-at-startup "ghostty" "-e" "nvr" "/home/mc/.config/niri/config.kdl"
@@ -717,7 +717,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // === Screenshots ===
-    Print hotkey-overlay-title="Screenshot Area" {  spawn "/home/mc/.local/bin/custom/niri-gradia";  }
+    Print hotkey-overlay-title="Screenshot Area" {  spawn "flameshot" "gui";  }
+    // Print hotkey-overlay-title="Screenshot Area" {  spawn "/home/mc/.local/bin/custom/niri-gradia";  }
     Ctrl+Print hotkey-overlay-title="Screenshot Screen" {  spawn "flameshot" "screen";  }
     Shift+Print hotkey-overlay-title="Screenshot Screen" {  spawn "flameshot" "screen";  }
     // XF86Launch1 { screenshot; }
