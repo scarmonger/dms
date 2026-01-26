@@ -177,7 +177,8 @@ spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-su
 spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-super_usb_keyboard.kbd"
 spawn-at-startup "google-chrome-stable"
 // spawn-at-startup "/usr/bin/chromium" "--profile-directory=Default" "--app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
-spawn-at-startup "librewolf"
+spawn-at-startup "librewolf" "--new-window" "https://web.telegram.org/a/"
+spawn-at-startup "librewolf" "--new-window" "https://web.whatsapp.com/"
 spawn-at-startup "Telegram"
 // spawn-at-startup "keepassxc"
 
@@ -272,6 +273,7 @@ workspace "F"{
 window-rule{
     match at-startup=true app-id=r#"telegram"# 
     match at-startup=true app-id=r#"librewolf"# 
+    match app-id=r#"librewolf"# 
     match app-id=r#"telegram"# 
     open-on-workspace "F"
     open-focused false
@@ -344,7 +346,7 @@ window-rule {
     open-floating true
 }
 window-rule {
-    match app-id="^librewolf$"
+    // match app-id="^librewolf$"
     match app-id="^obsidian$"
     match app-id="org.ksnip.ksnip"
     open-maximized true
@@ -360,7 +362,7 @@ window-rule {
 window-rule{
     match app-id="com.mitchellh.ghostty"
     match app-id=r#"firefox"# 
-    match app-id="^librewolf$"
+    // match app-id="^librewolf$"
     match app-id="^chromium$"
     match app-id="be.alexandervanhee.gradia"
     open-maximized true

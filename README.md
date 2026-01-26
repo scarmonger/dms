@@ -296,3 +296,7 @@ systemctl --user status pipewire
 > (Pastikan statusnya active)
 systemctl --user status xdg-desktop-portal-gnome 
 > (Pastikan tidak ada pesan error merah)
+
+# dbeaver
+sudo rm /usr/share/applications/io.dbeaver.DBeaver.desktop
+cp ~/marc/GitHub/dms/local/share/applications/dbeaver.desktop  ~/.local/share/applications/dbeaver.desktop
