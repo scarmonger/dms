@@ -604,6 +604,8 @@ binds {
     // Mod+Ctrl+J     { focus-monitor-down; }
     // Mod+Ctrl+K     { focus-monitor-up; }
     Mod+Ctrl+L     { focus-monitor-right; }
+    Mod+F11   { focus-monitor-left; }
+    Mod+F12   { focus-monitor-right; }
 
     // === Move to Monitor ===
     Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
@@ -614,6 +616,8 @@ binds {
     // Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
     // Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
     Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+    Mod+Shift+F11         { move-column-to-monitor-left; }
+    Mod+Shift+F12         { move-column-to-monitor-right; }
 
     // === Workspace Navigation ===
     Mod+Page_Down      { focus-workspace-down; }
