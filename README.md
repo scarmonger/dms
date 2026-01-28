@@ -203,6 +203,11 @@ ln -ivs /home/mc/marc/GitHub/dms/myclirc ~/.myclirc
 ln -ivs /home/mc/marc/custom/source/commandbox/box ~/.local/bin/
 ln -ivs /home/mc/marc/custom/source/commandbox/jre ~/.local/bin/
 
+sudo ln -ivs /home/mc/marc/GitHub/dms/etc/clamav/clamd.conf /etc/clamav
+sudo ln -ivs /home/mc/marc/GitHub/dms/etc/clamav/virus-event.bash /etc/clamav
+
+cp /home/mc/marc/GitHub/ubuntu/HubApps /home/mc/.config/microsoft-edge/Default/HubApps
+
 <!-- ln -ivs ~/marc/.thunderbird ~/.thunderbird -->
 <!-- ln -ivs ~/marc/GitHub/dms/config/rofimoji.rc ~/.config/ -->
 ```
@@ -296,3 +301,34 @@ systemctl --user status pipewire
 > (Pastikan statusnya active)
 systemctl --user status xdg-desktop-portal-gnome 
 > (Pastikan tidak ada pesan error merah)
+
+# dbeaver
+sudo rm /usr/share/applications/io.dbeaver.DBeaver.desktop
+cp ~/marc/GitHub/dms/local/share/applications/dbeaver.desktop  ~/.local/share/applications/dbeaver.desktop
+
+# Clamav
+https://wiki.archlinux.org/title/ClamAV
+
+`sudo pacman -S clamav`
+
+Update the ClamAV Virus Database
+
+```
+sudo systemctl stop clamav-freshclam
+sudo freshclam
+sudo systemctl enable clamav-freshclam --now
+
+sudo systemctl enable clamav-clamonacc.service --now
+sudo systemctl enable clamav-daemon.service --now
+
+sudo systemctl edit clamav-clamonacc.service
+```
+
+Check last modified/ updates
+`ls -l /var/lib/clamav/`
+
+Disable clamav
+`sudo systemctl disable clamav-freshclam --now`
+
+clamscan -r ~/ -l ~/scanresult.txt
+
