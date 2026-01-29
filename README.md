@@ -75,7 +75,7 @@ pip3 install neovim-remote --break-system-packages
 
 # Install other app (sudo pacman -S)
 
-sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi ksnip --noconfirm
+sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi ksnip flameshot eza --noconfirm
 
 sudo pacman -S yt-dlp ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps --noconfirm
@@ -87,12 +87,15 @@ sudo pacman -S telegram-desktop filezilla --noconfirm
 sudo pacman -S code dbeaver --noconfirm
 sudo pacman -S gimp --noconfirm
 sudo pacman -S chromium --noconfirm
+sudo pacman -S --noconfirm networkmanager-l2tp strongswan xl2tpd
 
 yay -S wps-office ttf-wps-fonts libtiff5 --noconfirm
 yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
+yay -S microsoft-edge-stable-bin --noconfirm
 
 sudo pacman -S macchanger thunderbird --noconfirm
-<!-- sudo pacman -S rofimoji helix flameshot --noconfirm -->
+<!-- sudo pacman -S rofimoji helix --noconfirm -->
+<!-- gradia -->
 
 # projectlibre
 
