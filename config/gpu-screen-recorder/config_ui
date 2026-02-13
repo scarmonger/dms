@@ -19,6 +19,7 @@ record.record_options.codec auto
 record.record_options.color_range limited
 record.record_options.fps 60
 record.record_options.framerate_mode auto
+record.record_options.low_power_mode false
 record.record_options.merge_audio_tracks true
 record.record_options.overclock false
 record.record_options.record_area_height 1080
@@ -32,6 +33,9 @@ record.record_options.video_bitrate 40000
 record.record_options.video_height 1080
 record.record_options.video_quality medium
 record.record_options.video_width 1920
+record.record_options.webcam_camera_fps 0
+record.record_options.webcam_camera_height 0
+record.record_options.webcam_camera_width 0
 record.record_options.webcam_flip_horizontally false
 record.record_options.webcam_height 30
 record.record_options.webcam_source 
@@ -54,6 +58,7 @@ replay.record_options.codec auto
 replay.record_options.color_range limited
 replay.record_options.fps 60
 replay.record_options.framerate_mode auto
+replay.record_options.low_power_mode false
 replay.record_options.merge_audio_tracks true
 replay.record_options.overclock false
 replay.record_options.record_area_height 1080
@@ -67,6 +72,9 @@ replay.record_options.video_bitrate 40000
 replay.record_options.video_height 1080
 replay.record_options.video_quality custom
 replay.record_options.video_width 1920
+replay.record_options.webcam_camera_fps 0
+replay.record_options.webcam_camera_height 0
+replay.record_options.webcam_camera_width 0
 replay.record_options.webcam_flip_horizontally false
 replay.record_options.webcam_height 30
 replay.record_options.webcam_source 
@@ -105,6 +113,8 @@ screenshot.use_led_indicator false
 streaming.custom.container flv
 streaming.custom.key 
 streaming.custom.url 
+streaming.kick.key 
+streaming.kick.url 
 streaming.record_options.advanced_view false
 streaming.record_options.application_audio_invert false
 streaming.record_options.audio_codec opus
@@ -115,6 +125,7 @@ streaming.record_options.codec auto
 streaming.record_options.color_range limited
 streaming.record_options.fps 60
 streaming.record_options.framerate_mode auto
+streaming.record_options.low_power_mode false
 streaming.record_options.merge_audio_tracks true
 streaming.record_options.overclock false
 streaming.record_options.record_area_height 0
@@ -128,6 +139,9 @@ streaming.record_options.video_bitrate 8000
 streaming.record_options.video_height 0
 streaming.record_options.video_quality custom
 streaming.record_options.video_width 0
+streaming.record_options.webcam_camera_fps 0
+streaming.record_options.webcam_camera_height 0
+streaming.record_options.webcam_camera_width 0
 streaming.record_options.webcam_flip_horizontally false
 streaming.record_options.webcam_height 30
 streaming.record_options.webcam_source 

@@ -1,9 +1,5 @@
-tmux new-window yazi
-tmux rename-window yazi
-tmux new-window
-tmux next-window 
-tmux rename-window nvim
-nvim
+tmux new-window 
+tmux new-window 
 
 #tmux new-window -c ~/marc/GitHub/ubuntu -n nvim nvim
 # tmux split-window -h -l 33% ranger

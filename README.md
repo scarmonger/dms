@@ -84,12 +84,17 @@ sudo pacman -S 7zip imagemagick gwenview expac --noconfirm
 sudo pacman -S keepassxc qt5-wayland tailscale --noconfirm
 sudo pacman -S obsidian veracrypt --noconfirm
 sudo pacman -S telegram-desktop filezilla --noconfirm
-sudo pacman -S code dbeaver --noconfirm
+sudo pacman -S dbeaver --noconfirm
 sudo pacman -S gimp --noconfirm
 sudo pacman -S chromium --noconfirm
 
 yay -S wps-office ttf-wps-fonts libtiff5 --noconfirm
 yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
+
+yay -S visual-studio-code-bin
+i gnome-keyring
+code --password-store="gnome-libsecret"
+If this solution works for you, you can persist the value of password-store by opening the Command Palette (Ctrl+Shift+P) and running the Preferences: Configure Runtime Arguments command. This will open the argv.json file where you can add the setting "password-store":"gnome-libsecret".
 
 sudo pacman -S macchanger thunderbird --noconfirm
 <!-- sudo pacman -S rofimoji helix flameshot ksnip --noconfirm -->
@@ -246,9 +251,11 @@ systemctl enable --now --user gpu-screen-recorder-ui
 
 # Install python,pip & selenium
 
-yay -S python-selenium python-clipman mycli --noconfirm
+yay -S python-clipman mycli --noconfirm
+python3 -m pip install --user selenium --break-system-packages
+
 sudo pacman -S python-pandas --noconfirm
-<!-- yay -S pyinstaller -->
+<!-- yay -S pyinstaller python-selenium -->
 
 # virtualbox
 
@@ -332,3 +339,4 @@ Disable clamav
 
 clamscan -r ~/ -l ~/scanresult.txt
 
+xdg-mime default mpv.desktop audio/mpeg
