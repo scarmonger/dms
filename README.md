@@ -45,39 +45,17 @@ Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 wget -O ~/.local/bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py"
 chmod +x ~/.local/bin/dropbox
 
-<!-- # Install yay -->
-
-<!-- sudo pacman -S --needed base-devel git -->
-<!-- git clone https://aur.archlinux.org/yay-git.git -->
-<!-- cd yay-git -->
-<!-- makepkg -si -->
 
 # Install google-chrome
 
 yay -S --noconfirm google-chrome 
 
-# Install neovim - https://www.lazyvim.org/installation
-
-sudo pacman -S neovim github-cli python-pip tree-sitter-cli ripgrep fd fzf lazygit luarocks ghostty
-
-rm -rf ~/.config/nvim
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-
-## Install neovim-remote / nvr
-
-https://github.com/mhinz/neovim-remote
-
-pip3 install neovim-remote --break-system-packages
-
-### Check servername
-
-:echo v:servername
 
 # Install other app (sudo pacman -S)
 
 sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi --noconfirm
 
-sudo pacman -S yt-dlp ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
+sudo pacman -S ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps --noconfirm
 sudo pacman -S 7zip imagemagick gwenview expac --noconfirm
 
@@ -339,4 +317,12 @@ Disable clamav
 
 clamscan -r ~/ -l ~/scanresult.txt
 
+# Setting default apps
 xdg-mime default mpv.desktop audio/mpeg
+
+# yt-dlp
+sudo rm ~/.local/bin/yt-dlp
+
+curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
+chmod a+rx ~/.local/bin/yt-dlp  # Make executable
+
