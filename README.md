@@ -53,7 +53,7 @@ yay -S --noconfirm google-chrome
 
 # Install other app (sudo pacman -S)
 
-sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi --noconfirm
+sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi ksnip flameshot eza --noconfirm
 
 sudo pacman -S ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps --noconfirm
@@ -65,9 +65,11 @@ sudo pacman -S telegram-desktop filezilla --noconfirm
 sudo pacman -S dbeaver --noconfirm
 sudo pacman -S gimp --noconfirm
 sudo pacman -S chromium --noconfirm
+sudo pacman -S --noconfirm networkmanager-l2tp strongswan xl2tpd
 
 yay -S wps-office ttf-wps-fonts libtiff5 --noconfirm
 yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
+yay -S microsoft-edge-stable-bin --noconfirm
 
 yay -S visual-studio-code-bin
 i gnome-keyring
@@ -75,7 +77,8 @@ code --password-store="gnome-libsecret"
 If this solution works for you, you can persist the value of password-store by opening the Command Palette (Ctrl+Shift+P) and running the Preferences: Configure Runtime Arguments command. This will open the argv.json file where you can add the setting "password-store":"gnome-libsecret".
 
 sudo pacman -S macchanger thunderbird --noconfirm
-<!-- sudo pacman -S rofimoji helix flameshot ksnip --noconfirm -->
+<!-- sudo pacman -S rofimoji helix --noconfirm -->
+<!-- gradia -->
 
 # projectlibre
 
