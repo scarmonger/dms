@@ -1,8 +1,13 @@
 printenv
 
+To check the numerical (octal) chmod value of a folder or file in Linux, the most direct way is using the stat command.
+stat -c "%a %n" ~/.gnupg
+lsd: lsd -l --permission octal
+exa / eza: eza -l --octal-permissions
+
 # change mac address
 
-sudo apt install macchanger
+sudo pacman -S macchanger
 sudo macchanger -s eno1
 sudo macchanger -m 6c:0b:84:22:be:c4 eno1
 
@@ -132,6 +137,7 @@ xdg-mime query default image/jpeg
 
 \*) Setup new default application
 xdg-mime default org.kde.gwenview.desktop image/jpeg
+xdg-mime default org.kde.gwenview.desktop image/png
 
 # Troubleshooting Niri
 

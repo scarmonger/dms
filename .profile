@@ -11,11 +11,12 @@ if [ -d "$HOME/.local/bin" ]; then
 fi
 
 export XDG_CONFIG_HOME=$HOME/.config
-
+#
 # make default editor nvr
 export EDITOR=nvr
 export BROWSER=google-chrome-stable
 export TERM=kitty
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Most pure GTK3 apps use wayland by default, but some,
 # such as Firefox, require the backend to be explicitly selected.
