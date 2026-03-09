@@ -72,6 +72,8 @@ yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
 yay -S microsoft-edge-stable-bin --noconfirm
 
 yay -S visual-studio-code-bin
+
+i libreoffice-still
 i gnome-keyring
 code --password-store="gnome-libsecret"
 If this solution works for you, you can persist the value of password-store by opening the Command Palette (Ctrl+Shift+P) and running the Preferences: Configure Runtime Arguments command. This will open the argv.json file where you can add the setting "password-store":"gnome-libsecret".
@@ -321,7 +323,10 @@ Disable clamav
 clamscan -r ~/ -l ~/scanresult.txt
 
 # Setting default apps
+xdg-mime query filetype nama_file.pod
+
 xdg-mime default mpv.desktop audio/mpeg
+xdg-mime default mpv.desktop video/webm
 
 # yt-dlp
 sudo rm ~/.local/bin/yt-dlp
