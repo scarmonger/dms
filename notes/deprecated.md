@@ -90,3 +90,20 @@ https://www.youtube.com/watch?v=Dhj1eauljwU
    systemctl --user enable kmonad.service
    systemctl --user start kmonad.service
 
+# Install neovim - https://www.lazyvim.org/installation
+
+sudo pacman -S neovim github-cli python-pip tree-sitter-cli ripgrep fd fzf lazygit luarocks ghostty
+
+rm -rf ~/.config/nvim
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+
+## Install neovim-remote / nvr
+
+https://github.com/mhinz/neovim-remote
+
+pip3 install neovim-remote --break-system-packages
+
+### Check servername
+
+:echo v:servername
+

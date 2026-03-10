@@ -45,54 +45,42 @@ Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
 wget -O ~/.local/bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py"
 chmod +x ~/.local/bin/dropbox
 
-<!-- # Install yay -->
-
-<!-- sudo pacman -S --needed base-devel git -->
-<!-- git clone https://aur.archlinux.org/yay-git.git -->
-<!-- cd yay-git -->
-<!-- makepkg -si -->
 
 # Install google-chrome
 
 yay -S --noconfirm google-chrome 
 
-# Install neovim - https://www.lazyvim.org/installation
-
-sudo pacman -S neovim github-cli python-pip tree-sitter-cli ripgrep fd fzf lazygit luarocks ghostty
-
-rm -rf ~/.config/nvim
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-
-## Install neovim-remote / nvr
-
-https://github.com/mhinz/neovim-remote
-
-pip3 install neovim-remote --break-system-packages
-
-### Check servername
-
-:echo v:servername
 
 # Install other app (sudo pacman -S)
 
-sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi --noconfirm
+sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi ksnip flameshot eza --noconfirm
 
-sudo pacman -S yt-dlp ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
+sudo pacman -S ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps --noconfirm
 sudo pacman -S 7zip imagemagick gwenview expac --noconfirm
 
 sudo pacman -S keepassxc qt5-wayland tailscale --noconfirm
 sudo pacman -S obsidian veracrypt --noconfirm
 sudo pacman -S telegram-desktop filezilla --noconfirm
-sudo pacman -S code dbeaver --noconfirm
+sudo pacman -S dbeaver --noconfirm
 sudo pacman -S gimp --noconfirm
 sudo pacman -S chromium --noconfirm
+sudo pacman -S --noconfirm networkmanager-l2tp strongswan xl2tpd
 
 yay -S wps-office ttf-wps-fonts libtiff5 --noconfirm
 yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
+yay -S microsoft-edge-stable-bin --noconfirm
+
+yay -S visual-studio-code-bin
+
+i libreoffice-still
+i gnome-keyring
+code --password-store="gnome-libsecret"
+If this solution works for you, you can persist the value of password-store by opening the Command Palette (Ctrl+Shift+P) and running the Preferences: Configure Runtime Arguments command. This will open the argv.json file where you can add the setting "password-store":"gnome-libsecret".
 
 sudo pacman -S macchanger thunderbird --noconfirm
-<!-- sudo pacman -S rofimoji helix flameshot ksnip --noconfirm -->
+<!-- sudo pacman -S rofimoji helix --noconfirm -->
+<!-- gradia -->
 
 # projectlibre
 
@@ -203,6 +191,11 @@ ln -ivs /home/mc/marc/GitHub/dms/myclirc ~/.myclirc
 ln -ivs /home/mc/marc/custom/source/commandbox/box ~/.local/bin/
 ln -ivs /home/mc/marc/custom/source/commandbox/jre ~/.local/bin/
 
+sudo ln -ivs /home/mc/marc/GitHub/dms/etc/clamav/clamd.conf /etc/clamav
+sudo ln -ivs /home/mc/marc/GitHub/dms/etc/clamav/virus-event.bash /etc/clamav
+
+cp /home/mc/marc/GitHub/ubuntu/HubApps /home/mc/.config/microsoft-edge/Default/HubApps
+
 <!-- ln -ivs ~/marc/.thunderbird ~/.thunderbird -->
 <!-- ln -ivs ~/marc/GitHub/dms/config/rofimoji.rc ~/.config/ -->
 ```
@@ -241,9 +234,11 @@ systemctl enable --now --user gpu-screen-recorder-ui
 
 # Install python,pip & selenium
 
-yay -S python-selenium python-clipman mycli --noconfirm
+yay -S python-clipman mycli --noconfirm
+python3 -m pip install --user selenium --break-system-packages
+
 sudo pacman -S python-pandas --noconfirm
-<!-- yay -S pyinstaller -->
+<!-- yay -S pyinstaller python-selenium -->
 
 # virtualbox
 
@@ -296,3 +291,46 @@ systemctl --user status pipewire
 > (Pastikan statusnya active)
 systemctl --user status xdg-desktop-portal-gnome 
 > (Pastikan tidak ada pesan error merah)
+
+# dbeaver
+sudo rm /usr/share/applications/io.dbeaver.DBeaver.desktop
+cp ~/marc/GitHub/dms/local/share/applications/dbeaver.desktop  ~/.local/share/applications/dbeaver.desktop
+
+# Clamav
+https://wiki.archlinux.org/title/ClamAV
+
+`sudo pacman -S clamav`
+
+Update the ClamAV Virus Database
+
+```
+sudo systemctl stop clamav-freshclam
+sudo freshclam
+sudo systemctl enable clamav-freshclam --now
+
+sudo systemctl enable clamav-clamonacc.service --now
+sudo systemctl enable clamav-daemon.service --now
+
+sudo systemctl edit clamav-clamonacc.service
+```
+
+Check last modified/ updates
+`ls -l /var/lib/clamav/`
+
+Disable clamav
+`sudo systemctl disable clamav-freshclam --now`
+
+clamscan -r ~/ -l ~/scanresult.txt
+
+# Setting default apps
+xdg-mime query filetype nama_file.pod
+
+xdg-mime default mpv.desktop audio/mpeg
+xdg-mime default mpv.desktop video/webm
+
+# yt-dlp
+sudo rm ~/.local/bin/yt-dlp
+
+curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
+chmod a+rx ~/.local/bin/yt-dlp  # Make executable
+
