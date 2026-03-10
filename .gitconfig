@@ -1,6 +1,6 @@
 [user]
-	email = <psikomania@yahoo.com>
-	name = scarmonger
+	email = marctinius@dataon.com
+	name = marc
 [merge]
 	tool = nvim
 [mergetool "nvim"]
@@ -14,3 +14,14 @@
     tool = nvimdiff
 [difftool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[safe]
+	directory = /home/mc/marc/custom/source/soulbackend
+	directory = /home/mc/.sfclone/repositories/SunFish7BackEnd/branch/master
+	directory = /home/mc/marc/custom/source/soulbackend
+	directory = /home/mc/.sfclone/repositories/SunFish7BackEnd/branch/master
+	directory = /home/mc/marc/custom/source/soulbackend
+	directory = /home/mc/.sfclone/repositories/SunFish7BackEnd/branch/master
+	directory = /home/mc/marc/custom/source/soulbackend
+	directory = /home/mc/.sfclone/repositories/SunFish7BackEnd/branch/master
+	directory = /home/mc/marc/custom/source/soulbackend
+	directory = /home/mc/.sfclone/repositories/SunFish7BackEnd/branch/master

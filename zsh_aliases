@@ -51,7 +51,7 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias ap="PATH=$PATH:~/bin/otomation/"
 alias updateyt="python3 -m pip install -U 'yt-dlp[default]'"
 alias now="date +"%Y%m%d%H%M" | xclip -selection clipboard" # Linux with xclip
-alias fd="fdfind"
+# alias fd="fdfind"
 alias g1="veracrypt ~/Dropbox/linux/cl ~/.config/script"
 alias npms="NODE_OPTIONS=--max-old-space-size=8096 npm start"
 

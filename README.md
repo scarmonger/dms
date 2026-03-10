@@ -66,8 +66,9 @@ sudo pacman -S dbeaver --noconfirm
 sudo pacman -S gimp --noconfirm
 sudo pacman -S chromium --noconfirm
 sudo pacman -S --noconfirm networkmanager-l2tp strongswan xl2tpd
+> nm to call vpn setup
 
-yay -S wps-office ttf-wps-fonts libtiff5 --noconfirm
+yay -S wps-office ttf-ms-fonts ttf-wps-fonts libtiff5 --noconfirm
 yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
 yay -S microsoft-edge-stable-bin --noconfirm
 

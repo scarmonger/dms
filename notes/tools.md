@@ -95,6 +95,7 @@ xdg-mime default wps-office-wps.desktop application/vnd.openxmlformats-officedoc
 xdg-mime default wps-office-wps.desktop application/msword
 xdg-mime default wps-office-et.desktop application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 xdg-mime default wps-office-et.desktop application/vnd.ms-excel
+xdg-mime default wps-office-et.desktop text/html
 xdg-mime default wps-office-wpp.desktop application/vnd.ms-powerpoint
 xdg-mime default wps-office-wpp.desktop application/vnd.openxmlformats-officedocument.presentationml.presentation
 

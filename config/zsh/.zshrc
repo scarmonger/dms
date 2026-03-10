@@ -121,3 +121,6 @@ source ~/.config/powerlevel10k/powerlevel10k.zsh-theme
 
 source /home/mc/marc/GitHub/dms/zsh-addon
 
+
+# opencode
+export PATH=/home/mc/.opencode/bin:$PATH

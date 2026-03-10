@@ -273,7 +273,7 @@ workspace "F"{
 window-rule{
     match at-startup=true app-id=r#"telegram"# 
     match at-startup=true app-id=r#"librewolf"# 
-    match app-id=r#"librewolf"# 
+    // match app-id=r#"librewolf"# 
     match app-id=r#"telegram"# 
     open-on-workspace "F"
     open-focused false
@@ -335,9 +335,9 @@ workspace "G"{
 }
 
 window-rule{
-  match at-startup=true app-id=r#"code"# 
-  match at-startup=true app-id=r#"dbeaver"# 
-  // match app-id=r#"firefox"# 
+  match app-id=r#"code"# 
+  match app-id=r#"DBeaver"# 
+  match app-id=r#"obsidian"# 
   open-on-workspace "G"
   open-maximized true
 }
@@ -345,6 +345,7 @@ window-rule {
     match title="^Open database$"
     open-floating true
 }
+
 window-rule {
     // match app-id="^librewolf$"
     match app-id="^obsidian$"
@@ -585,8 +586,8 @@ binds {
     Mod+Shift+Up    { move-window-up; }
     Mod+Shift+Right { move-column-right; }
     Mod+Shift+H     { move-column-left; }
-    Mod+Shift+J     { move-window-down; }
-    Mod+Shift+K     { move-window-up; }
+    Mod+Shift+K     { move-window-down; }
+    Mod+Shift+J     { move-window-up; }
     Mod+Shift+L     { move-column-right; }
 
     // === Column Navigation ===
@@ -628,11 +629,11 @@ binds {
     Mod+Ctrl+Up        { move-column-to-workspace-up; }
     Mod+Ctrl+I         { move-column-to-workspace-down; }
     Mod+Ctrl+U         { move-column-to-workspace-up; }
-    Mod+Ctrl+J         { move-column-to-workspace-down; }
-    Mod+Ctrl+K         { move-column-to-workspace-up; }
+    Mod+Ctrl+K         { move-column-to-workspace-down; }
+    Mod+Ctrl+J         { move-column-to-workspace-up; }
 
-    Mod+J              { focus-workspace-down; }
-    Mod+K              { focus-workspace-up; }
+    Mod+K              { focus-workspace-down; }
+    Mod+J              { focus-workspace-up; }
 
     // === Move Workspaces ===
     Mod+Shift+Page_Down { move-workspace-down; }
@@ -662,7 +663,7 @@ binds {
     Mod+D { focus-workspace "D"; }
     Mod+F { focus-workspace "F"; }
     Mod+W { focus-workspace "W"; }
-    Mod+G { focus-workspace "E"; }
+    Mod+G { focus-workspace "G"; }
     Mod+R { focus-workspace "R"; }
     Mod+T { focus-workspace "T"; }
     Mod+Y { focus-workspace "Y"; }
@@ -673,7 +674,7 @@ binds {
     Mod+Shift+D { move-column-to-workspace "D"; }
     Mod+Shift+F { move-column-to-workspace "F"; }
     Mod+Shift+W { move-column-to-workspace "W"; }
-    Mod+Shift+G { move-column-to-workspace "E"; }
+    Mod+Shift+G { move-column-to-workspace "G"; }
     Mod+Shift+R { move-column-to-workspace "R"; }
     Mod+Shift+T { move-column-to-workspace "T"; }
     Mod+Shift+Y { move-column-to-workspace "Y"; }
@@ -746,3 +747,5 @@ debug {
 include "dms/cursor.kdl"
 
 include "dms/outputs.kdl"
+
+include "dms/windowrules.kdl"
