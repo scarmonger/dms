@@ -25,3 +25,5 @@
 	directory = /home/mc/.sfclone/repositories/SunFish7BackEnd/branch/master
 	directory = /home/mc/marc/custom/source/soulbackend
 	directory = /home/mc/.sfclone/repositories/SunFish7BackEnd/branch/master
+[core]
+	editor = nvim

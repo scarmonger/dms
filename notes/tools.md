@@ -107,6 +107,8 @@ xdg-mime query default application/vnd.ms-excel
 xdg-mime query default application/vnd.ms-powerpoint
 xdg-mime query default application/vnd.openxmlformats-officedocument.presentationml.presentation
 
+xdg-mime default libreoffice-calc.desktop application/vnd.oasis.opendocument.spreadsheet
+
 # Setup default browser
 
 xdg-settings get default-web-browser
