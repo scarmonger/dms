@@ -43,11 +43,14 @@ vim.keymap.set("n", "<m-n>", '"nP', { desc = "paste from n buffer" })
 vim.keymap.set("i", "<m-n>", "<c-r>n", { desc = "paste from n buffer" })
 vim.keymap.set("n", "<leader>yp", ":let @+ = expand('%:p')<cr>", { desc = "copy filepath" })
 vim.keymap.set("n", "<leader>yd", ":let @+ = expand('%:p:h:h %:p')<cr>", { desc = "copy file's directory" })
-vim.keymap.set("n", "<leader>yc", ":let @+= @*<cr>", { desc = "transfer / copy * registers to clipboard" })
-vim.keymap.set("n", "<leader>yr", ":let @+ = @r<CR>", { desc = "Copy @r to system clipboard" })
+-- vim.keymap.set("n", "<leader>yc", ":let @+= @*<cr>", { desc = "transfer / copy * registers to clipboard" })
+-- vim.keymap.set("n", "<leader>yr", ":let @+ = @r<CR>", { desc = "Copy @r to system clipboard" })
 vim.keymap.set({ "n", "v" }, '"0', '"0p', { desc = "paste from last yank" })
 vim.keymap.set("i", "<C-v>", '<C-r>"', { desc = "paste from the last yank, delete" })
 vim.keymap.set("i", "<C-b>", "<C-r>0", { desc = "paste from last yank" })
+vim.keymap.set("v", "<leader>y", '"ry', { desc = "copy into r register" })
+vim.keymap.set("n", "<leader>yy", '"ryy', { desc = "copy into r register" })
+vim.keymap.set("n", "<leader>p", '"rp', { desc = "paste from r register" })
 
 vim.keymap.set("n", "<leader>ta", "ggVG", { desc = "select all" })
 vim.keymap.set("n", "<leader>th", ':! thorium-browser "<c-r>%"<CR>', { desc = "preview markdown" })
@@ -88,9 +91,6 @@ vim.keymap.set("x", "<leader>p", '"_dP', { desc = "paste in visual mode, don't y
 vim.keymap.set("n", "<leader>d", '"_d', { desc = "delete into void" })
 vim.keymap.set("v", "<leader>d", '"_d', { desc = "delete into void" })
 vim.keymap.set("x", "<leader>d", '"_d', { desc = "delete into void" })
-
-vim.keymap.set("v", "<leader>y", '"ry', { desc = "copy into r register" })
-vim.keymap.set("n", "<leader>p", '"rp', { desc = "paste from r register" })
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "change project" })
 -- go back to previous session with <tmux-leader>+L

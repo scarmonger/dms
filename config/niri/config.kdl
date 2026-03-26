@@ -271,10 +271,10 @@ workspace "F"{
 }
 
 window-rule{
-    match at-startup=true app-id=r#"telegram"# 
-    match at-startup=true app-id=r#"librewolf"# 
-    // match app-id=r#"librewolf"# 
-    match app-id=r#"telegram"# 
+    // match at-startup=true app-id=r#"telegram"# 
+    // match at-startup=true app-id=r#"librewolf"# 
+    match at-startup=true title=r#"Telegram — LibreWolf"# 
+    match at-startup=true title=r#"WhatsApp — LibreWolf"#
     open-on-workspace "F"
     open-focused false
 }
@@ -292,7 +292,7 @@ window-rule{
 }
 window-rule{
   match at-startup=true app-id=r#"keepassxc"# 
-  match app-id=r#"keepassxc"# 
+  // match app-id=r#"keepassxc"# 
   // match app-id=r#"firefox"# 
   open-on-workspace "W"
   open-maximized true
@@ -347,7 +347,6 @@ window-rule {
 }
 
 window-rule {
-    // match app-id="^librewolf$"
     match app-id="^obsidian$"
     match app-id="org.ksnip.ksnip"
     open-maximized true
@@ -363,7 +362,6 @@ window-rule {
 window-rule{
     match app-id="com.mitchellh.ghostty"
     match app-id=r#"firefox"# 
-    // match app-id="^librewolf$"
     match app-id="^chromium$"
     match app-id="be.alexandervanhee.gradia"
     open-maximized true
@@ -547,10 +545,10 @@ binds {
     Mod+P hotkey-overlay-title="Play/Pause Media Player" {
         spawn "dms" "ipc" "call" "mpris" "playPause";
     }
-    Mod+BracketLeft hotkey-overlay-title="Play Previous" {
+    Mod+F11 hotkey-overlay-title="Play Previous" {
         spawn "dms" "ipc" "call" "mpris" "previous";
     }
-    Mod+BracketRight hotkey-overlay-title="Play Next" {
+    Mod+F12 hotkey-overlay-title="Play Next" {
         spawn "dms" "ipc" "call" "mpris" "next";
     }
 
@@ -605,8 +603,8 @@ binds {
     // Mod+Ctrl+J     { focus-monitor-down; }
     // Mod+Ctrl+K     { focus-monitor-up; }
     Mod+Ctrl+L     { focus-monitor-right; }
-    Mod+F11   { focus-monitor-left; }
-    Mod+F12   { focus-monitor-right; }
+    Mod+BracketLeft   { focus-monitor-left; }
+    Mod+BracketRight  { focus-monitor-right; }
 
     // === Move to Monitor ===
     Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
@@ -616,9 +614,9 @@ binds {
     Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
     // Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
     // Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
-    Mod+Shift+F11         { move-column-to-monitor-left; }
-    Mod+Shift+F12         { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+L       { move-column-to-monitor-right; }
+    Mod+Shift+BracketLeft  { move-column-to-monitor-left; }
+    Mod+Shift+BracketRight { move-column-to-monitor-right; }
 
     // === Workspace Navigation ===
     Mod+Page_Down      { focus-workspace-down; }

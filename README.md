@@ -300,28 +300,18 @@ cp ~/marc/GitHub/dms/local/share/applications/dbeaver.desktop  ~/.local/share/ap
 # Clamav
 https://wiki.archlinux.org/title/ClamAV
 
-`sudo pacman -S clamav`
-
-Update the ClamAV Virus Database
-
-```
-sudo systemctl stop clamav-freshclam
-sudo freshclam
-sudo systemctl enable clamav-freshclam --now
-
-sudo systemctl enable clamav-clamonacc.service --now
-sudo systemctl enable clamav-daemon.service --now
-
-sudo systemctl edit clamav-clamonacc.service
-```
-
-Check last modified/ updates
-`ls -l /var/lib/clamav/`
-
-Disable clamav
-`sudo systemctl disable clamav-freshclam --now`
-
 clamscan -r ~/ -l ~/scanresult.txt
+
+ps aux | grep clamd
+
+sudo systemctl enable clamav-daemon
+sudo systemctl start clamav-daemon
+sudo systemctl stop clamav-daemon
+
+sudo systemctl enable clamav-daemon.socket
+sudo systemctl start clamav-daemon.socket
+sudo systemctl stop clamav-daemon.socket
+
 
 # Setting default apps
 xdg-mime query filetype nama_file.pod
