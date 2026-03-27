@@ -170,16 +170,16 @@ spawn-at-startup "copyq"
 spawn-at-startup "flameshot"
 spawn-at-startup "firefox"
 spawn-at-startup "thunderbird"
-//spawn-at-startup "ghostty" "-e" "nvr" "/home/mc/.config/niri/config.kdl"
 spawn-at-startup "ghostty"
-//spawn-at-startup "kitty" "-e" "yazi"
+spawn-at-startup "google-chrome-stable"
 spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-super.kbd"
 spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-super_usb_keyboard.kbd"
-spawn-at-startup "google-chrome-stable"
-// spawn-at-startup "/usr/bin/chromium" "--profile-directory=Default" "--app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
 spawn-at-startup "librewolf" "--new-window" "https://web.telegram.org/a/"
 spawn-at-startup "librewolf" "--new-window" "https://web.whatsapp.com/"
 spawn-at-startup "Telegram"
+//spawn-at-startup "ghostty" "-e" "nvr" "/home/mc/.config/niri/config.kdl"
+//spawn-at-startup "kitty" "-e" "yazi"
+// spawn-at-startup "/usr/bin/chromium" "--profile-directory=Default" "--app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
 // spawn-at-startup "keepassxc"
 
 environment {
@@ -269,12 +269,16 @@ window-rule{
 workspace "F"{
     open-on-output "HDMI-A-2"
 }
+window-rule{
+    match at-startup=true app-id=r#"librewolf"#
+    // match title=r#"(Telegram|WhatsApp)"#
+    match title=r#"^(Telegram|WhatsApp) — LibreWolf"#
+    open-on-workspace "F"
+    open-focused false
+}
 
 window-rule{
-    // match at-startup=true app-id=r#"telegram"# 
-    // match at-startup=true app-id=r#"librewolf"# 
-    match at-startup=true title=r#"Telegram — LibreWolf"# 
-    match at-startup=true title=r#"WhatsApp — LibreWolf"#
+    match at-startup=true app-id=r#"telegram"# 
     open-on-workspace "F"
     open-focused false
 }
