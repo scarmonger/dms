@@ -529,7 +529,12 @@ binds {
     Alt+F4 repeat=false { close-window; }
     // Mod+Shift+E { quit; }
     Mod+semicolon hotkey-overlay-title="Show Emoji" { spawn "/home/mc/marc/GitHub/dms/local/bin/custom/showemoji"; }
-    Mod+apostrophe hotkey-overlay-title="Show Emoji" { spawn "/home/mc/marc/GitHub/dms/local/bin/custom/showemoji"; }
+    Mod+Shift+semicolon hotkey-overlay-title="Dropbox Status" {
+    spawn "sh" "-c" "notify-send 'Dropbox Status' \"$(dropbox status)\""
+
+    // Mod+apostrophe hotkey-overlay-title="Dropbox Status" {
+    // spawn "sh" "-c" "notify-send 'Dropbox Status' \"$(dropbox status)\""
+}
 
     Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" {
         spawn "dms" "ipc" "call" "processlist" "toggle";
