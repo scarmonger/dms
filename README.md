@@ -56,7 +56,7 @@ yay -S --noconfirm google-chrome
 sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi ksnip flameshot eza --noconfirm
 
 sudo pacman -S ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
-sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps --noconfirm
+sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps foliate --noconfirm
 sudo pacman -S 7zip imagemagick gwenview expac --noconfirm
 
 sudo pacman -S keepassxc qt5-wayland tailscale --noconfirm
@@ -82,6 +82,14 @@ If this solution works for you, you can persist the value of password-store by o
 sudo pacman -S macchanger thunderbird --noconfirm
 <!-- sudo pacman -S rofimoji helix --noconfirm -->
 <!-- gradia -->
+
+## Android screen sharing
+sudo pacman -S scrcpy
+
+Steps:
+1. Enable Developer Options → USB Debugging on your phone
+2. Connect phone via USB
+3. Run: `scrcpy`
 
 # projectlibre
 
@@ -325,3 +333,5 @@ sudo rm ~/.local/bin/yt-dlp
 curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
 chmod a+rx ~/.local/bin/yt-dlp  # Make executable
 
+# Gemini
+sudo npm install -g @google/gemini-cli
