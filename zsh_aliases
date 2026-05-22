@@ -7,6 +7,7 @@ alias zz="zellij -s z1 || zellij attach z1"
 alias apa='veracrypt ~/Dropbox/linux/cl ~/bin/ && export PATH="$HOME/bin/otomation:$PATH"'
 alias adp='export PATH="$HOME/bin/otomation:$PATH"'
 alias mvc='veracrypt ~/Dropbox/linux/cl ~/bin/'
+alias zathura="GTK_IM_MODULE=none zathura"
 
 ## Useful aliases
 # Replace ls with eza
