@@ -15,15 +15,13 @@ local SUPPORTED_KEYS = {
 	{ on = "u", desc = "Free" }, { on = "v", desc = "Free" }, { on = "w", desc = "Free" }, { on = "x", desc = "Free" }, { on = "y", desc = "Free"}, { on = "z", desc = "Free" },
 }
 
-local _send_notification = ya.sync(
-	function(state, message)
-		ya.notify {
-			title = "Bookmarks",
-			content = message,
-			timeout = state.notify.timeout,
-		}
-	end
-)
+local _send_notification = ya.sync(function(state, message)
+	ya.notify({
+		title = "Bookmarks",
+		content = message,
+		timeout = state.notify.timeout,
+	})
+end)
 
 local _get_real_index = ya.sync(function(state, idx)
 	for key, value in pairs(state.bookmarks) do
@@ -123,10 +121,14 @@ local _save_last = ya.sync(function(state, persist, imediate)
 	end
 end)
 
-local get_last_mode = ya.sync(function(state) return state.last_mode end)
+local get_last_mode = ya.sync(function(state)
+	return state.last_mode
+end)
 
 local save_last_dir = ya.sync(function(state)
-	ps.sub("cd", function() _save_last(state.last_persist, false) end)
+	ps.sub("cd", function()
+		_save_last(state.last_persist, false)
+	end)
 
 	ps.sub("hover", function()
 		local file = _get_bookmark_file()
@@ -135,13 +137,21 @@ local save_last_dir = ya.sync(function(state)
 	end)
 end)
 
-local save_last_jump = ya.sync(function(state) _save_last(state.last_persist, true) end)
+local save_last_jump = ya.sync(function(state)
+	_save_last(state.last_persist, true)
+end)
 
-local save_last_mark = ya.sync(function(state) _save_last(state.last_persist, true) end)
+local save_last_mark = ya.sync(function(state)
+	_save_last(state.last_persist, true)
+end)
 
-local _is_show_keys_enabled = ya.sync(function(state) return state.show_keys end)
+local _is_show_keys_enabled = ya.sync(function(state)
+	return state.show_keys
+end)
 
-local _is_custom_desc_input_enabled = ya.sync(function(state) return state.custom_desc_input end)
+local _is_custom_desc_input_enabled = ya.sync(function(state)
+	return state.custom_desc_input
+end)
 
 -- ***********************************************
 -- **============= C O M M A N D S =============**
@@ -274,14 +284,14 @@ return {
 			if _is_show_keys_enabled() then
 				SUPPORTED_KEYS = get_updated_keys(SUPPORTED_KEYS)
 			end
-			local key = ya.which { cands = SUPPORTED_KEYS, silent = not _is_show_keys_enabled() }
+			local key = ya.which({ cands = SUPPORTED_KEYS, silent = not _is_show_keys_enabled() })
 			if key then
 				if _is_custom_desc_input_enabled() then
-					local value, event = ya.input {
+					local value, event = ya.input({
 						title = "Save with custom description:",
 						position = { "top-center", y = 3, w = 60 },
 						value = tostring(_get_bookmark_file().url),
-					}
+					})
 					if event ~= 1 then
 						return
 					end
@@ -299,7 +309,7 @@ return {
 		end
 
 		local bookmarks = all_bookmarks(action == "jump")
-		local selected = #bookmarks > 0 and ya.which { cands = bookmarks }
+		local selected = #bookmarks > 0 and ya.which({ cands = bookmarks })
 		if not selected then
 			return
 		end
@@ -310,9 +320,9 @@ return {
 			end
 
 			if bookmarks[selected].is_parent then
-				ya.mgr_emit("cd", { bookmarks[selected].path })
+				ya.emit("cd", { bookmarks[selected].path })
 			else
-				ya.mgr_emit("reveal", { bookmarks[selected].path })
+				ya.emit("reveal", { bookmarks[selected].path })
 			end
 		elseif action == "delete" then
 			delete_bookmark(selected)
