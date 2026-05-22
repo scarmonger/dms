@@ -63,7 +63,7 @@ sudo pacman -S keepassxc qt5-wayland tailscale --noconfirm
 sudo pacman -S obsidian veracrypt --noconfirm
 sudo pacman -S telegram-desktop filezilla --noconfirm
 sudo pacman -S dbeaver --noconfirm
-sudo pacman -S gimp --noconfirm
+sudo pacman -S gimp obs-studio --noconfirm
 sudo pacman -S chromium --noconfirm
 sudo pacman -S --noconfirm networkmanager-l2tp strongswan xl2tpd
 > nm to call vpn setup

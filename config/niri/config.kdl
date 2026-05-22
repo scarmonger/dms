@@ -587,7 +587,7 @@ binds {
     }
 
     // === Window Management ===
-    Mod+Shift+Q repeat=false { close-window; }
+    Mod+Q repeat=false { close-window; }
     Mod+C hotkey-overlay-title="Maximize column" { maximize-column; }
     Mod+Shift+C hotkey-overlay-title="Fullscreen window" { fullscreen-window; }
     Mod+Z hotkey-overlay-title="switch-focus-between-floating-and-tiling" { switch-focus-between-floating-and-tiling; }
@@ -686,7 +686,6 @@ binds {
     Mod+S { focus-workspace "S"; }
     Mod+D { focus-workspace "D"; }
     Mod+F { focus-workspace "F"; }
-    Mod+Q { focus-workspace "Q"; }
     Mod+W { focus-workspace "W"; }
     Mod+E { focus-workspace "E"; }
     Mod+R { focus-workspace "R"; }
