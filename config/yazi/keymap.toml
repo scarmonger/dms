@@ -414,6 +414,11 @@ on   = "l"
 run  = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"
 
+[[mgr.prepend_keymap]]
+on   = "<Right>"
+run  = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"
+
 # If your yazi version is lower than v25.5.28, repleace "mgr" by "manager".
 [[mgr.prepend_keymap]]
 on = [ "m" ]
