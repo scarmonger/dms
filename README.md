@@ -53,9 +53,10 @@ yay -S --noconfirm google-chrome
 
 # Install other app (sudo pacman -S)
 
-sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi ksnip flameshot eza --noconfirm
-
+sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi ksnip eza --noconfirm
+<!-- flameshot  -->
 sudo pacman -S ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
+sudo pacman -S grim satty
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps foliate --noconfirm
 sudo pacman -S 7zip imagemagick gwenview expac --noconfirm
 
@@ -183,8 +184,9 @@ ln -ivs ~/marc/GitHub/dms/config/helix/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/fish/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/zellij ~/.config/
 <!-- ln -ivs ~/marc/GitHub/dms/config/flameshot/ ~/.config/ -->
-ln -ivs ~/marc/GitHub/dms/config/gpu-screen-recorder/ ~/.config/
+<!-- ln -ivs ~/marc/GitHub/dms/config/gpu-screen-recorder/ ~/.config/ -->
 ln -ivs ~/marc/GitHub/dms/config/keepassxc/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/satty/ ~/.config/
 
 ln -ivs ~/marc/GitHub/dms/config/zathura ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/mpv ~/.config/

@@ -66,7 +66,7 @@ input {
     workspace-auto-back-and-forth // Enable workspace back & forth switching
 
     mouse {
-      left-handed
+      //left-handed
       accel-speed 0.5
       scroll-factor 2.0
     }
@@ -167,7 +167,7 @@ spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 spawn-at-startup "~/.dropbox-dist/dropboxd"
 spawn-at-startup "copyq"
-spawn-at-startup "flameshot"
+//spawn-at-startup "flameshot"
 spawn-at-startup "firefox"
 spawn-at-startup "thunderbird"
 spawn-at-startup "ghostty"
@@ -752,10 +752,11 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // === Screenshots ===
-    Print hotkey-overlay-title="Screenshot Area" {  spawn "flameshot" "gui";  }
+    Print hotkey-overlay-title="Screenshot Area" { spawn "sh" "-c" "grim -g \"$(slurp)\" - | satty --filename -" ;  }
+    Ctrl+Print hotkey-overlay-title="Screenshot Screen" {  spawn "sh" "-c" "grim - | satty --filename -";  }
+    Shift+Print hotkey-overlay-title="Screenshot Screen" {  spawn "sh" "-c" "grim - | satty --filename -";  }
     // Print hotkey-overlay-title="Screenshot Area" {  spawn "/home/mc/.local/bin/custom/niri-gradia";  }
-    Ctrl+Print hotkey-overlay-title="Screenshot Screen" {  spawn "flameshot" "screen";  }
-    Shift+Print hotkey-overlay-title="Screenshot Screen" {  spawn "flameshot" "screen";  }
+    //Print hotkey-overlay-title="Screenshot Area" {  spawn "flameshot" "gui";  }
     // XF86Launch1 { screenshot; }
     // Ctrl+XF86Launch1 { screenshot-screen; }
     // Alt+XF86Launch1 { screenshot-window; }
