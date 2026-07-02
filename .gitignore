@@ -13,3 +13,5 @@ config/zsh/.zcompdump-m720q-5.9.zwc
 config/zsh/.zsh_history
 config/nvim/lua/plugins/dankcolors.lua
 dump.html
+/config/zsh/.zcompdump-m720q-5.9.1
+/config/zsh/.zcompdump-m720q-5.9.1.zwc

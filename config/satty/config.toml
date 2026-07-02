@@ -21,8 +21,39 @@ save-after-copy = true
 # Optional: use fullscreen mode
 fullscreen = false
 
-annotation-size-factor = 0.5
+annotation-size-factor = 0.7
 
+auto-copy = true
+
+disable-notifications = true
+
+# Tool selection keyboard shortcuts (since 0.20.0)
+[keybinds]
+pointer = "q"
+crop = "c"
+brush = "p"
+line = "l"
+arrow = "a"
+rectangle = "r"
+ellipse = "e"
+text = "t"
+marker = "m"
+blur = "b"
+highlight = "h"
+
+# Custom colours for the colour palette
+[color-palette]
+# These will be shown in the toolbar for quick selection
+palette = [
+    # RRGGBBAA format, where AA is the alpha channel 
+    # (00 is fully transparent, ff is fully opaque)
+    "#eb4d4bff",
+    "#f0932bff",
+    "#6ab04cff",
+    "#22a6b3ff",
+    "#130f40FF",
+    # add or remove as needed
+]
 # [general]
 # # Start Satty in fullscreen mode
 # fullscreen = false

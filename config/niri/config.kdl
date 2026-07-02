@@ -66,7 +66,7 @@ input {
     workspace-auto-back-and-forth // Enable workspace back & forth switching
 
     mouse {
-      //left-handed
+      left-handed
       accel-speed 0.5
       scroll-factor 2.0
     }
