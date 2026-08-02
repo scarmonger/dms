@@ -70,7 +70,7 @@ sudo pacman -S --noconfirm networkmanager-l2tp strongswan xl2tpd
 > nm to call vpn setup
 
 sudo pacman -S hypridle hyprlock hyprpaper hyprshutdown
-sudo pacman -S xdg-desktop-portal-hyprland
+sudo pacman -S xdg-desktop-portal-hyprland wf-recorder
 
 yay -S wps-office ttf-ms-fonts ttf-wps-fonts libtiff5 --noconfirm
 yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
