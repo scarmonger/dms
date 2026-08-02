@@ -69,6 +69,9 @@ sudo pacman -S chromium --noconfirm
 sudo pacman -S --noconfirm networkmanager-l2tp strongswan xl2tpd
 > nm to call vpn setup
 
+sudo pacman -S hypridle hyprlock hyprpaper hyprshutdown
+sudo pacman -S xdg-desktop-portal-hyprland
+
 yay -S wps-office ttf-ms-fonts ttf-wps-fonts libtiff5 --noconfirm
 yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
 yay -S microsoft-edge-stable-bin --noconfirm
@@ -187,6 +190,9 @@ ln -ivs ~/marc/GitHub/dms/config/zellij ~/.config/
 <!-- ln -ivs ~/marc/GitHub/dms/config/gpu-screen-recorder/ ~/.config/ -->
 ln -ivs ~/marc/GitHub/dms/config/keepassxc/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/satty/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/hypr/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/waybar/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/mako/ ~/.config/
 
 ln -ivs ~/marc/GitHub/dms/config/zathura ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/mpv ~/.config/

@@ -1,0 +1,26 @@
+# Ukuran & Posisi
+anchor=top-right
+width=350
+height=150
+margin=20
+padding=15
+border-size=2
+border-radius=8
+icon=1
+
+# Font & Warna
+font=JetBrainsMono Nerd Font 10
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+
+# Waktu Notifikasi (dalam milidetik)
+default-timeout=5000
+
+# Aturan umum untuk mode DND (Sembunyikan semua notifikasi)
+[mode=dnd]
+invisible=1
+
+# PENGECUALIAN: Notifikasi dengan urgensi CRITICAL tetap ditampilkan
+[mode=dnd urgency=critical]
+invisible=0
