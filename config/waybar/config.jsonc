@@ -23,13 +23,14 @@
   ],
   "modules-right": [
     // informational
-    "sway/language",
-    "custom/github",
-    "custom/clipboard",
-    "custom/zeit",
+    // "sway/language",
+    "custom/network_traffic",
+    // "custom/github",
+    // "custom/clipboard",
+    // "custom/zeit",
     "cpu",
-    // "temperature",
-    // "memory",
+    "temperature",
+    "memory",
     "battery",
     // connecting
     "network",
@@ -37,14 +38,14 @@
     "custom/valent",
     // media
     "custom/playerctl",
-    "custom/idle_inhibitor",
+    // "custom/idle_inhibitor",
     "custom/dnd",
     "pulseaudio",
-    "backlight",
+    // "backlight",
     // system
-    "custom/theme",
-    "custom/adaptive-light",
-    "custom/sunset",
+    // "custom/theme",
+    // "custom/adaptive-light",
+    // "custom/sunset",
     "custom/pacman",
     "tray",
     "clock",
@@ -65,14 +66,16 @@
   },
   "clock": {
     "interval": 60,
-    "format": "{:%e %b %Y %H:%M}",
+    // "format": "{:%e %b %Y %H:%M}",
+    "format": "{:%e %b %H:%M}",
     "tooltip": true,
     "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
     "on-click": "swaymsg exec \\$calendar",
   },
   "cpu": {
     "interval": 10,
-    "format": "󰘚",
+    // "format": "󰘚",
+    "format": "C:{usage}%",
     "states": {
       "warning": 70,
       "critical": 90,
@@ -82,7 +85,8 @@
   },
   "memory": {
     "interval": 10,
-    "format": "󰍛",
+    // "format": "󰍛",
+    "format": "M:{used:0.1f}GB/{total:0.1f}GB({percentage}%)",
     "states": {
       "warning": 70,
       "critical": 90,
@@ -91,7 +95,7 @@
     "tooltip": true,
   },
   "network": {
-    "interval": 5,
+    "interval": 1,
     "format-wifi": "{icon}",
     "format-ethernet": "󰈀",
     "format-disconnected": "󰖪",
@@ -134,7 +138,7 @@
   "temperature": {
     "critical-threshold": 90,
     "interval": 5,
-    "format": "{icon}",
+    "format": "{icon} {temperatureC}°C",
     "tooltip-format": "{temperatureC}°C",
     "format-icons": ["", "", ""],
     "tooltip": true,
@@ -351,5 +355,10 @@
   },
   "hyprland/window": {
     "separate-outputs": true,
+  },
+  "custom/network_traffic": {
+    "exec": "~/.config/waybar/scripts/network_traffic.sh",
+    "return-type": "json",
+    "format": "Speed: {}", // optional
   },
 }
