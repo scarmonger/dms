@@ -69,11 +69,21 @@ sudo pacman -S chromium --noconfirm
 sudo pacman -S --noconfirm networkmanager-l2tp strongswan xl2tpd
 > nm to call vpn setup
 
+i nushell jq 
+yay -S jqp-bin
+
 yay -S wps-office ttf-ms-fonts ttf-wps-fonts libtiff5 --noconfirm
 yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
 yay -S microsoft-edge-stable-bin --noconfirm
-
+yay -S dankcalendar-bin
 yay -S visual-studio-code-bin
+
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+paru -S dsearch-bin
+https://danklinux.com/docs/danksearch/usage
 
 i libreoffice-still
 i gnome-keyring

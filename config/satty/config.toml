@@ -2,9 +2,6 @@
 # Start with the crop tool selected
 initial-tool = "rectangle"
 
-# Exit automatically after saving or copying
-early-exit = true
-
 # Hide toolbar for a cleaner interface (optional)
 default-hide-toolbars = false
 
@@ -16,7 +13,7 @@ copy-command = "wl-copy"
 output-filename = "/home/mc/Pictures/ss-%Y-%m-%d_%H:%M:%S.png"
 
 # Save automatically when copying
-save-after-copy = true
+# save-after-copy = true
 
 # Optional: use fullscreen mode
 fullscreen = false
@@ -26,6 +23,9 @@ annotation-size-factor = 0.7
 auto-copy = true
 
 disable-notifications = true
+
+actions-on-enter = ["save-to-clipboard"]
+
 
 # Tool selection keyboard shortcuts (since 0.20.0)
 [keybinds]
