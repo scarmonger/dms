@@ -2,6 +2,9 @@
 # Start with the crop tool selected
 initial-tool = "rectangle"
 
+# Ensure actions-on-enter is placed under [general]
+actions-on-enter = ["save-to-clipboard"]
+
 # Exit automatically after saving or copying
 early-exit = true
 
