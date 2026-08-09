@@ -61,10 +61,6 @@ sudo mv /etc/greetd/config.toml /etc/greetd/config.toml_bak
 sudo ln -ivs ~/marc/GitHub/dms/etc/greetd/config.toml /etc/greetd/
 
 
-rm -Rf ~/.config/ranger
-ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/
-rm /home/mc/.local/share/ranger/bookmarks
-ln -ivs ~/marc/GitHub/dms/local/share/ranger/bookmarks ~/.local/share/ranger/
 
 sudo pacman -S qt5-wayland libreoffice-still tldr fish lsd lsof xdotool 
 

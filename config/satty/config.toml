@@ -30,8 +30,6 @@ auto-copy = true
 
 disable-notifications = true
 
-actions-on-enter = ["save-to-clipboard"]
-
 
 # Tool selection keyboard shortcuts (since 0.20.0)
 [keybinds]

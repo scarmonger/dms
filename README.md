@@ -371,5 +371,17 @@ yay -S waybar-git
 # display manager
 Manjaro sway default display manager : greetd
 
-# launch et
-QT_SCALE_FACTOR=1 et
+# launch et with bigger fontsize
+QT_SCALE_FACTOR=2 et
+
+# ranger
+To generate the original configuration files for the ranger file manager, run the command `ranger --copy-config=all` in your terminal. This copies the default system files into your local user directory at
+
+rm -Rf ~/.config/ranger
+ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/
+rm /home/mc/.local/share/ranger/bookmarks
+ln -ivs ~/marc/GitHub/dms/local/share/ranger/bookmarks ~/.local/share/ranger/
+
+> To stop ranger from loading both the default and your custom rc.conf,
+  please set the environment variable RANGER_LOAD_DEFAULT_RC to FALSE.
+
