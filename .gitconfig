@@ -2,10 +2,16 @@
 	email = marctinius@dataon.com
 	name = marc
 [merge]
-	tool = nvim
-[mergetool "nvim"]
-	cmd = nvim -d $LOCAL $REMOTE $MERGED -c \"$wincmd w\" -c \"wincmd J\"
-	trustExitCode = true
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait --merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+# [merge]
+# 	tool = nvim
+# [mergetool "nvim"]
+#   cmd = nvim -d "$LOCAL" "$BASE" "$REMOTE" "$MERGED" \
+#         -c "wincmd w" \
+#         -c "wincmd J"
+#   trustExitCode = true
 [mergetool]
 	keepBackup = false
 [difftool]

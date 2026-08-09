@@ -78,11 +78,21 @@ yay -S qt6ct
 yay -S hyprqt6engine
 yay -S hyprpolkitagent
 
+i nushell jq 
+yay -S jqp-bin
+
 yay -S wps-office ttf-ms-fonts ttf-wps-fonts libtiff5 --noconfirm
 yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
 yay -S microsoft-edge-stable-bin --noconfirm
-
+yay -S dankcalendar-bin
 yay -S visual-studio-code-bin
+
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+paru -S dsearch-bin
+https://danklinux.com/docs/danksearch/usage
 
 i libreoffice-still
 i gnome-keyring
@@ -201,6 +211,9 @@ ln -ivs ~/marc/GitHub/dms/config/waybar/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/mako/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/wlogout/ ~/.config/
 
+ln -ivs ~/marc/GitHub/dms/config/hypr/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/waybar/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/mako/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/zathura ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/mpv ~/.config/
 ln -ivs ~/marc/GitHub/dms/local/share/applications/rofi-wifi-menu.desktop ~/.local/share/applications/
