@@ -56,7 +56,7 @@ yay -S --noconfirm google-chrome
 sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi ksnip eza --noconfirm
 <!-- flameshot  -->
 sudo pacman -S ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
-sudo pacman -S grim satty
+sudo pacman -S grim satty imv swayimg
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps foliate --noconfirm
 sudo pacman -S 7zip imagemagick gwenview expac --noconfirm
 
@@ -71,6 +71,12 @@ sudo pacman -S --noconfirm networkmanager-l2tp strongswan xl2tpd
 
 sudo pacman -S hypridle hyprlock hyprpaper hyprshutdown
 sudo pacman -S xdg-desktop-portal-hyprland wf-recorder dmenu
+
+i nwg-look 
+yay -S gnome-themes-extra
+yay -S qt6ct
+yay -S hyprqt6engine
+yay -S hyprpolkitagent
 
 yay -S wps-office ttf-ms-fonts ttf-wps-fonts libtiff5 --noconfirm
 yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
@@ -193,6 +199,7 @@ ln -ivs ~/marc/GitHub/dms/config/satty/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/hypr/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/waybar/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/mako/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/wlogout/ ~/.config/
 
 ln -ivs ~/marc/GitHub/dms/config/zathura ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/mpv ~/.config/
@@ -343,3 +350,13 @@ chmod a+rx ~/.local/bin/yt-dlp  # Make executable
 
 # Gemini
 sudo npm install -g @google/gemini-cli
+
+# waybar
+Install ulang waybar menggunakan AUR agar bisa pindah workspace dgn cara di klik workspacenya 
+yay -S waybar-git
+
+# display manager
+Manjaro sway default display manager : greetd
+
+# launch et
+QT_SCALE_FACTOR=1 et

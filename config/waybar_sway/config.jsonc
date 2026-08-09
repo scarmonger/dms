@@ -11,42 +11,38 @@
   // -------------------------------------------------------------------------
   "layer": "top",
   // If height property would be not present, it'd be calculated dynamically
-  "height": 20,
+  "height": 30,
   "position": "bottom",
   "reload_style_on_change": true,
-  "modules-left": [
-    //"custom/menu",
-    "hyprland/workspaces",
-  ],
-  "modules-center": ["custom/wf-recorder", "sway/mode", "clock", "sway/window"],
+  "modules-left": ["custom/menu", "sway/workspaces", "custom/scratchpad"],
+  "modules-center": ["custom/wf-recorder", "sway/mode", "custom/weather"],
   "modules-right": [
     // informational
-    // "sway/language",
-    // "networkspeed",
-    // "custom/github",
-    // "custom/clipboard",
-    // "custom/zeit",
-    "battery",
-    "temperature",
+    "sway/language",
+    "custom/github",
+    "custom/clipboard",
+    "custom/zeit",
     "cpu",
-    "memory",
+    // "temperature",
+    // "memory",
+    "battery",
     // connecting
     "network",
-    // "bluetooth",
+    "bluetooth",
     "custom/valent",
     // media
     "custom/playerctl",
-    // "custom/idle_inhibitor",
+    "custom/idle_inhibitor",
     "custom/dnd",
     "pulseaudio",
-    // "backlight",
+    "backlight",
     // system
-    // "custom/theme",
-    // "custom/adaptive-light",
-    // "custom/sunset",
+    "custom/theme",
+    "custom/adaptive-light",
+    "custom/sunset",
     "custom/pacman",
     "tray",
-    "custom/weather",
+    "clock",
   ],
   // -------------------------------------------------------------------------
   // Modules
@@ -64,16 +60,14 @@
   },
   "clock": {
     "interval": 60,
-    // "format": "{:%e %b %Y %H:%M}",
-    "format": "{:%e %b %H:%M}",
+    "format": "{:%e %b %Y %H:%M}",
     "tooltip": true,
     "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
     "on-click": "swaymsg exec \\$calendar",
   },
   "cpu": {
     "interval": 10,
-    // "format": "󰘚",
-    "format": "C:{usage}%",
+    "format": "󰘚",
     "states": {
       "warning": 70,
       "critical": 90,
@@ -83,9 +77,7 @@
   },
   "memory": {
     "interval": 10,
-    // "format": "󰍛",
-    // "format": "M:{used:0.1f}GB/{total:0.1f}GB({percentage}%)",
-    "format": "M:{percentage}%",
+    "format": "󰍛",
     "states": {
       "warning": 70,
       "critical": 90,
@@ -95,8 +87,8 @@
   },
   "network": {
     "interval": 5,
-    "format-wifi": "{icon} ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
-    "format-ethernet": "󰈀 ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀",
     "format-disconnected": "󰖪",
     "format-disabled": "󰀝",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
@@ -137,7 +129,7 @@
   "temperature": {
     "critical-threshold": 90,
     "interval": 5,
-    "format": "{icon} {temperatureC}°C",
+    "format": "{icon}",
     "tooltip-format": "{temperatureC}°C",
     "format-icons": ["", "", ""],
     "tooltip": true,
@@ -346,14 +338,5 @@
     "on-click": "inhibit-idle off; inhibit-idle interactive",
     "on-click-middle": "inhibit-idle off",
     "signal": 15,
-  },
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({workspace=\"e+1\"})' ",
-    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({workspace=\"e-1\"})' ",
-    "on-click": "activate",
-  },
-  "sway/window": {
-    "separate-outputs": true,
   },
 }
