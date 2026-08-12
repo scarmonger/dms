@@ -210,6 +210,7 @@ ln -ivs ~/marc/GitHub/dms/config/hypr/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/waybar/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/mako/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/wlogout/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/kitty/ ~/.config/
 
 ln -ivs ~/marc/GitHub/dms/config/hypr/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/waybar/ ~/.config/

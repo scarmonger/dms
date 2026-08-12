@@ -437,13 +437,13 @@ window-rule {
 }
 
 // Block out password managers from screencasts.
-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
-    match app-id=r#"telegram"# 
-    match title=r#"WhatsApp Web"# 
-    block-out-from "screencast"
-}
+//window-rule {
+//    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+//    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+//    match app-id=r#"telegram"# 
+//    match title=r#"WhatsApp Web"# 
+//    block-out-from "screencast"
+//}
 // Block out mako notifications from screencasts.
 layer-rule {
     match namespace="^notifications$"
