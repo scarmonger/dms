@@ -56,7 +56,7 @@ yay -S --noconfirm google-chrome
 sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi ksnip eza --noconfirm
 <!-- flameshot  -->
 sudo pacman -S ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
-sudo pacman -S grim satty imv swayimg
+sudo pacman -S grim satty imv swayimg nemo
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps foliate --noconfirm
 sudo pacman -S 7zip imagemagick gwenview expac --noconfirm
 
@@ -385,4 +385,7 @@ ln -ivs ~/marc/GitHub/dms/local/share/ranger/bookmarks ~/.local/share/ranger/
 
 > To stop ranger from loading both the default and your custom rc.conf,
   please set the environment variable RANGER_LOAD_DEFAULT_RC to FALSE.
+
+# Config nemo for bulk-rename
+thunar --bulk-rename
 
