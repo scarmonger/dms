@@ -276,7 +276,7 @@ alias so="source /home/mc/.config/zsh/.zshrc"
 alias v='nvim'
 alias vim='nvim'
 #alias vimdiff='nvim -d'
-alias r='ranger'
+alias r='VISUAL=nvim source ranger'
 #alias h='history | dmenu -i -l 20 -p "history" | xclip -sel c'
 #alias h='history | awk '{$1=""; print $0}' | rofi -dmenu -i -l 50 -p "history" | wl-copy'
 alias h="history | sed 's/^[[:space:]]*[0-9]*[[:space:]]*//' | rofi -dmenu -i -l 30 -p 'history' -theme /usr/share/rofi/themes/Adapta-Nokto.rasi | wl-copy "

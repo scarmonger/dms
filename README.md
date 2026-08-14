@@ -56,7 +56,8 @@ yay -S --noconfirm google-chrome
 sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi ksnip eza --noconfirm
 <!-- flameshot  -->
 sudo pacman -S ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
-sudo pacman -S grim satty imv swayimg nemo
+sudo pacman -S grim satty imv swayimg nemo cmus 
+sudo pacman -S ranger bat
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps foliate --noconfirm
 sudo pacman -S 7zip imagemagick gwenview expac --noconfirm
 
@@ -77,9 +78,12 @@ yay -S gnome-themes-extra
 yay -S qt6ct
 yay -S hyprqt6engine
 yay -S hyprpolkitagent
+i ffmpegthumbnailer
 
 i nushell jq 
 yay -S jqp-bin
+
+yay -S mmtui-bin
 
 yay -S wps-office ttf-ms-fonts ttf-wps-fonts libtiff5 --noconfirm
 yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
