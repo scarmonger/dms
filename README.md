@@ -393,3 +393,5 @@ ln -ivs ~/marc/GitHub/dms/local/share/ranger/bookmarks ~/.local/share/ranger/
 # Config nemo for bulk-rename
 thunar --bulk-rename
 
+# ranger gpg plugins
+https://gitlab.com/Ragnyll/ranger-gpg
