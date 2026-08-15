@@ -55,6 +55,7 @@ hl.bind(mainMod .. " + J", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
+hl.bind(sMod .. " + Return", hl.dsp.exec_cmd("ghostty"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(
 	sMod .. " + DELETE",

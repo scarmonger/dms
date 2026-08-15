@@ -114,6 +114,7 @@ Steps:
 1. Enable Developer Options → USB Debugging on your phone
 2. Connect phone via USB
 3. Run: `scrcpy`
+4. Additional: Developer Options -> show taps : on
 
 # projectlibre
 
