@@ -385,8 +385,6 @@ To generate the original configuration files for the ranger file manager, run th
 
 rm -Rf ~/.config/ranger
 ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/
-rm /home/mc/.local/share/ranger/bookmarks
-ln -ivs ~/marc/GitHub/dms/local/share/ranger/bookmarks ~/.local/share/ranger/
 
 > To stop ranger from loading both the default and your custom rc.conf,
   please set the environment variable RANGER_LOAD_DEFAULT_RC to FALSE.
