@@ -103,8 +103,18 @@ hl.bind(
 	{ locked = true, repeating = true }
 )
 hl.bind(
+	sMod .. " + equal",
+	hl.dsp.window.resize({ x = 700, y = 0, relative = true }),
+	{ locked = true, repeating = true }
+)
+hl.bind(
 	mainMod .. " + minus",
 	hl.dsp.window.resize({ x = -20, y = 0, relative = true }),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	sMod .. " + minus",
+	hl.dsp.window.resize({ x = -700, y = 0, relative = true }),
 	{ locked = true, repeating = true }
 )
 hl.bind(
