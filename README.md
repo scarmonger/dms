@@ -58,6 +58,7 @@ sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi ksnip eza --nocon
 sudo pacman -S ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
 sudo pacman -S grim satty imv swayimg nemo cmus 
 sudo pacman -S ranger bat
+yay -S mmtui-bin
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps foliate --noconfirm
 sudo pacman -S 7zip imagemagick gwenview expac --noconfirm
 
@@ -70,7 +71,7 @@ sudo pacman -S chromium --noconfirm
 sudo pacman -S --noconfirm networkmanager-l2tp strongswan xl2tpd
 > nm to call vpn setup
 
-sudo pacman -S hypridle hyprlock hyprpaper hyprshutdown
+sudo pacman -S hypridle hyprlock hyprpaper hyprshutdown wlogout
 sudo pacman -S xdg-desktop-portal-hyprland wf-recorder dmenu
 
 i nwg-look 
@@ -83,7 +84,6 @@ i ffmpegthumbnailer
 i nushell jq 
 yay -S jqp-bin
 
-yay -S mmtui-bin
 
 yay -S wps-office ttf-ms-fonts ttf-wps-fonts libtiff5 --noconfirm
 yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
