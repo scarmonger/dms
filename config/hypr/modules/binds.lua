@@ -20,7 +20,9 @@ local sMod = "SUPER + SHIFT" -- Sets "Windows" key as main modifier
 ----------------
 -- Navigation --
 ----------------
-hl.bind(sMod .. " + F", hl.dsp.exec_cmd(fileManager))
+hl.bind(sMod .. " + C", hl.dsp.exec_cmd("galculator", { float = true, move = { 1200, 100 } }))
+hl.bind(sMod .. " + E", hl.dsp.exec_cmd("/home/mc/marc/GitHub/dms/local/bin/custom/showemoji"))
+hl.bind(sMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
 hl.bind(sMod .. " + G", hl.dsp.exec_cmd(gmail))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(calendar))
 
@@ -29,13 +31,11 @@ hl.bind(mainMod .. " + F1", hl.dsp.focus({ urgent_or_last = "urgent" }))
 hl.bind(mainMod .. " + Grave", hl.dsp.window.cycle_next({ next = true }))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + SHIFT + Escape", hl.dsp.exec_cmd("systemctl suspend"))
-hl.bind(mainMod .. " + comma", hl.dsp.exec_cmd("galculator", { float = true, move = { 1200, 100 } }))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" - | satty --filename -')) -- screen shot area
 hl.bind("CTRL + Print", hl.dsp.exec_cmd("grim - | satty --filename -")) -- screen shot screen
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd("grim - | satty --filename -")) -- screen shot screen
 
-hl.bind(mainMod .. " + apostrophe", hl.dsp.exec_cmd("/home/mc/marc/GitHub/dms/local/bin/custom/showemoji"))
-hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd('notify-send -t 3000 "Dropbox Status" "$(dropbox status)"'))
+-- hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd('notify-send -t 3000 "Dropbox Status" "$(dropbox status)"'))
 hl.bind(mainMod .. " + semicolon", hl.dsp.exec_cmd("makoctl dismiss -a"))
 hl.bind(mainMod .. " + SHIFT + semicolon", hl.dsp.exec_cmd("makoctl restore"))
 hl.bind(
@@ -63,7 +63,6 @@ hl.bind(
 	-- hl.dsp.exec_cmd("hyprshutdown")
 )
 hl.bind(mainMod .. " + Z", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + C", hl.dsp.window.fullscreen({ mode = "maximized" }))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd("/home/mc/.local/bin/custom/launch.sh"))
 -- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
@@ -204,7 +203,7 @@ hl.bind(
 )
 
 -- Requires playerctl
-hl.bind("SUPER + bracketright", hl.dsp.exec_cmd("playerctl next"), { locked = true })
+hl.bind("SUPER + F11", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+hl.bind("SUPER + F12", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("SUPER + P", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 -- hl.bind("SUPER + p", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("SUPER + bracketleft", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
