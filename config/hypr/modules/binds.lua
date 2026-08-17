@@ -53,6 +53,35 @@ hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ workspace = "e-1" }))
 
+hl.bind(sMod .. " + H", hl.dsp.window.swap({ direction = "left" }))
+hl.bind(sMod .. " + L", hl.dsp.window.swap({ direction = "right" }))
+hl.bind(sMod .. " + K", hl.dsp.window.swap({ direction = "up" }))
+hl.bind(sMod .. " + J", hl.dsp.window.swap({ direction = "d" }))
+
+--------------
+-- Monitors --
+--------------
+hl.bind(mainMod .. " + bracketleft", hl.dsp.workspace.move({ monitor = "+" }))
+hl.bind(sMod .. " + bracketleft", hl.dsp.workspace.move({ monitor = "-" }))
+
+hl.bind("SUPER + SHIFT + LEFT", hl.dsp.workspace.move({ monitor = "-" }))
+hl.bind("SUPER + SHIFT + RIGHT", hl.dsp.workspace.move({ monitor = "+" }))
+
+local function swap_monitors()
+	local monitors = hl.get_monitors()
+
+	if #monitors ~= 2 then
+		return
+	end
+
+	hl.dispatch(hl.dsp.workspace.swap_monitors({
+		monitor1 = monitors[1],
+		monitor2 = monitors[2],
+	}))
+end
+
+hl.bind("SUPER + CTRL + S", swap_monitors)
+
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(sMod .. " + Return", hl.dsp.exec_cmd("ghostty"))
