@@ -31,3 +31,14 @@ hl.window_rule({
 
 	no_focus = true,
 })
+
+local copyqFloatRule = hl.window_rule({
+	name = "copyq-float",
+	match = {
+		class = "^copyq$",
+	},
+
+	float = true,
+})
+
+copyqFloatRule:set_enabled(true)
