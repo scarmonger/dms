@@ -58,6 +58,7 @@ sudo pacman -S yazi thunar nautilus tmux trash-cli zoxide rofi ksnip eza --nocon
 sudo pacman -S ncdu copyq kmonad mpv-mpris fastfetch wev galculator --noconfirm
 sudo pacman -S grim satty imv swayimg nemo cmus 
 sudo pacman -S ranger bat
+yay -S mmtui-bin
 sudo pacman -S zathura-cb zathura-cb zathura-djvu zathura-pdf-poppler zathura-ps foliate --noconfirm
 sudo pacman -S 7zip imagemagick gwenview expac --noconfirm
 
@@ -70,7 +71,7 @@ sudo pacman -S chromium --noconfirm
 sudo pacman -S --noconfirm networkmanager-l2tp strongswan xl2tpd
 > nm to call vpn setup
 
-sudo pacman -S hypridle hyprlock hyprpaper hyprshutdown
+sudo pacman -S hypridle hyprlock hyprpaper hyprshutdown wlogout
 sudo pacman -S xdg-desktop-portal-hyprland wf-recorder dmenu
 
 i nwg-look 
@@ -83,7 +84,6 @@ i ffmpegthumbnailer
 i nushell jq 
 yay -S jqp-bin
 
-yay -S mmtui-bin
 
 yay -S wps-office ttf-ms-fonts ttf-wps-fonts libtiff5 --noconfirm
 yay -S --noconfirm windsurf zellij zoom pinta librewolf-bin gradia
@@ -114,6 +114,7 @@ Steps:
 1. Enable Developer Options → USB Debugging on your phone
 2. Connect phone via USB
 3. Run: `scrcpy`
+4. Additional: Developer Options -> show taps : on
 
 # projectlibre
 
@@ -215,6 +216,8 @@ ln -ivs ~/marc/GitHub/dms/config/waybar/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/mako/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/wlogout/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/kitty/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/swayimg/ ~/.config/
+ln -ivs ~/marc/GitHub/dms/config/imv/ ~/.config/
 
 ln -ivs ~/marc/GitHub/dms/config/hypr/ ~/.config/
 ln -ivs ~/marc/GitHub/dms/config/waybar/ ~/.config/
@@ -384,8 +387,6 @@ To generate the original configuration files for the ranger file manager, run th
 
 rm -Rf ~/.config/ranger
 ln -ivs ~/marc/GitHub/dms/config/ranger ~/.config/
-rm /home/mc/.local/share/ranger/bookmarks
-ln -ivs ~/marc/GitHub/dms/local/share/ranger/bookmarks ~/.local/share/ranger/
 
 > To stop ranger from loading both the default and your custom rc.conf,
   please set the environment variable RANGER_LOAD_DEFAULT_RC to FALSE.

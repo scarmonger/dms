@@ -1,8 +1,9 @@
 #!/bin/sh
 alias hx='helix'
 alias ze='zellij'
+alias t="tmux"
 # alias tt="tmux attach -t t1 || tmux new -s t1"
-alias tt="tmux attach -t ws || tmux new -s ws ws"
+# alias tt="tmux attach -t ws || tmux new -s ws ws"
 alias zz="zellij -s z1 || zellij attach z1"
 alias apa='veracrypt ~/Dropbox/linux/cl ~/bin/ && export PATH="$HOME/bin/otomation:$PATH"'
 alias adp='export PATH="$HOME/bin/otomation:$PATH"'
@@ -191,7 +192,7 @@ alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias grep='grep --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
-alias t='tail -f'
+# alias t='tail -f'
 
 # Command line head / tail shortcuts
 alias -g H='| head'

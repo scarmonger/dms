@@ -135,7 +135,7 @@
     "on-scroll-down": "swaymsg exec \\$volume_down",
   },
   "temperature": {
-    "critical-threshold": 90,
+    "critical-threshold": 75,
     "interval": 5,
     "format": "{icon} {temperatureC}°C",
     "tooltip-format": "{temperatureC}°C",

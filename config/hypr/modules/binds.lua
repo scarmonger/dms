@@ -20,7 +20,9 @@ local sMod = "SUPER + SHIFT" -- Sets "Windows" key as main modifier
 ----------------
 -- Navigation --
 ----------------
-hl.bind(sMod .. " + F", hl.dsp.exec_cmd(fileManager))
+hl.bind(sMod .. " + C", hl.dsp.exec_cmd("galculator", { float = true, move = { 1200, 100 } }))
+hl.bind(sMod .. " + E", hl.dsp.exec_cmd("/home/mc/marc/GitHub/dms/local/bin/custom/showemoji"))
+hl.bind(sMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
 hl.bind(sMod .. " + G", hl.dsp.exec_cmd(gmail))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(calendar))
 
@@ -29,13 +31,11 @@ hl.bind(mainMod .. " + F1", hl.dsp.focus({ urgent_or_last = "urgent" }))
 hl.bind(mainMod .. " + Grave", hl.dsp.window.cycle_next({ next = true }))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + SHIFT + Escape", hl.dsp.exec_cmd("systemctl suspend"))
-hl.bind(mainMod .. " + comma", hl.dsp.exec_cmd("galculator", { float = true, move = { 1200, 100 } }))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" - | satty --filename -')) -- screen shot area
 hl.bind("CTRL + Print", hl.dsp.exec_cmd("grim - | satty --filename -")) -- screen shot screen
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd("grim - | satty --filename -")) -- screen shot screen
 
-hl.bind(mainMod .. " + apostrophe", hl.dsp.exec_cmd("/home/mc/marc/GitHub/dms/local/bin/custom/showemoji"))
-hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd('notify-send -t 3000 "Dropbox Status" "$(dropbox status)"'))
+-- hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd('notify-send -t 3000 "Dropbox Status" "$(dropbox status)"'))
 hl.bind(mainMod .. " + semicolon", hl.dsp.exec_cmd("makoctl dismiss -a"))
 hl.bind(mainMod .. " + SHIFT + semicolon", hl.dsp.exec_cmd("makoctl restore"))
 hl.bind(
@@ -53,8 +53,38 @@ hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ workspace = "e-1" }))
 
+hl.bind(sMod .. " + H", hl.dsp.window.swap({ direction = "left" }))
+hl.bind(sMod .. " + L", hl.dsp.window.swap({ direction = "right" }))
+hl.bind(sMod .. " + K", hl.dsp.window.swap({ direction = "up" }))
+hl.bind(sMod .. " + J", hl.dsp.window.swap({ direction = "d" }))
+
+--------------
+-- Monitors --
+--------------
+hl.bind(mainMod .. " + bracketleft", hl.dsp.workspace.move({ monitor = "+" }))
+hl.bind(sMod .. " + bracketleft", hl.dsp.workspace.move({ monitor = "-" }))
+
+hl.bind("SUPER + SHIFT + LEFT", hl.dsp.workspace.move({ monitor = "-" }))
+hl.bind("SUPER + SHIFT + RIGHT", hl.dsp.workspace.move({ monitor = "+" }))
+
+local function swap_monitors()
+	local monitors = hl.get_monitors()
+
+	if #monitors ~= 2 then
+		return
+	end
+
+	hl.dispatch(hl.dsp.workspace.swap_monitors({
+		monitor1 = monitors[1],
+		monitor2 = monitors[2],
+	}))
+end
+
+hl.bind("SUPER + CTRL + S", swap_monitors)
+
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
+hl.bind(sMod .. " + Return", hl.dsp.exec_cmd("ghostty"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(
 	sMod .. " + DELETE",
@@ -62,7 +92,6 @@ hl.bind(
 	-- hl.dsp.exec_cmd("hyprshutdown")
 )
 hl.bind(mainMod .. " + Z", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + C", hl.dsp.window.fullscreen({ mode = "maximized" }))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + F1", hl.dsp.exec_cmd("/home/mc/.local/bin/custom/launch.sh"))
 -- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
@@ -103,8 +132,18 @@ hl.bind(
 	{ locked = true, repeating = true }
 )
 hl.bind(
+	sMod .. " + equal",
+	hl.dsp.window.resize({ x = 700, y = 0, relative = true }),
+	{ locked = true, repeating = true }
+)
+hl.bind(
 	mainMod .. " + minus",
 	hl.dsp.window.resize({ x = -20, y = 0, relative = true }),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	sMod .. " + minus",
+	hl.dsp.window.resize({ x = -700, y = 0, relative = true }),
 	{ locked = true, repeating = true }
 )
 hl.bind(
@@ -203,7 +242,7 @@ hl.bind(
 )
 
 -- Requires playerctl
-hl.bind("SUPER + bracketright", hl.dsp.exec_cmd("playerctl next"), { locked = true })
+hl.bind("SUPER + F11", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+hl.bind("SUPER + F12", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("SUPER + P", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 -- hl.bind("SUPER + p", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("SUPER + bracketleft", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
