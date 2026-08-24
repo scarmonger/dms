@@ -281,6 +281,7 @@ systemctl enable --now --user gpu-screen-recorder-ui
 
 yay -S python-clipman mycli --noconfirm
 python3 -m pip install --user selenium --break-system-packages
+pip install pykeepass --break-system-packages
 
 sudo pacman -S python-pandas --noconfirm
 <!-- yay -S pyinstaller python-selenium -->
@@ -396,3 +397,4 @@ thunar --bulk-rename
 
 # ranger gpg plugins
 https://gitlab.com/Ragnyll/ranger-gpg
+

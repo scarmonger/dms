@@ -52,7 +52,36 @@ wait = WebDriverWait(driver, 10)
 cell = wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'sf7-email-template-content')]//table//tr[1]/td[4]")))
 
 pw = cell.text
-print("pw: " + pw)
 pyperclip.copy(pw)
+
+# Update to keepass
+import subprocess
+from pykeepass import PyKeePass
+
+DATABASE = "/home/mc/Dropbox/demo.kdbx"
+MASTER_PASSWORD = "jk"
+ENTRY_TITLE = "demo"
+
+new_password = subprocess.check_output(
+    ["wl-paste", "--no-newline"],
+    text=True,
+).rstrip("\n")
+
+kp = PyKeePass(
+    str(DATABASE),
+    password=MASTER_PASSWORD,
+)
+
+entry = kp.find_entries(
+    title=ENTRY_TITLE,
+    first=True,
+)
+
+entry.password = new_password
+
+kp.save()
+
+# print(f"Password updated: {ENTRY_TITLE}")
+print("pw: " + pw)
 
 driver.quit()

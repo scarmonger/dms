@@ -170,12 +170,12 @@ spawn-at-startup "copyq"
 //spawn-at-startup "flameshot"
 spawn-at-startup "firefox"
 spawn-at-startup "thunderbird"
-spawn-at-startup "ghostty"
+spawn-at-startup "kitty"
 spawn-at-startup "google-chrome-stable"
 spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-super.kbd"
 spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-super_usb_keyboard.kbd"
 // spawn-at-startup "librewolf" "--new-window" "https://web.telegram.org/a/"
-spawn-at-startup "librewolf" "--new-window" "https://web.whatsapp.com/"
+spawn-at-startup "librewolf" // "--new-window" "https://web.whatsapp.com/"
 spawn-at-startup "Telegram"
 //spawn-at-startup "ghostty" "-e" "nvr" "/home/mc/.config/niri/config.kdl"
 //spawn-at-startup "kitty" "-e" "yazi"
@@ -294,14 +294,14 @@ window-rule{
   open-maximized true
   open-focused false
 }
-window-rule{
-  match at-startup=true app-id=r#"keepassxc"# 
-  // match app-id=r#"keepassxc"# 
-  // match app-id=r#"firefox"# 
-  open-on-workspace "R"
-  open-maximized true
-  open-focused false
-}
+//window-rule{
+//  match at-startup=true app-id=r#"keepassxc"# 
+//  // match app-id=r#"keepassxc"# 
+//  // match app-id=r#"firefox"# 
+//  open-on-workspace "R"
+//  open-maximized true
+//  open-focused false
+//}
 
 workspace "E"{
     open-on-output "HDMI-A-2"
@@ -309,28 +309,28 @@ workspace "E"{
 
 window-rule {
     match app-id=r#"wps"#
-    open-on-workspace "E"
+    //open-on-workspace "E"
     open-maximized true
 }
 window-rule {
     match title=r#"LibreOffice"#
-    open-on-workspace "E"
+    //open-on-workspace "E"
     open-maximized true
 }
 window-rule {
     // match title=r#"projectlibre"#
     match app-id=r#"com-projectlibre1-main-Main"#
-    open-on-workspace "E"
+    //open-on-workspace "E"
     open-maximized true
 }
 window-rule {
     match app-id=r#"et"#
-    open-on-workspace "E"
+    //open-on-workspace "E"
     open-maximized true
 }
 window-rule {
     match app-id=r#"wpp"#
-    open-on-workspace "E"
+    //open-on-workspace "E"
     open-maximized true
 }
 
