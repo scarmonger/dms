@@ -24,6 +24,7 @@ hl.bind(sMod .. " + C", hl.dsp.exec_cmd("galculator", { float = true, move = { 1
 hl.bind(sMod .. " + E", hl.dsp.exec_cmd("/home/mc/marc/GitHub/dms/local/bin/custom/showemoji"))
 hl.bind(sMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
 hl.bind(sMod .. " + G", hl.dsp.exec_cmd(gmail))
+hl.bind(sMod .. " + P", hl.dsp.window.pin({}))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(calendar))
 
 hl.bind(mainMod .. " + TAB", hl.dsp.focus({ last = "last" }))
