@@ -398,3 +398,9 @@ thunar --bulk-rename
 # ranger gpg plugins
 https://gitlab.com/Ragnyll/ranger-gpg
 
+# hdmi speaker
+## untuk mengaktifkan opsi pada pavucontrol agar muncul semua 
+pactl set-card-profile alsa_card.pci-0000_00_1f.3 pro-audio
+
+## untuk menargetkan hanya hdmi sebagai output pada pavucontrol
+pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
