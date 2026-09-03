@@ -17,10 +17,13 @@ hl.on("hyprland.start", function()
 	-- hl.exec_cmd("librewolf", { workspace = "name:F silent" })
 	-- hl.exec_cmd("Telegram", { workspace = "name:F silent" })
 
-	hl.exec_cmd("sleep 60 && google-chrome-stable", { workspace = "1 silent" })
+	hl.exec_cmd("sleep 60 && google-chrome-stable", { monitor = "HDMI-A-2", workspace = "1 silent" })
 	hl.exec_cmd("sleep 10 && kitty ", { workspace = "2 silent" })
 	hl.exec_cmd("sleep 50 && firefox", { workspace = "3 silent" })
-	hl.exec_cmd("sleep 20 && librewolf", { workspace = "4 silent" })
+	hl.exec_cmd(
+		"sleep 20 && /usr/bin/chromium --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm",
+		{ workspace = "4 silent" }
+	)
 	hl.exec_cmd("sleep 40 && Telegram", { workspace = "4 silent" })
 	hl.exec_cmd("sleep 50 && keepassxc", { workspace = "7 silent" })
 	hl.exec_cmd("sleep 30 && thunderbird", { workspace = "7" })
