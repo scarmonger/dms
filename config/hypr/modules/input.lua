@@ -5,7 +5,7 @@
 hl.config({
 	input = {
 		numlock_by_default = true,
-		left_handed = true,
+		left_handed = false,
 		mouse_refocus = true,
 		repeat_rate = 25,
 		repeat_delay = 300,

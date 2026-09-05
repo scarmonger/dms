@@ -175,8 +175,9 @@ spawn-at-startup "google-chrome-stable"
 spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-super.kbd"
 spawn-at-startup "sudo" "kmonad" "/home/mc/marc/GitHub/dms/config/kmonad/ralt-super_usb_keyboard.kbd"
 // spawn-at-startup "librewolf" "--new-window" "https://web.telegram.org/a/"
-spawn-at-startup "librewolf" // "--new-window" "https://web.whatsapp.com/"
+// spawn-at-startup "librewolf" // "--new-window" "https://web.whatsapp.com/"
 spawn-at-startup "Telegram"
+spawn-at-startup "/usr/bin/chromium" "--profile-directory=Default" "--app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
 //spawn-at-startup "ghostty" "-e" "nvr" "/home/mc/.config/niri/config.kdl"
 //spawn-at-startup "kitty" "-e" "yazi"
 // spawn-at-startup "/usr/bin/chromium" "--profile-directory=Default" "--app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
@@ -270,9 +271,10 @@ workspace "F"{
     open-on-output "HDMI-A-2"
 }
 window-rule{
-    match at-startup=true app-id=r#"librewolf"#
+    // match at-startup=true app-id=r#"librewolf"#
     // match title=r#"(Telegram|WhatsApp)"#
-    match title=r#"^(Telegram|WhatsApp) — LibreWolf"#
+    match at-startup=true title=r#"WhatsApp Web"#
+    //match title=r#"WhatsApp Web"#
     open-on-workspace "F"
     open-focused false
 }
