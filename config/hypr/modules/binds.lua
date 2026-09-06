@@ -15,26 +15,28 @@ local menu = "/home/mc/.local/bin/custom/dmenu_run_history"
 ---------------------
 
 local Mod1 = "SUPER" -- Sets "Windows" key as main modifier
-local Mod2 = "SUPER + SHIFT" -- Sets "Windows" key as main modifier
+local Mods = "SUPER + SHIFT" -- Sets "Windows" key as main modifier
+local Moda = "SUPER + ALT" -- Sets "Windows" key as main modifier
+local Modc = "SUPER + CTRL" -- Sets "Windows" key as main modifier
 
 ----------------
 -- Navigation --
 ----------------
-hl.bind(Mod2 .. " + C", hl.dsp.exec_cmd("galculator", { float = true, move = { 1200, 100 } }))
-hl.bind(Mod2 .. " + E", hl.dsp.exec_cmd("/home/mc/marc/GitHub/dms/local/bin/custom/showemoji"))
---hl.bind(Mod2 .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
-hl.bind(Mod2 .. " + G", hl.dsp.exec_cmd(gmail))
-hl.bind(Mod2 .. " + P", hl.dsp.window.pin({}))
+hl.bind(Mods .. " + C", hl.dsp.exec_cmd("galculator", { float = true, move = { 1200, 100 } }))
+hl.bind(Mods .. " + E", hl.dsp.exec_cmd("/home/mc/marc/GitHub/dms/local/bin/custom/showemoji"))
+--hl.bind(Mods .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+hl.bind(Moda .. " + G", hl.dsp.exec_cmd(gmail))
+hl.bind(Mods .. " + P", hl.dsp.window.pin({}))
 hl.bind(Mod1 .. " + C", hl.dsp.exec_cmd(calendar))
 
 hl.bind(Mod1 .. " + TAB", hl.dsp.focus({ last = "last" }))
 hl.bind(Mod1 .. " + F1", hl.dsp.focus({ urgent_or_last = "urgent" }))
 hl.bind(Mod1 .. " + Grave", hl.dsp.window.cycle_next({ next = true }))
 hl.bind(Mod1 .. " + Escape", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(Mod2 .. " + Escape", hl.dsp.exec_cmd("wlogout"))
+hl.bind(Mods .. " + Escape", hl.dsp.exec_cmd("wlogout"))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" - | satty --filename -')) -- screen shot area
-hl.bind("CTRL + Print", hl.dsp.exec_cmd("grim - | satty --filename -")) -- screen shot screen
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd("grim - | satty --filename -")) -- screen shot screen
+hl.bind("CTRL + Print", hl.dsp.exec_cmd("grim -o DP-2 - | satty --filename -")) -- screen shot screen
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd("grim -o HDMI-A-1 - | satty --filename -")) -- screen shot screen
 
 -- hl.bind(Mod1 .. " + slash", hl.dsp.exec_cmd('notify-send -t 3000 "Dropbox Status" "$(dropbox status)"'))
 hl.bind(Mod1 .. " + semicolon", hl.dsp.exec_cmd("makoctl dismiss -a"))
@@ -45,7 +47,7 @@ hl.bind(
 )
 
 hl.bind(Mod1 .. " + X", hl.dsp.workspace.move({ monitor = "HDMI-A-2" }))
-hl.bind(Mod2 .. " + X", hl.dsp.workspace.move({ monitor = "DP-2" }))
+hl.bind(Mods .. " + X", hl.dsp.workspace.move({ monitor = "DP-2" }))
 hl.bind(Mod1 .. " + V", hl.dsp.exec_cmd("copyq toggle"))
 hl.bind(Mod1 .. " + Backspace", hl.dsp.exec_cmd("copyq disable"))
 hl.bind(Mod1 .. " + SHIFT + Backspace", hl.dsp.exec_cmd("copyq enable"))
@@ -55,16 +57,16 @@ hl.bind(Mod1 .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(Mod1 .. " + K", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(Mod1 .. " + J", hl.dsp.focus({ workspace = "e-1" }))
 
-hl.bind(Mod2 .. " + H", hl.dsp.window.swap({ direction = "left" }))
-hl.bind(Mod2 .. " + L", hl.dsp.window.swap({ direction = "right" }))
-hl.bind(Mod2 .. " + K", hl.dsp.window.swap({ direction = "up" }))
-hl.bind(Mod2 .. " + J", hl.dsp.window.swap({ direction = "d" }))
+hl.bind(Mods .. " + H", hl.dsp.window.swap({ direction = "left" }))
+hl.bind(Mods .. " + L", hl.dsp.window.swap({ direction = "right" }))
+hl.bind(Mods .. " + K", hl.dsp.window.swap({ direction = "up" }))
+hl.bind(Mods .. " + J", hl.dsp.window.swap({ direction = "d" }))
 
 --------------
 -- Monitors --
 --------------
 hl.bind(Mod1 .. " + bracketleft", hl.dsp.workspace.move({ monitor = "+" }))
-hl.bind(Mod2 .. " + bracketleft", hl.dsp.workspace.move({ monitor = "-" }))
+hl.bind(Mods .. " + bracketleft", hl.dsp.workspace.move({ monitor = "-" }))
 
 hl.bind("SUPER + SHIFT + LEFT", hl.dsp.workspace.move({ monitor = "-" }))
 hl.bind("SUPER + SHIFT + RIGHT", hl.dsp.workspace.move({ monitor = "+" }))
@@ -86,17 +88,17 @@ hl.bind("SUPER + CTRL + S", swap_monitors)
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(Mod1 .. " + Return", hl.dsp.exec_cmd(terminal))
-hl.bind(Mod2 .. " + Return", hl.dsp.exec_cmd("ghostty"))
+hl.bind(Mods .. " + Return", hl.dsp.exec_cmd("ghostty"))
 hl.bind(Mod1 .. " + Q", hl.dsp.window.close())
 hl.bind(
-	Mod2 .. " + DELETE",
+	Mods .. " + DELETE",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 	-- hl.dsp.exec_cmd("hyprshutdown")
 )
 hl.bind(Mod1 .. " + Z", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(Mod1 .. " + Space", hl.dsp.exec_cmd(menu))
-hl.bind(Mod2 .. " + Space", hl.dsp.exec_cmd("run_desktop_app"))
-hl.bind(Mod1 .. " + CTRL + Space", hl.dsp.exec_cmd("rofi -show window"), { locked = true })
+hl.bind(Mods .. " + Space", hl.dsp.exec_cmd("run_desktop_app"))
+hl.bind(Modc .. " + CTRL + Space", hl.dsp.exec_cmd("rofi -show window"), { locked = true })
 hl.bind(Mod1 .. " + F1", hl.dsp.exec_cmd("/home/mc/.local/bin/custom/launch.sh"))
 -- hl.bind(Mod1 .. " + P", hl.dsp.window.pseudo())
 hl.bind(Mod1 .. " + SHIFT + Z", hl.dsp.layout("togglesplit")) -- dwindle only
@@ -136,7 +138,7 @@ hl.bind(
 	{ locked = true, repeating = true }
 )
 hl.bind(
-	Mod2 .. " + equal",
+	Mods .. " + equal",
 	hl.dsp.window.resize({ x = 700, y = 0, relative = true }),
 	{ locked = true, repeating = true }
 )
@@ -146,7 +148,7 @@ hl.bind(
 	{ locked = true, repeating = true }
 )
 hl.bind(
-	Mod2 .. " + minus",
+	Mods .. " + minus",
 	hl.dsp.window.resize({ x = -700, y = 0, relative = true }),
 	{ locked = true, repeating = true }
 )
@@ -248,5 +250,5 @@ hl.bind("SUPER + P", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 -- hl.bind("SUPER + p", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 --
 
-hl.bind(Mod2 .. " + D", hl.dsp.layout("fit visible"))
-hl.bind(Mod2 .. " + F", hl.dsp.layout("fit active"))
+hl.bind(Modc .. " + D", hl.dsp.layout("fit visible"))
+hl.bind(Modc .. " + F", hl.dsp.layout("fit active"))

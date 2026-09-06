@@ -68,9 +68,16 @@ local workspaces = {
 	"R",
 	"T",
 	"G",
+	"O",
 }
 
 -- Assign character to numbers
 for index, workspace in ipairs(workspaces) do
 	hl.bind("SUPER + " .. workspace, workspace_callback(index))
+	hl.bind(
+		"SUPER + SHIFT + " .. workspace,
+		hl.dsp.window.move({
+			workspace = index,
+		})
+	)
 end
