@@ -24,8 +24,9 @@ hl.on("hyprland.start", function()
 		"sleep 20 && /usr/bin/chromium --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm",
 		{ workspace = "4 silent" }
 	)
+	--hl.bind(Mod2 .. " + C", hl.dsp.exec_cmd("galculator", { float = true, move = { 1200, 100 } }))
 	hl.exec_cmd("sleep 40 && Telegram", { workspace = "4 silent" })
-	hl.exec_cmd("sleep 50 && keepassxc", { workspace = "7 silent" })
+	hl.exec_cmd("sleep 50 && keepassxc", { workspace = "1 silent" })
 	hl.exec_cmd("sleep 30 && thunderbird", { workspace = "7" })
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("sudo kmonad /home/mc/marc/GitHub/dms/config/kmonad/ralt-super_usb_keyboard.kbd")
